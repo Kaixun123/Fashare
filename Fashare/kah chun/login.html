@@ -1,0 +1,110 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<link rel="stylesheet" type="text/css" href="../css/simple.css"/>
+	<title>fashare - login</title>
+	<style>
+		*{
+		font-family:Century Gothic,Futura, "Gill Sans";
+		}
+		body{
+		background-color:#d2d2d2;
+		padding:10%;
+		}
+		.main-div, .loggedin-div{
+		text-align:center;
+		}
+		.loginDetail{
+		background-color:white;
+		padding:10%;
+		}
+		h1{
+		font-size:50px;
+		padding-bottom:5%;
+		font-weight:bold;
+		}
+		.detail{
+		font-size:20px;
+		
+		}
+		
+		#fashare-logo{
+		padding-top:8%;
+		padding-bottom:5%;
+		width:20%;
+		}
+		
+		#loginButton{
+		background-color:black;
+		border:0;
+		color:white;
+		padding:9px 20px;
+		margin-top:3%;
+		margin-bottom:3%;
+		}
+		
+		#sign{
+		background-color:#d2d2d2;
+		color:black;
+		padding:9px 20px;
+		margin-top:3%;
+		margin-bottom:3%;
+		
+		#sign{
+		margin-top:3%;
+		margin-bottom:3%;
+		}
+
+	</style>
+</head>
+<body>
+
+  
+  	<div id="login_div" class="main-div">
+		<img src="../images/fashare.png" alt="fashare-logo" id="fashare-logo"/>
+	
+		<div class="loginDetail">
+			<h1>LOGIN OR SIGN UP</h1>
+			<div class="detail">
+				<label>EMAIL &nbsp; <input type="email" id="rEmail" placeholder = "<Login email>"/></label><br/>
+				<label>PASSWORD  &nbsp; <input type="password" id="password" placeholder = "<Login password>"/></label>
+			</div>
+			
+			<button type="button" id="loginButton" onclick="login(); RetrieveData();" class="btn btn-primary"> Login </button> 
+			<a href="../kah chun/CreateAccount.html"><input type="button" class="btn btn-alert" value= "Sign Up" id = "sign" /></a><br>
+			
+			
+			<input type="checkbox" checked="checked"> Remember me </label>
+			<span class="psw"><a href="../kah chun/forgotPass.html">Forgot password?</a></span>
+		</div>
+	</div>
+
+  <div id="user_div" class="loggedin-div">
+    <h1>Welcome User</h1>
+    <p id="user_para">You're currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+	<button onclick="sendVerification()">Send Verification</button>
+  </div>
+
+
+
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+	  
+	<script>
+		  // Initialize Firebase
+		  var config = {
+			apiKey: "AIzaSyA9W19h4_1tpp4KSL0M99M8SOUuN7c2U3E",
+			authDomain: "fashare-2c.firebaseapp.com",
+			databaseURL: "https://fashare-2c.firebaseio.com",
+			projectId: "fashare-2c",
+			storageBucket: "fashare-2c.appspot.com",
+			messagingSenderId: "115707668738"
+		  };
+  firebase.initializeApp(config);
+  
+
+</script>
+<script src="../js/login.js"></script>
+
+</body>
+</html>

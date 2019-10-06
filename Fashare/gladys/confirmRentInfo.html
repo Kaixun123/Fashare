@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Outfit Details </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+ 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="../css/gladys.css"> 
+
+<style>
+
+	.quick{
+  		color:white;
+  		}
+  	.quick:hover{
+  		color:#e0e0e0;
+  	}
+  	footer.simple{
+  		padding:2%;
+  	}
+
+  	div.col-md-3.footer-nav{padding-right: 0;padding-left:0;}
+  	
+  
+  	.itemd{
+  		font-weight:normal;
+  		font-size:17px;
+  	}
+
+  	.form-group{
+  		text-align:left;
+  		font-weight:normal;
+  	}
+
+  	#price{
+  		width:50%;
+  		display:inline-block;
+  	}
+
+  	input{
+  		font-weight:normal;
+  	}
+
+  	textarea#idetails.form-control{
+  		font-weight:normal;
+  		width: 330px;
+  		
+  	}
+
+  	.btn-color{
+  		margin-bottom:1%;
+  		padding:8px 15px;
+  		width:25%;
+  		font-size:12px;
+  	}
+
+  	.btn-color:hover{
+  		color:white;
+  		border:1px solid black;
+  	}
+
+  	input#idetails{
+
+  	}
+
+  	form div{
+  		padding:0%;
+  	}
+
+  	div.form-group{
+  		padding-bottom: 5%;
+  	}
+
+  	.userD{
+  			background:transparent;
+  			border:0;
+  	}
+
+  	#line{
+  		border:2px solid #F1C40F;
+  	}
+
+    #idetail {
+  white-space: pre-line;
+}
+
+.image{
+  border:1px solid black;
+  margin-bottom:7%;
+  transition: transform .2s;
+}
+.image:hover{
+  border:4px solid black;
+   transform: scale(1.1);
+   
+ 
+}
+  		
+</style>
+  	
+	
+</head>
+
+<body onload="RetrieveData()">
+	<header> 
+		<div>
+			<img id="logo" src="../images/fashare.png"> 
+			<h1 class="pageTitle"> RENTAL INFORMATION </h1>
+		</div>
+		<hr>
+	</header>
+
+	<ul class="breadcrumb">
+		  <li><a href="../gladys/uploadImage2.html" class="previous"> UPLOAD IMAGE</a></li>
+		  <li> <a href="../gladys/outfitDetails.html" class="previous"> OUTFIT DETAILS </a> </li>
+		  <li class="select"> RENTAL INFORMATION </li>
+	</ul>
+
+<div class="container">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-10"> 
+		<div class="rentConfirm" id="rent-out">
+			<div class="col-sm-8">
+				<p class="itemd"> Name of item: <input type="text" id="iname" readonly="readonly" class="userD"/> </p>
+				<p class="itemd"> Maximum number of days for rental: <input type="text" id="imax" readonly="readonly" class="userD"/> </p>
+				<p class="itemd"> Rental price per day: $<input type="text" id="iprice" readonly="readonly" class="userD"/> </p>
+				<p class="itemd"> Size: <input type="text" id="isize" readonly="readonly" class="userD"/> </p>
+				<p class="itemd"> Condition: <input type="text" id="icondition" readonly="readonly" class="userD"/> </p>
+				<p class="itemd"> Item details: <input type="text" id="idetail" readonly="readonly" class="userD"/> </p>
+				
+			</div>
+			
+			<div class="col-sm-4 text-center">
+				<img id="pic1" src="" width="100%" height="80%" class="image"/>
+				
+			</div>
+			<hr id="line">
+		</div>
+
+    <div class="rentConfirm" id="rent-out2">
+      <div class="col-sm-8">
+        <p class="itemd"> Name of item: <input type="text" id="iname2" readonly="readonly" class="userD"/> </p>
+        <p class="itemd"> Maximum number of days for rental: <input type="text" id="imax2" readonly="readonly" class="userD"/> </p>
+        <p class="itemd"> Rental price per day: $<input type="text" id="iprice2" readonly="readonly" class="userD"/> </p>
+        <p class="itemd"> Size: <input type="text" id="isize2" readonly="readonly" class="userD"/> </p>
+        <p class="itemd"> Condition: <input type="text" id="icondition2" readonly="readonly" class="userD"/> </p>
+        <p class="itemd"> Item details: <input type="text" id="idetail2" readonly="readonly" class="userD"/> </p>
+        
+      </div>
+      
+      <div class="col-sm-4 text-center">
+        <img id="pic2" src="" width="100%" height="80%" class="image"/>
+        
+      </div>
+      <hr id="line">
+    </div>
+
+    <div class="rentConfirm" id="rent-out3">
+      <div class="col-sm-8">
+        <p class="itemd"> Name of item: <input type="text" id="iname3" readonly="readonly" class="userD"/> </p>
+        <p class="itemd"> Maximum number of days for rental: <input type="text" id="imax3" readonly="readonly" class="userD"/> </p>
+        <p class="itemd"> Rental price per day: $<input type="text" id="iprice3" readonly="readonly" class="userD"/> </p>
+        <p class="itemd"> Size: <input type="text" id="isize3" readonly="readonly" class="userD"/> </p>
+        <p class="itemd"> Condition: <input type="text" id="icondition3" readonly="readonly" class="userD"/> </p>
+        <p class="itemd"> Item details: <input type="text" id="idetail3" readonly="readonly" class="userD"/> </p>
+        
+      </div>
+      
+      <div class="col-sm-4 text-center">
+        <img id="pic3" src="" width="100%" height="80%" class="image"/>
+        
+      </div>
+      <hr id="line">
+    </div>
+
+ 		
+	</div>
+
+
+
+	<div class="col-sm-1"></div>
+
+
+
+</div>
+
+<div class="next col-sm-12 text-center" style="height:50px">
+	<a href="../gladys/viewOutfit.html" style="text-decoration:none;"> <input type="button" value="SUBMIT" class="submitButton" style="margin-top:3%"/> </a>
+	<a href="../gladys/outfitDetails.html" class="cancel"> CANCEL </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="container-full" width="100%" style="margin-top: 5%">
+    <!----------- Footer ------------>
+    <footer class="footer-bs simple">
+        <div class="row">
+        	<div class="col-md-1"></div>
+            	<div class="col-md-3 footer-nav">
+                    <a href="../kai xun/home.html" class="quick"> FASHARE HOME PAGE</a>
+                </div>
+
+            	<div class="col-md-3 footer-nav">
+                    <a href="../gladys/termsncon.html" class="quick"> TERMS AND CONDITIONS</a>
+                </div>
+                <div class="col-md-2 footer-nav">
+                   <a href="../kai xun/FAQ.html" class="quick"> FAQ </a>
+                </div>
+                <div class="col-md-2 footer-nav" style="text-align:right; padding-right:0">
+                   <section style="color:white;"> &copy; FASHARE 2018 </section>
+                </div>
+        	
+        	
+            </div>
+        	
+        </div>
+    </footer>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script>
+
+	// $("#picUploaded").attr("src", localStorage.getItem("rentalImages"));
+
+	var config = {
+		apiKey: "AIzaSyA9W19h4_1tpp4KSL0M99M8SOUuN7c2U3E",
+		authDomain: "fashare-2c.firebaseapp.com",
+		databaseURL: "https://fashare-2c.firebaseio.com",
+		projectId: "fashare-2c",
+		storageBucket: "fashare-2c.appspot.com",
+		messagingSenderId: "115707668738"
+			  };
+		firebase.initializeApp(config);
+
+	function RetrieveData(){
+
+    var dbRef=firebase.database().ref().child('OutfitDetails');
+    dbRef.once('value', function(snapshot){
+    snapshot.forEach(function(childSnapshot){
+      var childData = childSnapshot.val();
+      var checking = localStorage.getItem("currentOutfit");
+      if(checking == childData.outfitName){
+        document.getElementById("iname").value=childData.rentals.rName1;
+         document.getElementById("iname2").value=childData.rentals.rName2;
+          document.getElementById("iname3").value=childData.rentals.rName3;
+        console.log(childData);
+
+        var ritem=firebase.database().ref().child('OutfitDetails/rentItems');
+        var rname =  document.getElementById("iname").value;
+        var rname2 =  document.getElementById("iname2").value;
+        var rname3 =  document.getElementById("iname3").value;
+
+        ritem.once('value', function(snapshot){
+          snapshot.forEach(function(childSnapshot){
+            var rentData = childSnapshot.val();
+
+                if(rname == rentData.rentItem || rentData.rentItem != "" ){
+                  document.getElementById("imax").value=rentData.rentDay;
+                  document.getElementById("iprice").value=rentData.rentPrice;
+                  document.getElementById("isize").value=rentData.rentSize;
+                  document.getElementById("icondition").value=rentData.rentCondition;
+                  document.getElementById("idetail").value=rentData.rentDetails;
+                  document.getElementById("pic1").src=rentData.rentURL;
+                  console.log(rentData);
+                } else {
+                  document.getElementById("rent-out").style.display = "none";
+                }
+                 if(rname2 == rentData.rentItem2 || rentData.rentItem2 != "" ){
+                  document.getElementById("imax2").value=rentData.rentDay2;
+                  document.getElementById("iprice2").value=rentData.rentPrice2;
+                  document.getElementById("isize2").value=rentData.rentSize2;
+                  document.getElementById("icondition2").value=rentData.rentCondition2;
+                  document.getElementById("idetail2").value=rentData.rentDetails2;
+                  document.getElementById("pic2").src=rentData.rentURL2;
+                  console.log(rentData);
+                } else {
+                  document.getElementById("rent-out2").style.display = "none";
+                }
+                if(rname3 == rentData.rentItem3 || rentData.rentItem3 != "" ){
+                  document.getElementById("imax3").value=rentData.rentDay3;
+                  document.getElementById("iprice3").value=rentData.rentPrice3;
+                  document.getElementById("isize3").value=rentData.rentSize3;
+                  document.getElementById("icondition3").value=rentData.rentCondition3;
+                  document.getElementById("idetail3").value=rentData.rentDetails3;
+                  document.getElementById("pic3").src=rentData.rentURL3;
+                  console.log(rentData);
+                } else {
+                  document.getElementById("rent-out3").style.display = "none";
+                }
+                
+
+            });
+          });
+        }
+      });
+    });
+
+
+
+/*
+    var dbRef=firebase.database().ref().child('OutfitDetails');
+    dbRef.once('value', function(snapshot){
+    snapshot.forEach(function(childSnapshot){
+      var childData = childSnapshot.val();
+      var checking = localStorage.getItem("currentOutfit");
+        if(checking == childData.outfitName){
+            document.getElementById("iname").value=childData.rentals.rName1;
+            console.log(childData);
+                      //document.getElementById("rName2").value=itemData.rental.rName2;
+          }
+
+      });
+    });*/
+		
+	} //end of function
+</script>
+
+
+
+</body>
+
+</html>

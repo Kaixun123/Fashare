@@ -1,0 +1,688 @@
+<!Doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="../css/MyCollections.css">
+	<title>My Current Rentals</title>
+	
+	<style>
+		* { font-family: Century Gothic, Futura, "Gill Sans";
+  	   }
+
+  	   h2 {text-decoration: none;}
+
+  	   #rdate {border: none;}
+
+  	   #amt {padding: 5px;
+  	   		padding-left: 12px;}
+
+  	   img#logo {
+			width: 100px;
+			margin-left: 3%;
+			float: left;
+			padding-bottom: 10px;
+
+		}
+
+		.pageTitle {
+			float: right;
+			margin-right: 3%;
+			font-size: 28px;
+			font-weight:bold;
+
+		}
+
+		.title1{
+				font-size:40px;
+			}
+
+		div{
+
+			color: black;
+
+		}
+
+		a.navbar-brand {
+			padding : 0;
+			margin-right: 50px;
+			padding-left: 20px;
+		}
+
+	
+		.navbar-default {
+    		background-color: white;
+    		border-radius: 0;
+    		border-bottom: 2px solid black;
+    		padding-bottom: 5px;
+    		font-size:18px;
+
+			}
+
+		.navbar-default .navbar-nav > li > a {
+			margin-top: 5px;
+    		color: #000000;
+			}
+
+		.navbar-default .navbar-center > li > a {
+			margin-left: 30px;
+    		color: #000000;
+			}
+
+		ul.dropdown-menu{
+			margin-left: 30px;
+		}
+		
+  		
+  		ul.dropdown-menu li a:hover{
+  			color: white;
+  			background: #393939;
+
+  		}
+
+  		.navbar-login
+		{
+		    width: 305px;
+		    padding: 10px;
+		    padding-bottom: 0px;
+		}
+
+		.navbar-login-session
+		{
+		    padding: 10px;
+		    padding-bottom: 0px;
+		    padding-top: 0px;
+		}
+
+		.icon-size
+		{
+		    font-size: 87px;
+		}
+
+		.glyphicon.glyphicon-search, .glyphicon.glyphicon-envelope, .glyphicon.glyphicon-upload {
+		    font-size: 18px;
+		    margin-left: 20px;
+		    border:0px;
+		}
+		.glyphicon.glyphicon-search{
+			margin-top:20px;
+			color:black;
+			margin-right:0px;
+			margin-left: 27px;
+			margin-bottom:40px;
+
+		}
+
+		.glyphicon.glyphicon-upload{
+			margin-right: 30px;
+		}
+
+		li.dropdown strong{
+			font-size:12px;
+		}
+
+		span.caret{
+			color:#a0a0a0;
+		}
+
+		@media (max-width: 1200px) {
+		    .navbar-header {
+		        float: none;
+		    }
+		    .navbar-left,.navbar-right {
+		        float: none !important;
+		    }
+		    .navbar-toggle {
+		        display: block;
+		    }
+		    .navbar-collapse {
+		        border-top: 1px solid transparent;
+		        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+		    }
+		    .navbar-fixed-top {
+		        top: 0;
+		        border-width: 0 0 1px;
+		    }
+		    .navbar-collapse.collapse {
+		        display: none!important;
+		    }
+		    .navbar-nav {
+		        float: none!important;
+		        margin-top: 7.5px;
+		    }
+		    .navbar-nav>li {
+		        float: none;
+		    }
+		    .navbar-nav>li>a {
+		        padding-top: 10px;
+		        padding-bottom: 10px;
+		    }
+		    .collapse.in{
+		        display:block !important;
+		    }
+		}
+
+		.button {background-color: #a8a8a8;
+				padding: 5px;
+				padding-left: 30px;
+				padding-right: 30px;
+				font-size: 15px;
+				}
+
+		.btn {font-size: 20px;
+			  color: black;
+			  text-decoration: underline;
+			 padding-left: 1000px;}
+
+		#bar {
+		border: 0; 
+		background-color: #d5d5d5;
+		margin:0;
+		padding:1%;
+		}
+
+		div.usern{
+			text-align:left;
+			padding:1%;
+			font-size:20px;
+			font-style:italic; 
+		}
+
+		div.duedate{
+			text-align:center;
+			background-color:white;
+			border: 3px solid red;
+			padding:10px;
+			font-weight:bold;
+			font-size:15px;
+			margin-top:1%;
+		}
+
+		.rentalHead h2, .rentalHead h4{
+			text-align:center;
+			font-family:"Century Gothic", Futura, "Gill Sans";
+		}
+		.rentalHead h2{font-weight:bold;}
+
+		h3{
+			font-family:"Century Gothic", Futura, "Gill Sans";
+		}
+
+		.rental-con{
+			width:100%;
+			padding:0;
+		}
+
+		#imgSize{
+			width:100%;
+			margin-top:5%;
+			margin-bottom:30%;
+			border: 1px solid black;
+		}
+
+		.col-sm-2 img{
+			float:left;
+		}
+
+		hr {
+		    border: none;
+		    height: 1px;
+		    /* Set the hr color */
+		    color: #333; /* old IE */
+		    background-color: #333; /* Modern Browsers */
+		}
+
+		div.col-sm-3{
+			padding:3px;
+		}
+
+		#itemDetails{
+			font-size:20px;
+			color:grey;
+			padding:0;
+
+
+		}
+
+		#rentalAmount{
+			font-size:20px;
+			color:grey;
+			padding:0;
+			padding-top:11%;
+
+		}
+
+		.idetails{
+			margin-bottom:7%;
+
+		}
+
+		#bar {padding: 3px;}
+
+		.dropbtn {
+		    background-color: #4CAF50;
+		    color: white;
+		    padding: 16px;
+		    font-size: 16px;
+		    border: none;
+		    cursor: pointer;
+		}
+
+		.dropbtn:hover, .dropbtn:focus {
+		    background-color: #3e8e41;
+		}
+
+		#myInput {
+		    border-box: box-sizing;
+		    background-image: url('searchicon.png');
+		    background-position: 3px 10px;
+		    background-repeat: no-repeat;
+		    background-position: left;
+		    background-size: 40px;
+		    font-size: 16px;
+		    padding: 14px 15px 12px 45px;
+		    border: none;
+		    border-bottom: 1px solid #ddd;
+		}
+
+		#myInput:focus {outline: 3px solid #ddd;}
+
+		.dropdown {
+		    position: relative;
+		    display: inline-block;
+		}
+
+		.dropdown-content {
+		    display: none;
+		    position: absolute;
+		    background-color: #f6f6f6;
+		    min-width: 230px;
+		    overflow: auto;
+		    border: 1px solid #ddd;
+		    z-index: 1;
+		}
+
+		.dropdown-content a {
+		    color: black;
+		    padding: 12px 16px;
+		    text-decoration: none;
+		    display: block;
+		}
+
+		.dropdown a:hover {background-color: #ddd}
+
+		.show {display:block;}
+
+		.scrollable-menu{
+			height:auto;
+			max-height:270px;
+			overflow-x: hidden;
+			font-size:15px;
+		}
+
+		#myDropdown p {
+			padding-left: 20px;
+			font-size: 12px;
+			color:grey;
+			padding-top: 10px;
+			text-align: left;
+		}	
+
+		#myDropdown a {
+			padding-left: 20px;
+			font-size: 15px;
+			padding-top: 12px;
+			text-align: left;
+		}	
+
+		.para {border: none;
+				font-size: 17px;}	
+
+		.para1 {font-size: 30px;
+				text-align: center;}
+
+		.para2 {font-size: 22px;}		
+
+		#title, #size, #days, #price, #from, #to, #totalprice {border: none;}		
+
+		.button {
+		  padding: 8px 10px;
+		  padding-top: 10px;
+		  font-size: 20px;
+		  text-align: center;
+		  cursor: pointer;
+		  outline: none;
+		  color: white;
+		  background-color: gold;
+		  border: none;
+		  border-radius: 15px;
+		  box-shadow: 0 9px #999;
+		}
+
+		.button:hover {background-color: black;}
+
+		.button:active {
+		  background-color: #3e8e41;
+		  box-shadow: 0 5px #666;
+		  transform: translateY(4px);
+
+
+	</style>
+
+</head>
+<body onload="thisDB();">
+
+	<header> <!--header -->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>                       
+			      </button>
+			      <a class="navbar-brand active" href="../kai xun/home.html"> <img id="logo" src="../images/fashare.png"> </a>
+			    </div>
+
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-center">
+					<li><a href="../kai xun/trending.html"> TRENDING </a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#"> OCCASIONS <span class="caret"></span></a>
+					        <ul class="dropdown-menu">
+					        	<li><a href="#"> PROM </a></li>
+					            <li><a href="../gladys/schoolWomen.html"> SCHOOL</a></li>
+					            <li><a href="#"> BUSINESS </a></li>
+					        </ul>
+					</li>
+
+					<li class="dropdown">
+					    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> STYLES <span class="caret"></span></a>
+					        <ul class="dropdown-menu">
+								<li><a href="../Xin jie/TomboyStyle.html">TOMBOY STYLE</a></li>
+								<li><a href="../Xin jie/ChicStyle.html">CHIC STYLE</a></li>
+								<li><a href="../Xin jie/CasualStyle.html">CASUAL STYLE</a></li>
+								<li><a href="../Xin jie/BohemianStyle.html">BOHEMIAN STYLE</a></li>
+					        </ul>
+					</li>
+
+					<li class="dropdown">
+					    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> HELP <span class="caret"></span></a>
+					        <ul class="dropdown-menu">
+					            <li><a href="../kai xun/FAQ.html"> FAQ </a></li>
+					            <li><a href="../kai xun/aboutUs.html"> ABOUT US </a></li>
+					            <li><a href="../kai xun/contactUs.html"> CONTACT US </a></li>
+					            <li><a href="../kai xun/howToRent.html"> HOW TO RENT </a></li>
+					        </ul>
+					</li>
+				</ul>			
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<div class="dropdown dropdown-menu-left">
+							<button onclick="myFunction()" class="glyphicon glyphicon-search"></button>
+							<div id="myDropdown" class="dropdown-content scrollable-menu">
+								<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+								<p> QUICK LINKS </p>
+								<a href="#about">PROM</a>
+								<a href="../gladys/schoolWomen.html">SCHOOL</a>
+								<a href="#blog">BUSINESS</a>
+								<a href="../Xin jie/TomboyStyle.html">TOMBOY STYLE</a>
+								<a href="../Xin jie/ChicStyle.html">CHIC STYLE</a>
+								<a href="../Xin jie/CasualStyle.html">CASUAL STYLE</a>
+								<a href="../Xin jie/MyCollections.html">My Collection</a>
+								<a href="../kah chun/profile.html">My Profile</a>
+								<a href="../Xin jie/CurrentRentals.html">My Rentals</a>
+								<a href="../Xin jie/PastHistory.html">My Rent-out History</a>
+								<a href="../kai xun/FAQ.html">FAQ</a>
+								<a href="../gladys/termsncon.html">TERMS AND CONDITIONS</a>
+								<a href="../kai xun/ContactUs.html">CONTACT US</a>
+								<a href="../kai xun/aboutUs.html">ABOUT US</a>
+								<a href="../kai xun/howToRent.html">HOW TO RENT</a>
+							</div>
+						</div> 
+					</li>	 
+					<li><a href="../Kovan/chatRoom.html"><i class="glyphicon glyphicon-envelope"></i></a> </li>
+					<li><a href="../gladys/uploadImage.html"><i class="glyphicon glyphicon-upload"></i></a> </li>
+
+			        <li class="dropdown">
+			            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				            <span class="glyphicon glyphicon-user"></span> 
+				            <strong> Username </strong>
+			            </a>
+			            <ul class="dropdown-menu">
+			                <li>
+			                    <div class="navbar-login">
+			                        <div class="row">
+			                            <div class="col-lg-4">
+			                                <p class="text-center">
+			                                	<span class="glyphicon glyphicon-user icon-size"></span>
+			                                </p>
+			                            </div>
+			                            <div class="col-lg-8">
+			                                <p class="text-left"><strong> name </strong></p>
+			                                <p class="text-left small"> email </p>
+			                                <p class="text-left">
+			                                    <a href="../kah chun/profile.html" class="btn btn-primary btn-block btn-sm"> VIEW PROFILE </a>
+			                                </p>
+			                            </div>
+			                        </div>
+			                    </div>
+			                </li>
+			                <li class="divider"></li>
+			                <li>
+			                    <div class="navbar-login navbar-login-session">
+			                        <div class="row">
+			                            <div class="col-lg-12">
+			                                <p>
+			                                    <a class="btn btn-danger btn-block" onclick="logout()">LOG OUT</a>
+			                                </p>
+			                            </div>
+			                        </div>
+			                    </div>
+			                </li>
+			            </ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		</nav>
+	</header>
+
+	<br>
+
+	<div class="row">
+		<div class="col-sm-4">		
+		</div>
+			<center><h2>MY CURRENT RENTALS</h2></center>
+		<div class="col-sm-4">		
+		</div>
+	</div>
+
+	<br>
+
+	<div class="container">
+		<div class="col-sm-10"></div>
+			<a href="#" class="btn">Back to Home Page</a>
+		<div class="col-sm-0"></div>
+	</div>
+
+	<br>
+
+	<div class="container rental-con"> <!-- Each item -->
+		<div class="col-sm-12" id="bar">  <!-- grey bar -->
+			<div class="col-sm-1"></div>
+			<div class="col-sm-2 usern">Alisha Tan</div> <!-- Name  of owner -->
+			<div class="col-sm-6"></div>
+		</div>
+
+		<div class="col-sm-12"> <!-- Item details -->
+			<div class="col-sm-1"></div>
+			<div class="col-sm-2"> <!-- Image -->
+				<img src="" width="200px" height="300px" style="padding-top: 50px;" id="rentimg">
+			</div>
+			<div class="col-sm-7">  <!-- Info -->
+				<h3><p class="para1"> <input type="text" id="title" readonly="readonly"/> </p></h3>
+				<hr>
+				<div class=" col-sm-12 confirmDetail">
+				<h3 style="text-decoration: underline;" class="para2"> DETAILS OF ITEM </h3>
+				<br>
+					<div class="idetails text-left">
+						<ol>
+						<li><p class="para"> SIZE: <input type="text" id="size" readonly="readonly" /> </p></li>
+						<li><p class="para"> DURATION OF RENTAL: <input type="text" id="days" readonly="readonly" /></p></li>
+						<li><p class="para"> PRICE PER DAY: $<input type="text" id="price" readonly="readonly" /> </p></li>
+						<li><p class="para"> DATE OF RENT: <input type="text" id="from" readonly="readonly" /> </p></li>
+						<li><p class="para"> DATE OF RETURN: <input type="text" id="to" readonly="readonly" /> </p></li>
+						</ol>
+						<hr>
+						<p class="para"> TOTAL RENTAL PRICE: $<input type="text" id="totalprice" readonly="readonly"/> </p>
+					</div>
+				</div>				
+			</div> 
+		</div>
+	</div>
+
+	<center><button class="button"><a href="PastHistory.html">VIEW COMPLETED RENTALS</a></button></center>
+
+	<div class="container-full"> <!--footer -->
+	    <footer class="footer-bs">
+	        <div class="row">
+	            <div class="col-md-3 footer-nav">
+	                <ul class="list">
+	                    <h4>HELP &amp; INFORMATION</h4>
+						<li><a href="../kai xun/FAQ.html">FAQ</a></li>
+	                    <li><a href="../kai xun/ContactUs.html">Contact Us</a></li>
+	                    <li><a href="../kai xun/aboutUs.html">About Us</a></li>
+	                    <li><a href="../kai xun/howToRent.html">How to Rent</a></li>	 
+	                </ul>
+	            </div>
+
+	            <div class="col-md-2 footer-nav">
+	                <ul class="list">
+	                    <h4>for you</h4>
+						<li><a href="../kah chun/profile.html">My Profile</a></li>
+	                    <li><a href="../Xin jie/MyCollections.html">My Collections</a></li>
+	                    <li><a href="../Xin jie/CurrentRentals.html">My Rentals </a></li>
+	                    <li><a href="../Xin jie/PastHistory.html">My Rent-Out History</a></li>
+	                </ul>
+	            </div>
+
+	        	<div class="col-md-3 footer-brand">
+	            	<img src="../images/footerLogo.png" alt="footer-logo" id="footer-logo"/>
+	            	<ul class="list">
+	            		<li> <a href="../gladys/termsncon.html">TERMS &amp; CONDITIONS </a> </li>
+	            	</ul>
+	            </div>
+
+	        	<div class="col-md-4 footer-social">
+	            	<h4>FOLLOW US</h4>
+	            	
+	                <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+	               	<a href="https://twitter.com/?lang=en" class="fa fa-twitter"></a>
+	                <a href="https://www.instagram.com/fashare2c/?hl=en" class="fa fa-instagram"></a>
+	             
+	            </div>
+	        	
+	        </div>
+	    </footer>
+	</div>
+
+	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+	<script>
+	  var config = {
+	    apiKey: "AIzaSyA9W19h4_1tpp4KSL0M99M8SOUuN7c2U3E",
+	    authDomain: "fashare-2c.firebaseapp.com",
+	    databaseURL: "https://fashare-2c.firebaseio.com",
+	    projectId: "fashare-2c",
+	    storageBucket: "fashare-2c.appspot.com",
+	    messagingSenderId: "115707668738"
+	    };
+	    firebase.initializeApp(config);
+	      
+	</script>
+	<script>
+	function thisDB(){
+		var dbRef=firebase.database().ref().child('OutfitDetails/confirmRent');
+		dbRef.once('value', function(snapshot){
+			snapshot.forEach(function(childSnapshot){
+				var childData = childSnapshot.val();
+						document.getElementById("title").value=childData.item_name;
+						document.getElementById("days").value=childData.num_days;
+						document.getElementById("price").value=childData.rent_price;
+						document.getElementById("from").value=childData.rent_from;
+						document.getElementById("to").value=childData.rent_to;
+						document.getElementById("size").value=childData.item_size;
+
+						var total = childData.num_days * childData.rent_price;
+						document.getElementById("totalprice").value = total;	
+			});
+		});	
+
+var rentImage=firebase.database().ref().child('OutfitDetails/rentItems');
+		rentImage.once('value', function(snapshot){
+			snapshot.forEach(function(childSnapshot){
+				var imgData = childSnapshot.val();
+					if(document.getElementById("title").value == imgData.rentItem){
+						document.getElementById("rentimg").src=imgData.rentURL;
+					}
+					
+			});
+		});
+
+
+		
+	}
+
+	</script>
+
+	<script>
+	/* When the user clicks on the button,
+	toggle between hiding and showing the dropdown content */
+	function myFunction() {
+	    document.getElementById("myDropdown").classList.toggle("show");
+	}
+
+	function filterFunction() {
+	    var input, filter, ul, li, a, i;
+	    input = document.getElementById("myInput");
+	    filter = input.value.toUpperCase();
+	    div = document.getElementById("myDropdown");
+	    a = div.getElementsByTagName("a");
+	    for (i = 0; i < a.length; i++) {
+	        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+	            a[i].style.display = "";
+	        } else {
+	            a[i].style.display = "none";
+	        }
+	    }
+	}
+	
+	function logout(){
+	  firebase.auth().signOut().then(function() {
+	  // Sign-out successful.
+	   window.location.href="../kah chun/login.html";
+	}).catch(function(error) {
+	  // An error happened.
+	});
+	}
+	</script>
+
+
+
+</body>
+</html>

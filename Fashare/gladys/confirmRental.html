@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Item for Rent </title>
+   	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="gladys.css"> 
+
+  	<style>
+  		#request{
+  			font-size:35px;
+  			text-align:center;
+  		}
+
+  		#request p{
+  			font-size:17px;
+  			text-align:center;
+  		}
+  		.idetails p{
+  			text-align:left;
+  			padding-left:15%;
+        margin-bottom:1%;
+  		}
+
+  		div.col-sm-5{
+  			margin:0 auto;
+  		}
+
+  		.confirmDetail{
+  			border:1px solid black;
+  			margin-top:5%;
+  			padding-bottom:2%;
+  		}
+  		
+  		h3{
+  			font-weight:bold;
+  			color:#4B4B4B;
+  		}
+  		
+  		div#buttons{
+  			text-align:center;
+  			padding:8%;
+  		}
+
+  		.btn{
+  			margin:0px 30px;
+  			text-decoration: none;
+  		}
+
+  	
+  		.btn-success{
+  			background-color: #3d3d3d;
+  			color:white;
+  			border: 0;
+  			padding:10px 30px;
+  		}
+  		
+  		.btn-primary{
+  			padding:10px 40px;
+  			background-color: #cdcdcd;
+  			color:black;
+  			border: 0;
+  		}
+
+  		.quick{
+  			color:white;
+  		}
+  		.quick:hover{
+  			color:#e0e0e0;
+  		}
+  		footer.simple{
+  			padding:2%;
+  		}
+  		div.col-md-3.footer-nav{padding-right: 0;padding-left:0;}
+
+      input{
+        border:0;
+      }
+      .para{
+        font-size:17px;
+      }
+  		
+
+  	</style>
+  	
+
+</head>
+
+<body>
+	<header> 
+		<div>
+			<a href="#"><img id="logo" src="fashare.png"> </a>
+			<h1 class="pageTitle"> CONFIRM RENTAL </h1>
+		</div>
+		<hr>
+	</header>
+<div class="container">
+	<div class="col-sm-12" >
+		<div id="request">
+			<h1> Request to <span id="iname"></span> from <span id="owner"> Alisha Tan </span> </h1>
+			<p> Your request has been sucessful!
+			 You maybe choose to make payment to reserve your item <br>(only if rental is 3 weeks in advance)  or chat with the owner to liase with him/her about meet ups and dates for rental
+			</p>
+		</div>
+		<span class="col-sm-3"></span>
+		<div class="col-sm-6">
+			<div class=" col-sm-12 confirmDetail">
+				<h3 class="text-center"> DETAILS OF ITEM </h3>
+					<div class="idetails text-left">
+						<p class="para"> SIZE: <input type="text" id="size" readonly="readonly" /> </p>
+						<p class="para"> DURATION OF RENTAL: <input type="text" id="days" readonly="readonly" /></p>
+						<p class="para"> PRICE PER DAY: <input type="text" id="price" readonly="readonly" /> </p>
+						<p class="para"> DATE OF RENT: <input type="text" id="from" readonly="readonly" /> </p>
+						<p class="para"> DATE OF RETURN: <input type="text" id="to" readonly="readonly" /> </p>
+						<hr>
+						<p class="para"> TOTAL RENTAL PRICE: $<input type="text" id="totalprice" readonly="readonly"/> </p>
+					</div>
+			</div>
+
+			<div class="col-sm-12" id="buttons">
+				<a href="#" style="text-decoration: none;"> <button class="btn btn-success"> MAKE PAYMENT </button> </a> 
+				<a href="#"> <button class="btn btn-primary"> CHAT </button> </a>
+			</div>
+
+		</div>
+
+			
+
+		<div class="col-sm-3"></div>
+		
+			
+	
+	</div>
+</div>
+
+
+<div class="container-full" width="100%">
+    <!----------- Footer ------------>
+    <footer class="footer-bs simple">
+        <div class="row">
+        	<div class="col-md-1"></div>
+            	<div class="col-md-3 footer-nav">
+                    <a href="#" class="quick"> FASHARE HOME PAGE</a>
+                </div>
+
+            	<div class="col-md-3 footer-nav">
+                    <a href="#" class="quick"> TERMS AND CONDITIONS</a>
+                </div>
+                <div class="col-md-2 footer-nav">
+                   <a href="#" class="quick"> FAQ </a>
+                </div>
+                <div class="col-md-2 footer-nav" style="text-align:right; padding-right:0">
+                   <section style="color:white;"> &copy; FASHARE 2018 </section>
+                </div>
+        	
+        	
+            </div>
+        	
+        </div>
+    </footer>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script>
+  var config = {
+    apiKey: "AIzaSyA9W19h4_1tpp4KSL0M99M8SOUuN7c2U3E",
+    authDomain: "fashare-2c.firebaseapp.com",
+    databaseURL: "https://fashare-2c.firebaseio.com",
+    projectId: "fashare-2c",
+    storageBucket: "fashare-2c.appspot.com",
+    messagingSenderId: "115707668738"
+        };
+    firebase.initializeApp(config);
+      
+</script>
+<script>
+					
+  var rent_name = localStorage.getItem("iName");
+  var rent_size = localStorage.getItem("iSize");
+  var rent_from = localStorage.getItem("rentFrom");
+  var rent_to = localStorage.getItem("rentTo");
+  var num_days = localStorage.getItem("noDays");
+  var rent_price = localStorage.getItem("iPrice");
+
+    document.getElementById("iname").innerHTML = rent_name;
+    document.getElementById("size").value = rent_size;
+    document.getElementById("days").value = num_days;
+    document.getElementById("price").value = rent_price;
+    document.getElementById("from").value = rent_from;
+    document.getElementById("to").value = rent_to;
+
+    var total = num_days * rent_price;
+    document.getElementById("totalprice").value = total;
+
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>-->
+	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="../css/simple.css"/>
+	
+	<title>Fashare - forgot password</title>
+	<style>
+		*{
+		font-family:Century Gothic,Futura, "Gill Sans";
+		}
+		body{
+		background-color:#d2d2d2;
+		padding:10%;
+		}
+		.container{
+		text-align:center;
+		}
+		.loginDetail{
+		background-color:white;
+		padding:10%;
+		}
+		h1{
+		font-size:50px;
+		padding-bottom:5%;
+		font-weight:bold;
+		}
+		.detail{
+		font-size:20px;
+		
+		}
+		
+		#fashare-logo{
+		padding-top:8%;
+		padding-bottom:5%;
+		width:20%;
+		}
+		
+		#reset{
+		background-color:black;
+		border:0;
+		color:white;
+		padding:9px 20px;
+		margin-top:3%;
+		margin-bottom:3%;
+		}
+		#back{
+		background-color:#d2d2d2;
+		color:black;
+		padding:9px 20px;
+		margin-top:3%;
+		margin-bottom:3%;
+		}
+		#sign{
+		margin-top:3%;
+		margin-bottom:3%;
+		}
+
+	</style>
+
+</head>
+<body>
+	<div class="container">
+		<img src="../images/fashare.png" alt="fashare-logo" id="fashare-logo"/>
+		<form>
+		<div class="loginDetail">
+			<h1>FORGOT PASSWORD</h1>
+			<div>Please Email Address to Reset</div>
+			<div class="detail">
+
+				<label>Email  &nbsp; <input type="email" id="rEmail" placeholder = "<google@gmail.com>"/></label>
+			</div>
+			
+	
+			<button type="button" id="reset" class="btn btn-primary" onclick = "resetpass()"> Reset </button> 
+			<a href="login.html"><input type="button" class="btn btn-alert" value= "back" id = "back" /></a><br>
+			
+
+		</div>
+		
+		</form>
+	</div>
+
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+	<script>
+	
+  var config = {
+	apiKey: "AIzaSyA9W19h4_1tpp4KSL0M99M8SOUuN7c2U3E",
+	authDomain: "fashare-2c.firebaseapp.com",
+	databaseURL: "https://fashare-2c.firebaseio.com",
+	projectId: "fashare-2c",
+	storageBucket: "fashare-2c.appspot.com",
+	messagingSenderId: "115707668738"
+  };
+ 
+  firebase.initializeApp(config);
+
+	
+
+		
+function resetpass(){
+
+	
+	var auth = firebase.auth();
+	var emailAddress = document.getElementById('rEmail').value;
+
+	
+	auth.sendPasswordResetEmail(emailAddress).then(function(){
+	  // Email sent.
+	  window.alert("Reset password is sent")  ;
+	}).catch(function(error) {
+	  // An error happened.
+	});
+}	
+	</script>
+</body>
+
+</html>

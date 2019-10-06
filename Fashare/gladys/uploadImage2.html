@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Upload image </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="../css/gladys.css">
+
+	<style>
+
+	#image-preview,
+	canvas {
+	    margin: 20px 0 0 20px;
+	    border: 1px solid #cccccc;
+	}
+
+	.image-container {
+	   margin: 0 auto;
+	   float: none;
+	   padding-bottom: 5%;
+	    
+	}
+	.quick{
+  			color:white;
+  		}
+  		.quick:hover{
+  			color:#e0e0e0;
+  		}
+  		footer.simple{
+  			padding:2%;
+  		}
+  		div.col-md-3.footer-nav{padding-right: 0;padding-left:0;}
+
+  	#picUploaded{
+  		width:350px;
+  		padding-bottom:20px;
+
+  	}
+
+</style>
+
+</head>
+
+<body>
+
+	<header> 
+		<div>
+			<a href="../kai xun/home.html"><img id="logo" src="../images/fashare.png"> </a>
+			<h1 class="pageTitle"> UPLOAD IMAGE </h1>
+		</div>
+		<hr>
+	</header>
+	
+	<ul class="breadcrumb">
+	  <li class="select">UPLOAD IMAGE</li>
+	  <li> <a href="" class="disabled"> OUTFIT DETAILS </a> </li>
+	  <li> <a href="" class="disabled"> RENTAL INFORMATION </a> </li>
+	</ul>
+
+<form action="../gladys/rentDetails.html" method="post">
+	<div class="title1">
+		<h1> PHOTO YOU HAVE SELECTED </h1>
+		<img id="picUploaded" src=""/>
+	</div>
+
+	 <input type="submit" value="OKAY!" class="submitButton"> <a href="../gladys/uploadImage.html" class="cancel"> BACK </a>
+	
+</form>
+
+
+<div class="container-full" width="100%">
+    <!----------- Footer ------------>
+    <footer class="footer-bs simple">
+        <div class="row">
+        	<div class="col-md-1"></div>
+            	<div class="col-md-3 footer-nav">
+                    <a href="../kai xun/home.html" class="quick"> FASHARE HOME PAGE</a>
+                </div>
+
+            	<div class="col-md-3 footer-nav">
+                    <a href="../gladys/termsncon.html" class="quick"> TERMS AND CONDITIONS</a>
+                </div>
+                <div class="col-md-2 footer-nav">
+                   <a href="../kai xun/FAQ.html" class="quick"> FAQ </a>
+                </div>
+                <div class="col-md-2 footer-nav" style="text-align:right; padding-right:0">
+                   <section style="color:white;"> &copy; FASHARE 2018 </section>
+                </div>
+        	
+        	
+            </div>
+        	
+        </div>
+    </footer>
+</div>
+	
+<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script>
+	$("#picUploaded").attr("src", localStorage.getItem("picURL"));
+
+	var config = {
+		apiKey: "AIzaSyA9W19h4_1tpp4KSL0M99M8SOUuN7c2U3E",
+		authDomain: "fashare-2c.firebaseapp.com",
+		databaseURL: "https://fashare-2c.firebaseio.com",
+		projectId: "fashare-2c",
+		storageBucket: "fashare-2c.appspot.com",
+		messagingSenderId: "115707668738"
+			  };
+		firebase.initializeApp(config);
+		
+</script>
+
+<script type="text/javascript"></script>
+
+</body>
+
+</html>

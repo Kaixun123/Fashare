@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Rent Information </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+ 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="../css/gladys.css"> 
+
+<style>
+
+	.quick{
+  		color:white;
+  		}
+  	.quick:hover{
+  		color:#e0e0e0;
+  	}
+  	footer.simple{
+  		padding:2%;
+  	}
+
+  	div.col-md-3.footer-nav{padding-right: 0;padding-left:0;}
+  	
+  	.rentalInfo{
+  		background-color:#E0E0E0;
+  		padding:3%;
+  		margin-bottom:30px;
+
+  		
+  	}
+  	.itemd{
+  		font-weight:bold;
+  		font-size:17px;
+  	}
+
+  	.form-group{
+  		text-align:left;
+  		font-weight:normal;
+  	}
+
+  	#price,#price2,#price3{
+  		width:50%;
+  		display:inline-block;
+  	}
+
+  	input{
+  		font-weight:normal;
+  	}
+
+  	textarea#idetails.form-control,textarea#idetails2.form-control,textarea#idetails3.form-control{
+  		font-weight:normal;
+  		width: 330px;
+  		
+  	}
+
+  	.btn-color{
+  		margin:4px 4px;
+  		padding:8px 15px;
+  		width:25%;
+  		font-size:12px;
+  		/*-webkit-transition-duration: 0.2s; /* Safari 
+    	transition-duration: 0.2s;*/
+    	display:inline-block;
+    	position: relative;
+    	-webkit-transition: all 200ms ease-in;
+	    -webkit-transform: scale(1); 
+	    -ms-transition: all 200ms ease-in;
+	    -ms-transform: scale(1); 
+	    -moz-transition: all 200ms ease-in;
+	    -moz-transform: scale(1);
+	    transition: all 200ms ease-in;
+	    transform: scale(1); 
+  	}
+
+  	.btn-color:hover{
+  		font-weight:bold;
+  		box-shadow: 0px 0px 150px #000000;
+	    z-index: 2;
+	    -webkit-transition: all 200ms ease-in;
+	    -webkit-transform: scale(1.2);
+	    -ms-transition: all 200ms ease-in;
+	    -ms-transform: scale(1.2);   
+	    -moz-transition: all 200ms ease-in;
+	    -moz-transform: scale(1.2);
+	    transition: all 200ms ease-in;
+	    transform: scale(1.2);
+  	}
+
+  	input#idetails{
+
+  	}
+
+  	form div{
+  		padding:0%;
+  	}
+
+  	div.form-group{
+  		padding-bottom: 5%;
+  	}
+
+  	.forImage{
+  		width:80%;
+  		border: 1px solid black;
+  	}
+  	#fileButton, #fileButton2, #fileButton3{margin-left:30%;}
+
+  	input.userD{
+  		background-color:transparent;
+  		border:0;
+  		font-weight:bold;
+  	}
+
+  	div.container{
+  		width:78%;
+  	}
+
+  	/*#renting2{
+  		display:none;
+  	}*/
+
+  
+
+  	
+</style>
+  	
+	
+</head>
+
+<body onload="RetrieveData()">
+	<header> 
+		<div>
+			<img id="logo" src="../images/fashare.png"> 
+			<h1 class="pageTitle"> RENTAL INFORMATION </h1>
+		</div>
+		<hr>
+	</header>
+
+	<ul class="breadcrumb">
+		  <li><a href="../gladys/uploadImage2.html" class="previous"> UPLOAD IMAGE</a></li>
+		  <li> <a href="../gladys/outfitDetails.html" class="previous"> OUTFIT DETAILS </a> </li>
+		  <li class="select"> RENTAL INFORMATION </li>
+	</ul>
+
+<div class="container">
+		<div class="rentalInfo col-sm-12" id="renting"> 
+			<div class="col-sm-6">
+				<p class="itemd"> Name of item: <input type="text" id="rName1" readonly="readonly" class="userD"/> </p>
+				<p class="itemd"> Brand: <input type="text" id="rBrand1" readonly="readonly" class="userD"/> </p>
+				<p class="itemd"> Category: <input type="text" id="rCategory1" readonly="readonly" class="userD"/> </p>
+				<hr>
+
+				<form id="rentDetails">
+					<div class="form-group">
+					    <label>Maximum number of days for rental<br>
+					    	<label class="radio-inline"><input type="radio" name="optradio" id="4d" value="4 Days">4 days</label>
+							<label class="radio-inline"><input type="radio" name="optradio" id="6d" value="6 Days">6 days</label>
+							<label class="radio-inline"><input type="radio" name="optradio" id="8d" value="8 Days">8 days</label>
+						</label>
+					</div>
+
+					<div class="form-group">
+					    <label for="price">Rental Price of item per day <br>
+					    	<i style="font-size:10px">Keep your price as afforadable as possible! It helps with your transaction</i> <br>
+					    		<span class="currencyinput">S$<input type="number" class="form-control" id="price" placeholder="1.00" min="1.00" max="100.00"></span>
+						</label>
+					</div>
+
+					<div class="form-group">
+					    <label for="size"> What is the size? <br>
+							<select id="sizing" name="size" height="10px">
+								<option value=""> Size </option>
+									<optgroup label="International">
+										<option id ="xsmall" value="XS"> XS </option>
+										<option id="small" value="S"> S </option>
+										<option id="medium" value="M">M </option>
+										<option id="large" value="L">L</option>
+										<option id="xlarge" value="XL">XL</option>			   	
+									</optgroup>
+									<optgroup label="US">
+										<option id="us0" value="US 0">US 0</option>
+										<option id="us2" value="US 2">US 2</option>
+										<option id="us4" value="US 4">US 4</option>
+										<option id="us6" value="US 6">US 6</option>
+										<option id="us8" value="US 8">US 8</option>
+										<option id="us10" value="US 10">US 10</option>
+										<option id="us12" alue="US 12">US 12</option>
+									</optgroup>
+									<optgroup label="UK">
+										<option id="uk2" value="UK 2">UK 2</option>
+										<option id="uk4" value="UK 4">UK 4</option>
+										<option id="uk6" value="UK 6">UK 6</option>
+										<option id="uk8" value="UK 8">UK 8</option>
+										<option id="uk10" value="UK 10">UK 10</option>
+										<option id="uk12" value="UK 12">UK 12</option>
+										<option id="uk14" value="UK 14">UK 14</option>
+									</optgroup>
+									<optgroup label="EUR">
+										<option id="eur30" value="EUR 30">EUR 30</option>
+										<option id="eur32" value="EUR 32">EUR 32</option>
+										<option id="eur34" value="EUR 34">EUR 34</option>
+										<option id="eur36" value="EUR 36">EUR 36</option>
+										<option id="eur38" value="EUR 38">EUR 38</option>
+										<option id="eur40" value="EUR 40">EUR 40</option>
+										<option id="eur42" value="EUR 42">EUR 42</option>
+									</optgroup>
+							</select>
+						</label>
+					</div>
+					<div class="form-group">
+					    <label for="condition"> What is the condition of your item? <br>
+							<select id="condition" name="itemCondition" class="" height="10px">
+								<option value=""> Condition </option>
+									<option value="Brand New" id="bnew"> Brand New (have not worn) </option>
+									<option value="Quite New" id="qnew"> Quite New (worn 1-2 times) </option>
+									<option value="Worn" id="worn"> Worn (worn several times) </option>
+							</select>
+						</label>
+					</div>
+					<div class="form-group">
+					    <label> Colour <br>
+							<label class="btn btn-color" style="background-color:#B04141"> <input type="radio" name="color-icon" id="red" value="Red"> Red </label>
+							<label class="btn btn-color" style="background-color:#DC7633"> <input type="radio" name="color-icon" id="orange" value="Orange"> Orange </label>
+							<label class="btn btn-color" style="background-color:#F1C40F"> <input type="radio" name="color-icon" id="yellow" value="Yellow"> Yellow </label>
+							<label class="btn btn-color" style="background-color:#E3A857 "> <input type="radio" name="color-icon" id="tan" value="Tan"> Tan </label>
+							<label class="btn btn-color" style="background-color:#F5F5DC; "> <input type="radio" name="color-icon" id="beidge" value="Beidge"> Beidge </label>
+							<label class="btn btn-color" style="background-color:#835C3B;color:white; "> <input type="radio" name="color-icon" id="brown" value="Brown"> Brown </label>
+							<label class="btn btn-color" style="background-color:#138D75"> <input type="radio" name="color-icon" id="green" value="Green"> Green </label>
+							<label class="btn btn-color" style="background-color:#2980B9"> <input type="radio" name="color-icon" id="blue" value="Blue"> Blue </label>
+							<label class="btn btn-color" style="background-color:#000080; color:white; "> <input type="radio" name="color-icon" id="navy" value="Navy"> Navy </label>
+							<label class="btn btn-color" style="background-color:#9370DB; "> <input type="radio" name="color-icon" id="purple" value="Purple"> Purple </label>
+							<label class="btn btn-color" style="background-color:#E781B2; "> <input type="radio" name="color-icon" id="pink" value="Pink"> Pink </label>
+							<label class="btn btn-color" style="background-color:#99A3A4; "> <input type="radio" name="color-icon" id="grey" value="Grey"> Grey </label>
+							<label class="btn btn-color" style="background-color:#ffffff;"> <input type="radio" name="color-icon" id="white" value="White"> White</label>
+							<label class="btn btn-color" style="background-color:#000000; color:white;"> <input type="radio" name="color-icon" id="black" value="Black"> Black </label>
+							<label class="btn btn-color" style="background:linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);color:white; "> <input type="radio" name="color-icon" id="multi" value="Multi"> Multi </label>
+						</label>
+					</div>
+
+					<div class="form-group">
+					    <label for="condition"> Item Details <br>
+					    	<i style="font-size:10px">Organise information in point form so it’s easier to read!</i> <br>
+							 <textarea class="form-control" rows="5" id="idetails">
+								- 
+								- 
+								- 
+								- 
+								-  
+												</textarea>
+						</label>
+					</div>
+				</form>
+			</div>
+				<div class="col-sm-6 text-center">
+					<progress value="0" max="100" id="uploader"> 0% </progress>
+					<img id="picUploaded" src="" class="forImage"/>
+					<input type="file"  value="upload" accept="image/*" id="fileButton" onclick="PostImage()">	
+				</div>	
+		</div>
+
+		<div class="rentalInfo col-sm-12" id="renting2"> 
+			<div class="col-sm-6">
+				<p class="itemd"> Name of item: <input type="text" id="rName2" readonly="readonly" class="userD"/> </p>
+				<p class="itemd"> Brand: <input type="text" id="rBrand2" readonly="readonly" class="userD"/> </p>
+				<p class="itemd"> Category: <input type="text" id="rCategory2" readonly="readonly" class="userD"/> </p>
+				<hr>
+
+				<form id="rentDetails">
+					<div class="form-group">
+					    <label>Maximum number of days for rental<br>
+					    	<label class="radio-inline"><input type="radio" name="optradio" id="4d2" value="4 Days">4 days</label>
+							<label class="radio-inline"><input type="radio" name="optradio" id="6d2" value="6 Days">6 days</label>
+							<label class="radio-inline"><input type="radio" name="optradio" id="8d2" value="8 Days">8 days</label>
+						</label>
+					</div>
+
+					<div class="form-group">
+					    <label for="price">Rental Price of item per day <br>
+					    	<i style="font-size:10px">Keep your price as afforadable as possible! It helps with your transaction</i> <br>
+					    		<span class="currencyinput">S$<input type="number" class="form-control" id="price2" placeholder="1.00" min="1.00" max="100.00"></span>
+						</label>
+					</div>
+
+					<div class="form-group">
+					    <label for="size"> What is the size? <br>
+							<select id="size2" name="size" height="10px">
+								<option value=""> Size </option>
+									<optgroup label="International">
+										<option id ="xs" value="XS"> XS </option>
+										<option id="s" value="S"> S </option>
+										<option id="m" value="M">M </option>
+										<option id="l" value="L">L</option>
+										<option id="xl" value="XL">XL</option>			   	
+									</optgroup>
+									<optgroup label="US">
+										<option id="us0" value="US 0">US 0</option>
+										<option id="us2" value="US 2">US 2</option>
+										<option id="us4" value="US 4">US 4</option>
+										<option id="us6" value="US 6">US 6</option>
+										<option id="us8" value="US 8">US 8</option>
+										<option id="us10" value="US 10">US 10</option>
+										<option id="us12" alue="US 12">US 12</option>
+									</optgroup>
+									<optgroup label="UK">
+										<option id="uk2" value="UK 2">UK 2</option>
+										<option id="uk4" value="UK 4">UK 4</option>
+										<option id="uk6" value="UK 6">UK 6</option>
+										<option id="uk8" value="UK 8">UK 8</option>
+										<option id="uk10" value="UK 10">UK 10</option>
+										<option id="uk12" value="UK 12">UK 12</option>
+										<option id="uk14" value="UK 14">UK 14</option>
+									</optgroup>
+									<optgroup label="EUR">
+										<option id="eur30" value="EUR 30">EUR 30</option>
+										<option id="eur32" value="EUR 32">EUR 32</option>
+										<option id="eur34" value="EUR 34">EUR 34</option>
+										<option id="eur36" value="EUR 36">EUR 36</option>
+										<option id="eur38" value="EUR 38">EUR 38</option>
+										<option id="eur40" value="EUR 40">EUR 40</option>
+										<option id="eur42" value="EUR 42">EUR 42</option>
+									</optgroup>
+							</select>
+						</label>
+					</div>
+					<div class="form-group">
+					    <label for="condition"> What is the condition of your item? <br>
+							<select id="condition2" name="itemCondition" class="" height="10px">
+								<option value=""> Condition </option>
+									<option value="Brand New" id="bnew"> Brand New (have not worn) </option>
+									<option value="Quite New" id="qnew"> Quite New (worn 1-2 times) </option>
+									<option value="Worn" id="worn"> Worn (worn several times) </option>
+							</select>
+						</label>
+					</div>
+					<div class="form-group">
+					    <label> Colour <br>
+							<label class="btn btn-color" style="background-color:#B04141"> <input type="radio" name="color-icon" id="red2" value="Red"> Red </label>
+							<label class="btn btn-color" style="background-color:#DC7633"> <input type="radio" name="color-icon" id="orange2" value="Orange"> Orange </label>
+							<label class="btn btn-color" style="background-color:#F1C40F"> <input type="radio" name="color-icon" id="yellow2" value="Yellow"> Yellow </label>
+							<label class="btn btn-color" style="background-color:#E3A857 "> <input type="radio" name="color-icon" id="tan2" value="Tan"> Tan </label>
+							<label class="btn btn-color" style="background-color:#F5F5DC; "> <input type="radio" name="color-icon" id="beidge2" value="Beidge"> Beidge </label>
+							<label class="btn btn-color" style="background-color:#835C3B;color:white; "> <input type="radio" name="color-icon" id="brown2" value="Brown"> Brown </label>
+							<label class="btn btn-color" style="background-color:#138D75"> <input type="radio" name="color-icon" id="green2" value="Green"> Green </label>
+							<label class="btn btn-color" style="background-color:#2980B9"> <input type="radio" name="color-icon" id="blue2" value="Blue"> Blue </label>
+							<label class="btn btn-color" style="background-color:#000080; color:white; "> <input type="radio" name="color-icon" id="navy2" value="Navy"> Navy </label>
+							<label class="btn btn-color" style="background-color:#9370DB; "> <input type="radio" name="color-icon" id="purple2" value="Purple"> Purple </label>
+							<label class="btn btn-color" style="background-color:#E781B2; "> <input type="radio" name="color-icon" id="pink2" value="Pink"> Pink </label>
+							<label class="btn btn-color" style="background-color:#99A3A4; "> <input type="radio" name="color-icon" id="grey2" value="Grey"> Grey </label>
+							<label class="btn btn-color" style="background-color:#ffffff;"> <input type="radio" name="color-icon" id="white2" value="White"> White</label>
+							<label class="btn btn-color" style="background-color:#000000; color:white;"> <input type="radio" name="color-icon" id="black2" value="Black"> Black </label>
+							<label class="btn btn-color" style="background:linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);color:white; "> <input type="radio" name="color-icon" id="multi2" value="Multi"> Multi </label>
+						</label>
+					</div>
+
+					<div class="form-group">
+					    <label for="condition"> Item Details <br>
+					    	<i style="font-size:10px">Organise information in point form so it’s easier to read!</i> <br>
+							 <textarea class="form-control" rows="5" id="idetails2">- 
+- 
+- 
+- 
+- 
+							</textarea>
+						</label>
+					</div>
+				</form>
+			</div>
+				<div class="col-sm-6 text-center">
+					<progress value="0" max="100" id="uploader2"> 0% </progress>
+					<img id="picUploaded2" src="" class="forImage"/>
+					<input type="file"  value="upload" accept="image/*" id="fileButton2" onclick="PostImage2()">	
+				</div>	
+		</div>
+
+		<div class="rentalInfo col-sm-12" id="renting3"> 
+			<div class="col-sm-6">
+				<p class="itemd"> Name of item: <input type="text" id="rName3" readonly="readonly" class="userD"/> </p>
+				<p class="itemd"> Brand: <input type="text" id="rBrand3" readonly="readonly" class="userD"/> </p>
+				<p class="itemd"> Category: <input type="text" id="rCategory3" readonly="readonly" class="userD"/> </p>
+				<hr>
+
+				<form id="rentDetails">
+					<div class="form-group">
+					    <label>Maximum number of days for rental<br>
+					    	<label class="radio-inline"><input type="radio" name="optradio" id="4d3" value="4 Days">4 days</label>
+							<label class="radio-inline"><input type="radio" name="optradio" id="6d3" value="6 Days">6 days</label>
+							<label class="radio-inline"><input type="radio" name="optradio" id="8d3" value="8 Days">8 days</label>
+						</label>
+					</div>
+
+					<div class="form-group">
+					    <label for="price">Rental Price of item per day <br>
+					    	<i style="font-size:10px">Keep your price as afforadable as possible! It helps with your transaction</i> <br>
+					    		<span class="currencyinput">S$<input type="number" class="form-control" id="price3" placeholder="1.00" min="1.00" max="100.00"></span>
+						</label>
+					</div>
+
+					<div class="form-group">
+					    <label for="size"> What is the size? <br>
+							<select id="size3" name="size" height="10px">
+								<option value=""> Size </option>
+									<optgroup label="International">
+										<option id ="xs" value="XS"> XS </option>
+										<option id="s" value="S"> S </option>
+										<option id="m" value="M">M </option>
+										<option id="l" value="L">L</option>
+										<option id="xl" value="XL">XL</option>			   	
+									</optgroup>
+									<optgroup label="US">
+										<option id="us0" value="US 0">US 0</option>
+										<option id="us2" value="US 2">US 2</option>
+										<option id="us4" value="US 4">US 4</option>
+										<option id="us6" value="US 6">US 6</option>
+										<option id="us8" value="US 8">US 8</option>
+										<option id="us10" value="US 10">US 10</option>
+										<option id="us12" alue="US 12">US 12</option>
+									</optgroup>
+									<optgroup label="UK">
+										<option id="uk2" value="UK 2">UK 2</option>
+										<option id="uk4" value="UK 4">UK 4</option>
+										<option id="uk6" value="UK 6">UK 6</option>
+										<option id="uk8" value="UK 8">UK 8</option>
+										<option id="uk10" value="UK 10">UK 10</option>
+										<option id="uk12" value="UK 12">UK 12</option>
+										<option id="uk14" value="UK 14">UK 14</option>
+									</optgroup>
+									<optgroup label="EUR">
+										<option id="eur30" value="EUR 30">EUR 30</option>
+										<option id="eur32" value="EUR 32">EUR 32</option>
+										<option id="eur34" value="EUR 34">EUR 34</option>
+										<option id="eur36" value="EUR 36">EUR 36</option>
+										<option id="eur38" value="EUR 38">EUR 38</option>
+										<option id="eur40" value="EUR 40">EUR 40</option>
+										<option id="eur42" value="EUR 42">EUR 42</option>
+									</optgroup>
+							</select>
+						</label>
+					</div>
+					<div class="form-group">
+					    <label for="condition"> What is the condition of your item? <br>
+							<select id="condition3" name="itemCondition" class="" height="10px">
+								<option value=""> Condition </option>
+									<option value="Brand New" id="bnew"> Brand New (have not worn) </option>
+									<option value="Quite New" id="qnew"> Quite New (worn 1-2 times) </option>
+									<option value="Worn" id="worn"> Worn (worn several times) </option>
+							</select>
+						</label>
+					</div>
+					<div class="form-group">
+					    <label> Colour <br>
+							<label class="btn btn-color" style="background-color:#B04141"> <input type="radio" name="color-icon" id="red3" value="Red"> Red </label>
+							<label class="btn btn-color" style="background-color:#DC7633"> <input type="radio" name="color-icon" id="orange3" value="Orange"> Orange </label>
+							<label class="btn btn-color" style="background-color:#F1C40F"> <input type="radio" name="color-icon" id="yellow3" value="Yellow"> Yellow </label>
+							<label class="btn btn-color" style="background-color:#E3A857 "> <input type="radio" name="color-icon" id="tan3" value="Tan"> Tan </label>
+							<label class="btn btn-color" style="background-color:#F5F5DC; "> <input type="radio" name="color-icon" id="beidge3" value="Beidge"> Beidge </label>
+							<label class="btn btn-color" style="background-color:#835C3B;color:white; "> <input type="radio" name="color-icon" id="brown3" value="Brown"> Brown </label>
+							<label class="btn btn-color" style="background-color:#138D75"> <input type="radio" name="color-icon" id="green3" value="Green"> Green </label>
+							<label class="btn btn-color" style="background-color:#2980B9"> <input type="radio" name="color-icon" id="blue3" value="Blue"> Blue </label>
+							<label class="btn btn-color" style="background-color:#000080; color:white; "> <input type="radio" name="color-icon" id="navy3" value="Navy"> Navy </label>
+							<label class="btn btn-color" style="background-color:#9370DB; "> <input type="radio" name="color-icon" id="purple3" value="Purple"> Purple </label>
+							<label class="btn btn-color" style="background-color:#E781B2; "> <input type="radio" name="color-icon" id="pink3" value="Pink"> Pink </label>
+							<label class="btn btn-color" style="background-color:#99A3A4; "> <input type="radio" name="color-icon" id="grey3" value="Grey"> Grey </label>
+							<label class="btn btn-color" style="background-color:#ffffff;"> <input type="radio" name="color-icon" id="white3" value="White"> White</label>
+							<label class="btn btn-color" style="background-color:#000000; color:white;"> <input type="radio" name="color-icon" id="black3" value="Black"> Black </label>
+							<label class="btn btn-color" style="background:linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);color:white; "> <input type="radio" name="color-icon" id="multi3" value="Multi"> Multi </label>
+						</label>
+					</div>
+
+					<div class="form-group">
+					    <label for="condition"> Item Details <br>
+					    	<i style="font-size:10px">Organise information in point form so it’s easier to read!</i> <br>
+							 <textarea class="form-control" rows="5" id="idetails3">- 
+- 
+- 
+- 
+- 
+							</textarea>
+						</label>
+					</div>
+				</form>
+			</div>
+				<div class="col-sm-6 text-center">
+					<progress value="0" max="100" id="uploader3"> 0% </progress>
+					<img id="picUploaded3" src="" class="forImage"/>
+					<input type="file"  value="upload" accept="image/*" id="fileButton3" onclick="PostImage3()">	
+				</div>	
+		</div>
+	<div class="col-sm-1"></div>
+
+
+
+		
+	
+
+
+
+</div>
+
+<div class="next col-sm-12 text-center" style="height:50px">
+	<a href="" id="confirminfo"><input type="button" value="SUBMIT" class="submitButton" style="margin-top:3%" onclick="saveToDB()"/> </a>
+	<a href="../gladys/outfitDetails.html" class="cancel"> BACK </a>
+</div>
+
+
+<div class="container-full" width="100%" style="margin-top: 30%">
+    <!----------- Footer ------------>
+    <footer class="footer-bs simple">
+        <div class="row">
+        	<div class="col-md-1"></div>
+            	<div class="col-md-3 footer-nav">
+                    <a href="../kai xun/home.html" class="quick"> FASHARE HOME PAGE</a>
+                </div>
+
+            	<div class="col-md-3 footer-nav">
+                    <a href="../gladys/termsncon.html" class="quick"> TERMS AND CONDITIONS</a>
+                </div>
+                <div class="col-md-2 footer-nav">
+                   <a href="../kai xun/FAQ.html" class="quick"> FAQ </a>
+                </div>
+                <div class="col-md-2 footer-nav" style="text-align:right; padding-right:0">
+                   <section style="color:white;"> &copy; FASHARE 2018 </section>
+                </div>
+        	
+        	
+            </div>
+        	
+        </div>
+    </footer>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script>
+
+	var config = {
+		apiKey: "AIzaSyA9W19h4_1tpp4KSL0M99M8SOUuN7c2U3E",
+		authDomain: "fashare-2c.firebaseapp.com",
+		databaseURL: "https://fashare-2c.firebaseio.com",
+		projectId: "fashare-2c",
+		storageBucket: "fashare-2c.appspot.com",
+		messagingSenderId: "115707668738"
+			  };
+		firebase.initializeApp(config);
+
+function RetrieveData(){
+
+		var rentout = localStorage.getItem('aRent1');
+		var rentout2 = localStorage.getItem('aRent2');
+		var rentout3 = localStorage.getItem('aRent3');
+
+	var dbRef=firebase.database().ref().child('OutfitDetails');
+		dbRef.once('value', function(snapshot){
+		snapshot.forEach(function(childSnapshot){
+			var childData = childSnapshot.val();
+			var checking = localStorage.getItem("currentOutfit");
+			if(checking == childData.outfitName){
+
+				var ritem=firebase.database().ref().child('OutfitDetails');
+				ritem.once('value', function(snapshot){
+					snapshot.forEach(function(childSnapshot){
+						var itemData = childSnapshot.val();
+								if(rentout == "yes"){
+									document.getElementById("rName1").value=itemData.rentals.rName1;
+									document.getElementById("rBrand1").value=itemData.rentals.rBrand1;
+									document.getElementById("rCategory1").value=itemData.rentals.rCat1;
+								}else {
+									document.getElementById("renting").style.display = "none";
+								}
+
+								if(rentout2 == "yes"){
+									document.getElementById("rName2").value=itemData.rentals.rName2;
+									document.getElementById("rBrand2").value=itemData.rentals.rBrand2;
+									document.getElementById("rCategory2").value=itemData.rentals.rCat2;
+								}else {
+									document.getElementById("renting2").style.display = "none";
+								}
+
+								if(rentout3 == "yes"){
+									document.getElementById("rName3").value=itemData.rentals.rName3;
+									document.getElementById("rBrand3").value=itemData.rentals.rBrand3;
+									document.getElementById("rCategory3").value=itemData.rentals.rCat3;
+								}else {
+									document.getElementById("renting3").style.display = "none";
+								}
+						
+						});
+					});
+				}
+			});
+		});
+
+		/*var query = firebase.database().ref("OutfitDetails")
+									   .orderByChild("outfitDetails")
+									   .equalTo(localStorage.getItem("currentOutfit"))
+									   .on("child_added", function(snapshot) {
+									   		console.log(snapshot.val());
+									   		//snapshot.ref.update({ outfitName: "Gladys" })
+									    });*/
+
+	} //end of function
+
+
+function PostImage(){
+			  
+			var uploader = document.getElementById('uploader');
+			var fileButton = document.getElementById('fileButton');
+			fileButton.addEventListener('change', function(e){
+			var file = e.target.files[0];
+			var storageRef = firebase.storage().ref('rentalPosts/'+file.name);
+				var task = storageRef.put(file);
+				task.on('state_changed', function progress(snapshot) {
+			    var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+			    uploader.value = percentage;
+
+			  }, function error(err) {
+
+
+			  }, function complete() {
+			  	var postKey = firebase.database().ref('Rentals/').push().key;
+	  			var downloadURL = task.snapshot.downloadURL;
+	  			var updates = {};
+	  			var postData = {
+	  				url: downloadURL, 
+	  			};
+
+
+	  			updates['Rentals/' + postKey]= postData;
+	  			firebase.database().ref().update(updates);
+	  			//console.log(downloadURL);
+	  			localStorage.setItem("rentalImages", downloadURL);
+	  			
+			  });
+
+			});
+
+			
+	}
+	$("#picUploaded").attr("src", localStorage.getItem("rentalImages"));
+
+function PostImage2(){
+		var uploader = document.getElementById('uploader2');
+			var fileButton = document.getElementById('fileButton2');
+			fileButton.addEventListener('change', function(e){
+			var file = e.target.files[0];
+			var storageRef = firebase.storage().ref('rentalPosts/'+file.name);
+				var task = storageRef.put(file);
+				task.on('state_changed', function progress(snapshot) {
+			    var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+			    uploader.value = percentage;
+
+			  }, function error(err) {
+
+
+			  }, function complete() {
+			  	var postKey = firebase.database().ref('Rentals/').push().key;
+	  			var downloadURL = task.snapshot.downloadURL;
+	  			var updates = {};
+	  			var postData = {
+	  				url2: downloadURL, 
+	  			};
+
+
+	  			updates['Rentals/' + postKey]= postData;
+	  			firebase.database().ref().update(updates);
+	  			//console.log(downloadURL);
+	  			localStorage.setItem("rentalImages2", downloadURL);
+	  			
+			  });
+
+			});
+
+	}
+	$("#picUploaded2").attr("src", localStorage.getItem("rentalImages2"));
+
+	function PostImage3(){
+		var uploader = document.getElementById('uploader3');
+			var fileButton = document.getElementById('fileButton3');
+			fileButton.addEventListener('change', function(e){
+			var file = e.target.files[0];
+			var storageRef = firebase.storage().ref('rentalPosts/'+file.name);
+				var task = storageRef.put(file);
+				task.on('state_changed', function progress(snapshot) {
+			    var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+			    uploader.value = percentage;
+
+			  }, function error(err) {
+
+
+			  }, function complete() {
+			  	var postKey = firebase.database().ref('Rentals/').push().key;
+	  			var downloadURL = task.snapshot.downloadURL;
+	  			var updates = {};
+	  			var postData = {
+	  				url3: downloadURL, 
+	  			};
+
+	  			updates['Rentals/' + postKey]= postData;
+	  			firebase.database().ref().update(updates);
+	  			//console.log(downloadURL);
+	  			localStorage.setItem("rentalImages3", downloadURL);
+	  			
+			  });
+
+			});
+
+	}
+	$("#picUploaded3").attr("src", localStorage.getItem("rentalImages3"));
+
+function saveToDB(){
+
+	var rentout = localStorage.getItem('aRent1');
+	var rentout2 = localStorage.getItem('aRent2');
+	var rentout3 = localStorage.getItem('aRent3');
+
+	  if(rentout == "yes"){
+		var rPrice=document.getElementById("price").value;
+		var maxidays;
+			if (document.getElementById("4d").checked)
+				maxidays=document.getElementById("4d").value;
+			if (document.getElementById("6d").checked)
+				maxidays=document.getElementById("6d").value;
+			if (document.getElementById("8d").checked)
+				maxidays=document.getElementById("8d").value;
+		var size = document.getElementById("sizing").value; 
+		var rCondition= document.getElementById("condition").value;	
+		var rColour;
+			if (document.getElementById("red").checked)
+				rColour=document.getElementById("red").value;
+			if (document.getElementById("orange").checked)
+				rColour=document.getElementById("orange").value;
+			if (document.getElementById("yellow").checked)
+				rColour=document.getElementById("yellow").value;
+			if (document.getElementById("tan").checked)
+				rColour=document.getElementById("tan").value;
+			if (document.getElementById("beidge").checked)
+				rColour=document.getElementById("beidge").value;
+			if (document.getElementById("brown").checked)
+				rColour=document.getElementById("brown").value;
+			if (document.getElementById("green").checked)
+				rColour=document.getElementById("green").value;
+			if (document.getElementById("blue").checked)
+				rColour=document.getElementById("blue").value;
+			if (document.getElementById("navy").checked)
+				rColour=document.getElementById("navy").value;
+			if (document.getElementById("purple").checked)
+				rColour=document.getElementById("purple").value;
+			if (document.getElementById("pink").checked)
+				rColour=document.getElementById("pink").value;
+			if (document.getElementById("grey").checked)
+				rColour=document.getElementById("grey").value;
+			if (document.getElementById("white").checked)
+				rColour=document.getElementById("white").value;
+			if (document.getElementById("black").checked)
+				rColour=document.getElementById("black").value;
+			if (document.getElementById("multi").checked)
+				rColour=document.getElementById("multi").value;
+		var rDetails=document.getElementById("idetails").value;
+	} else{
+		var rPrice="0";
+		var maxidays ="0";
+		var size =  "0";	
+		var rCondition = "0";
+		var rColour = "0";
+		var rDetails ="0";
+	}
+
+	if(rentout2 == "yes"){
+		var rPrice2=document.getElementById("price2").value;
+		var maxidays2;
+			if (document.getElementById("4d2").checked)
+				maxidays2=document.getElementById("4d2").value;
+			if (document.getElementById("6d2").checked)
+				maxidays2=document.getElementById("6d2").value;
+			if (document.getElementById("8d2").checked)
+				maxidays2=document.getElementById("8d2").value;
+		var size2 = document.getElementById("size2").value; 	
+		var rCondition2= document.getElementById("condition2").value;
+		var rColour2;
+			if (document.getElementById("red2").checked)
+				rColour2=document.getElementById("red2").value;
+			if (document.getElementById("orange2").checked)
+				rColour2=document.getElementById("orange2").value;
+			if (document.getElementById("yellow2").checked)
+				rColour2=document.getElementById("yellow2").value;
+			if (document.getElementById("tan2").checked)
+				rColour2=document.getElementById("tan2").value;
+			if (document.getElementById("beidge2").checked)
+				rColour2=document.getElementById("beidge2").value;
+			if (document.getElementById("brown2").checked)
+				rColour2=document.getElementById("brown2").value;
+			if (document.getElementById("green2").checked)
+				rColour2=document.getElementById("green2").value;
+			if (document.getElementById("blue2").checked)
+				rColour2=document.getElementById("blue2").value;
+			if (document.getElementById("navy2").checked)
+				rColour2=document.getElementById("navy2").value;
+			if (document.getElementById("purple2").checked)
+				rColour2=document.getElementById("purple2").value;
+			if (document.getElementById("pink2").checked)
+				rColour2=document.getElementById("pink2").value;
+			if (document.getElementById("grey2").checked)
+				rColour2=document.getElementById("grey2").value;
+			if (document.getElementById("white2").checked)
+				rColour2=document.getElementById("white2").value;
+			if (document.getElementById("black2").checked)
+				rColour2=document.getElementById("black2").value;
+			if (document.getElementById("multi2").checked)
+				rColour2=document.getElementById("multi2").value;
+		var rDetails2=document.getElementById("idetails2").value;
+	}else{
+		var rPrice2="0";
+		var maxidays2 ="0";
+		var size2 =  "0";	
+		var rCondition2= "0";
+		var rColour2 = "0";
+		var rDetails2="0";
+	}
+
+	if(rentout3 == "yes"){
+		var rPrice3=document.getElementById("price3").value;
+		var maxidays3;
+			if (document.getElementById("4d3").checked)
+				maxidays3=document.getElementById("4d3").value;
+			if (document.getElementById("6d3").checked)
+				maxidays3=document.getElementById("6d3").value;
+			if (document.getElementById("8d3").checked)
+				maxidays3=document.getElementById("8d3").value;
+		var size3 = document.getElementById("size3").value; 	
+		var rCondition3= document.getElementById("condition3").value;
+		var rColour3;
+			if (document.getElementById("red3").checked)
+				rColour3=document.getElementById("red3").value;
+			if (document.getElementById("orange3").checked)
+				rColour3=document.getElementById("orange3").value;
+			if (document.getElementById("yellow3").checked)
+				rColour3=document.getElementById("yellow3").value;
+			if (document.getElementById("tan3").checked)
+				rColour3=document.getElementById("tan3").value;
+			if (document.getElementById("beidge3").checked)
+				rColour3=document.getElementById("beidge3").value;
+			if (document.getElementById("brown3").checked)
+				rColour3=document.getElementById("brown3").value;
+			if (document.getElementById("green3").checked)
+				rColour3=document.getElementById("green3").value;
+			if (document.getElementById("blue3").checked)
+				rColour3=document.getElementById("blue3").value;
+			if (document.getElementById("navy3").checked)
+				rColour3=document.getElementById("navy3").value;
+			if (document.getElementById("purple3").checked)
+				rColour3=document.getElementById("purple3").value;
+			if (document.getElementById("pink3").checked)
+				rColour3=document.getElementById("pink3").value;
+			if (document.getElementById("grey3").checked)
+				rColour3=document.getElementById("grey3").value;
+			if (document.getElementById("white3").checked)
+				rColour3=document.getElementById("white3").value;
+			if (document.getElementById("black3").checked)
+				rColour3=document.getElementById("black3").value;
+			if (document.getElementById("multi3").checked)
+				rColour3=document.getElementById("multi3").value;
+		var rDetails3=document.getElementById("idetails3").value;
+	}else{
+		var rPrice3="0";
+		var maxidays3 ="0";
+		var size3 =  "0";	
+		var rCondition3 = "0";
+		var rColour3 = "0";
+		var rDetails3 ="0";
+	}
+
+	var rname = document.getElementById("rName1").value;
+	var rname2 = document.getElementById("rName2").value;
+	var rname3 = document.getElementById("rName3").value;
+		
+	var dbRef=firebase.database().ref().child('OutfitDetails/rentItems');
+
+		var postData = {
+			rentItem: rname,
+			rentPrice: rPrice,
+			rentDay: maxidays,
+			rentSize: size,
+			rentCondition: rCondition,
+			rentColor: rColour,
+			rentDetails: rDetails,
+			rentURL: downloadURL,
+
+			rentItem2: rname2,
+			rentPrice2: rPrice2,
+			rentDay2: maxidays2,
+			rentSize2: size2,
+			rentCondition2: rCondition2,
+			rentColor2: rColour2,
+			rentDetails2: rDetails2,
+			rentURL2: downloadURL2,
+
+			rentItem3: rname3,
+			rentPrice3: rPrice3,
+			rentDay3: maxidays3,
+			rentSize3: size3,
+			rentCondition3: rCondition3,
+			rentColor3: rColour3,
+			rentDetails3: rDetails3,
+			rentURL3: downloadURL3,
+		};
+
+		dbRef.push(postData);
+		document.getElementById("confirminfo").href = "confirmRentInfo.html"
+
+
+
+
+
+
+	}
+
+	var rentout = localStorage.getItem('aRent1');
+	var rentout2 = localStorage.getItem('aRent2');
+	var rentout3 = localStorage.getItem('aRent3');
+	
+		downloadURL= localStorage.getItem("rentalImages");
+		downloadURL2= localStorage.getItem("rentalImages2");
+		downloadURL3= localStorage.getItem("rentalImages3");
+
+		if(rentout == "yes"){
+			localStorage.setItem("rentalImages", downloadURL);
+		} else {
+			localStorage.setItem("rentalImages", "nil");
+		}
+
+		if(rentout2 == "yes"){
+			localStorage.setItem("rentalImages2", downloadURL2);
+		} else {
+			localStorage.setItem("rentalImages2", "nil");
+		}
+		
+		if(rentout3 == "yes"){
+			localStorage.setItem("rentalImages3", downloadURL3);
+		} else {
+			localStorage.setItem("rentalImages3", "nil");
+		}
+
+
+</script>
+
+
+
+</body>
+
+</html>

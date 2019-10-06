@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Fashare - Upload image </title>
+   	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  	<link rel="stylesheet" href="../css/gladys.css"> 
+
+  	<style>
+  	 div.upload{
+  	 	display: flex;
+  	 	min-height: 30vh;
+  	 	width: 100%;
+  	 	padding:0;
+  	 	margin:0;
+  	 	align-items: center;
+  	 	justify-content: center;
+  	 	flex-direction: column;
+  	 }
+
+  	 #uploader{
+  	 	-webkit-appearance: none;
+  	 	appearance: none;
+  	 	width: 50%;
+  	 	margin-bottom: 10px;
+  	 	background-color:blue;
+  	 }
+  	 .quick{
+  			color:white;
+  		}
+  		.quick:hover{
+  			color:#e0e0e0;
+  		}
+  		footer.simple{
+  			padding:2%;
+  		}
+  		div.col-md-3.footer-nav{padding-right: 0;padding-left:0;}
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+	<header> 
+		<div>
+			<a href="../kai xun/home.html"><img id="logo" src="../images/fashare.png"> </a>
+			<h1 class="pageTitle"> UPLOAD IMAGE </h1>
+		</div>
+		<hr>
+	</header>
+	
+
+
+	<ul class="breadcrumb">
+	  <li class="select">UPLOAD IMAGE</li>
+	  <li> <a href="" class="disabled"> OUTFIT DETAILS </a> </li>
+	  <li> <a href="" class="disabled"> RENTAL INFORMATION </a> </li>
+	</ul>
+
+	<div class="title1">
+		<h1 class="text-center"> What are you posting today? </h1>
+	</div>
+
+
+	<div class="upload">
+		<progress value="0" max="100" id="uploader"> 0% </progress>
+	  	<input type="file"  value="upload" accept="image/*" class="inButton" id="fileButton" onclick="PostImage()">	
+	</div>
+
+	<div class="container" id="contentHolder">
+	</div>
+
+	<form action="uploadImage2.html" method="get">
+		<input type="submit" value="SUBMIT" class="submitButton"> <a href="#" class="cancel" onclick="CancelUpload()"> CANCEL </a>
+	</form>
+
+	<div class="container-full" width="100%">
+    <!----------- Footer ------------>
+    <footer class="footer-bs simple">
+        <div class="row">
+        	<div class="col-md-1"></div>
+            	<div class="col-md-3 footer-nav">
+                    <a href="../kai xun/home.html" class="quick"> FASHARE HOME PAGE</a>
+                </div>
+
+            	<div class="col-md-3 footer-nav">
+                    <a href="../gladys/termsncon" class="quick"> TERMS AND CONDITIONS</a>
+                </div>
+                <div class="col-md-2 footer-nav">
+                   <a href="../kai xun/FAQ.html" class="quick"> FAQ </a>
+                </div>
+                <div class="col-md-2 footer-nav" style="text-align:right; padding-right:0">
+                   <section style="color:white;"> &copy; FASHARE 2018 </section>
+                </div>
+        	
+        	
+            </div>
+        	
+        </div>
+    </footer>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+		<script>
+		var config = {
+			    apiKey: "AIzaSyA9W19h4_1tpp4KSL0M99M8SOUuN7c2U3E",
+			    authDomain: "fashare-2c.firebaseapp.com",
+			    databaseURL: "https://fashare-2c.firebaseio.com",
+			    projectId: "fashare-2c",
+			    storageBucket: "fashare-2c.appspot.com",
+			    messagingSenderId: "115707668738"
+			  };
+			firebase.initializeApp(config);
+		</script>
+
+		<script type="text/javascript">
+
+		function PostImage(){
+			  
+			var uploader = document.getElementById('uploader');
+			var fileButton = document.getElementById('fileButton');
+			fileButton.addEventListener('change', function(e){
+			var file = e.target.files[0];
+			var storageRef = firebase.storage().ref('posts/'+file.name);
+				var task = storageRef.put(file);
+				task.on('state_changed', function progress(snapshot) {
+				var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+				uploader.value = percentage;
+
+			  }, function error(err) {
+
+
+			  }, function complete() {
+			  	var postKey = firebase.database().ref().child('Posts').push().key;
+	  			var downloadURL = task.snapshot.downloadURL;
+	  			var updates = {};
+	  			var postData = {
+	  				url: downloadURL, 
+	  				//caption: $("#imageCaption").val(),
+	  				//user: user.
+	  			};
+
+	  			updates['Posts/' + postKey]= postData;
+	  			firebase.database().ref().update(updates);
+	  			console.log(downloadURL);
+	  			localStorage.setItem("picURL", downloadURL);
+			  });
+
+			});
+		}
+
+
+		// function CancelUpload(){
+		// 	// Create a reference to the file to delete
+		// 	var desertRef = firebase.storage().ref('posts/');
+		// 	// Delete the file
+		// 	desertRef.delete().then(function() {
+		// 	  // File deleted successfully
+		// 	}).catch(function(error) {
+		// 	  // Uh-oh, an error occurred!
+		// 	});
+
+
+		// }
+
+		</script>
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

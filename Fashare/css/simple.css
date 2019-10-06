@@ -1,0 +1,27 @@
+.navbar {
+    margin-bottom: 0;
+}
+
+.thumbnail img{
+		opacity:0.8;
+		transition: all 0.3s ease;
+		width:100%;
+		hight:100%;
+	}
+	
+.thumbnail img:hover{
+		opacity: 1;
+	}
+	
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.block {display: block;}
+

@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Rating and feedback</title>
+   	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <link rel="stylesheet" href="../css/mainStyle.css">
+<style>
+ul li{
+list-style-type:none;
+display:inline-block;
+color:black;
+margin:0 auto;
+}
+
+ul li:hover{
+color:red;
+}
+
+ul li.active,ul li.secondary-active{
+color:red;
+}
+
+
+input[type="radio"]{
+display:none;
+}
+
+.center{
+text-align:center;
+}
+
+text{
+text-align:center;
+}
+#image { border: 1px solid transparent;
+         width:50%;
+		 height:50%;
+         margin:auto;
+	     border-radius: 25px;   
+}  
+
+#overlay{
+width:100%
+height:100%
+position:fixed;
+background-color:black;
+opacity:0.7;
+}
+
+#display{
+font-weight:bold;
+font-size:50px;
+color:#FFEE80;
+
+}
+.button {
+  border-radius: 4px;
+  background-color: #FFEE80;
+  border: none;
+  color: #C0C0C0;
+  text-align: center;
+  font-size: 28px;
+  padding: 0px;
+  width: 150px;
+  height:50px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+svg {
+    display: block;
+    font: 10.5em 'Roboto';
+    font-family: 'Roboto', sans-serif;
+    width: 500px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.web-coder-skull {
+    fill: none;
+    stroke: #FFEE80;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.web-coder-skull:nth-child(6){
+    stroke: white;
+	animation-delay: -1;
+}
+
+.web-coder-skull:nth-child(2){
+	stroke: black;
+	animation-delay: -2s;
+}
+
+.web-coder-skull:nth-child(3){
+	stroke: green;
+	animation-delay: -3s;
+}
+
+.web-coder-skull:nth-child(4){
+	stroke: white;
+	animation-delay: -4s;
+}
+
+.web-coder-skull:nth-child(5){
+	stroke: green;
+	animation-delay: -5s;
+}
+.web-coder-skull:nth-child(1){ 
+stroke: black;
+animation-delay: -1s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
+}
+.modalbox {
+    min-width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(81, 51, 51, 0.5);
+    z-index: 99999;
+    pointer-events: auto;
+    display:none;
+    overflow-y:auto;
+    -webkit-overflow-scrolling: touch;
+
+}
+.modalbox >.dialog {
+    max-width: 100%;
+    position: relative;
+    top: 10px;
+    margin: 5% 10%;
+    padding: 5px 20px 13px 20px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 0 10px #000000;
+    -moz-box-shadow: 0 0 10px #000000;
+    -webkit-box-shadow: 0 0 10px #000000;
+    display: block;
+    pointer-events: auto;
+	height:500px;
+}
+
+.closebutton {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .10;
+    z-index: 9999;
+    cursor:pointer
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+  margin-left:50px;
+}
+	 {
+  background-color:#ce3635;
+  text-align: center;
+  color:#fff;
+  padding-top:10em;
+}
+.typewrite{
+font-size:100px;
+color:#C0C0C0;
+}
+
+.dropbtn {
+					background-color: #4CAF50;
+					color: white;
+					padding: 16px;
+					font-size: 16px;
+					border: none;
+					cursor: pointer;
+				}
+
+				.dropbtn:hover, .dropbtn:focus {
+					background-color: #3e8e41;
+				}
+
+				#myInput {
+					border-box: box-sizing;
+					background-image: url('searchicon.png');
+					background-position: 3px 10px;
+					background-repeat: no-repeat;
+					background-position: left;
+					background-size: 40px;
+					font-size: 16px;
+					padding: 14px 15px 12px 45px;
+					border: none;
+					border-bottom: 1px solid #ddd;
+				}
+
+				#myInput:focus {outline: 3px solid #ddd;}
+
+				.dropdown {
+					position: relative;
+					display: inline-block;
+				}
+
+				.dropdown-content {
+					display: none;
+					position: absolute;
+					background-color: #f6f6f6;
+					min-width: 230px;
+					overflow: auto;
+					border: 1px solid #ddd;
+					z-index: 1;
+				}
+
+				.dropdown-content a {
+					color: black;
+					padding: 12px 16px;
+					text-decoration: none;
+					display: block;
+				}
+
+				.dropdown a:hover {background-color: #ddd}
+
+				.show {display:block;}
+
+				.scrollable-menu{
+					height:auto;
+					max-height:275px;
+					overflow-x: hidden;
+					font-size:15px;
+				}
+
+				#myDropdown p {
+					padding-left: 20px;
+					font-size: 12px;
+					color:grey;
+					padding-top: 10px;
+					text-align: left;
+				}	
+
+				#myDropdown a {
+					padding-left: 20px;
+					font-size: 15px;
+					padding-top: 12px;
+					text-align: left;
+				}	
+				
+				ul.gender{
+					clear:both;
+					list-style: none;
+					text-align: center;
+					padding:0px;
+				}
+
+				ul.gender li {
+					display: inline;
+				}
+
+				ul.gender li.hover{
+					font-weight:bold;
+					background-color:grey;
+				}
+
+				hr{
+					clear:both;
+					border: 2px solid grey;
+					margin-top: -7px;
+				}
+				.dropdown {
+					margin-bottom:20px;
+					color: black;
+					text-align: center;
+				}
+
+				button.btn{
+					background-color: lightgrey;
+				}
+
+				button.labels {
+					padding-left: 20px;
+					width: 180px;
+					font-size: 15px;
+				}
+
+				.size {width:100%; 
+					   height:550px; 
+					   width:550px;}
+
+				li a.tagging {text-decoration: none; }
+
+				li a.tagging:hover {text-decoration: none;
+									border: 3px solid black;
+									}
+
+				.dropdown-toggle {position: relative;
+								  display: inline-block;}
+
+				.dropdown-menu {display: none;
+								position: absolute;
+								background-color: #f6f6f6;
+								min-width: 160px;
+								box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+								padding: 12px 16px;
+								z-index: 1;
+								}
+
+				.dropdown:hover .dropdown-menu {display: block;
+														}
+</style>
+</head>
+<body>
+<body>
+	<header> 
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>                       
+			      </button>
+			      <a class="navbar-brand active" href="../kai xun/home.html"> <img id="logo" src="../images/fashare.png"> </a>
+			    </div>
+
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-center">
+							<li><a href="../kai xun/trending.html"> TRENDING </a></li>
+					        <li class="dropdown">
+					          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> OCCASIONS <span class="caret"></span></a>
+					          <ul class="dropdown-menu">
+					            <li><a href="#"> PROM </a></li>
+					            <li><a href="../gladys/schoolWomen.html"> SCHOOL</a></li>
+					            <li><a href="#"> BUSINESS </a></li>
+					          </ul>
+					        </li>
+
+					        <li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#"> STYLES <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="../Xin jie/TomboyStyle.html">TOMBOY STYLE</a></li>
+										<li><a href="../Xin jie/ChicStyle.html">CHIC STYLE</a></li>
+										<li><a href="../Xin jie/CasualStyle.html">CASUAL STYLE</a></li>
+										<li><a href="../Xin jie/BohemianStyle.html">BOHEMIAN STYLE</a></li>
+									</ul>
+							</li>
+
+					        <li class="dropdown">
+					          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> HELP <span class="caret"></span></a>
+					          <ul class="dropdown-menu">
+					            <li><a href="../kai xun/FAQ.html"> FAQ </a></li>
+					            <li><a href="../kai xun/aboutUs.html"> ABOUT US </a></li>
+					            <li><a href="../kai xun/ContactUs.html"> CONTACT US </a></li>
+					            <li><a href="../kai xun/howToRent.html"> HOW TO RENT </a></li>
+					          </ul>
+					        </li>
+				</ul>
+			
+				
+						<ul class="nav navbar-nav navbar-right">
+								<li>
+									<div class="dropdown dropdown-menu-left">
+										<button onclick="myFunction()" class="glyphicon glyphicon-search"></button>
+										<div id="myDropdown" class="dropdown-content scrollable-menu">
+											<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+											<p> QUICK LINKS </p>
+											<a href="#about">PROM</a>
+											<a href="../gladys/schoolWomen.html">SCHOOL</a>
+											<a href="#blog">BUSINESS</a>
+											<a href="../Xin jie/TomboyStyle.html">TOMBOY STYLE</a>
+											<a href="../Xin jie/ChicStyle.html">CHIC STYLE</a>
+											<a href="../Xin jie/CasualStyle.html">CASUAL STYLE</a>
+											<a href="../Xin jie/MyCollections.html">My Collection</a>
+											<a href="../kah chun/profile.html">My Profile</a>
+											<a href="../Xin jie/MyRentals.html">My Rentals</a>
+											<a href="../Xin jie/PastHistory.html">My Rent-out History</a>
+											<a href="../kai xun/FAQ.html">FAQ</a>
+											<a href="../gladys/termsncon.html">TERMS AND CONDITIONS</a>
+											<a href="../kai xun/ContactUs.html">CONTACT US</a>
+											<a href="../kai xun/aboutUs.html">ABOUT US</a>
+											<a href="../kai xun/howToRent.html">HOW TO RENT</a>
+										</div>
+									</div> 
+								</li>
+								
+							    <li><a href="#"><i class="glyphicon glyphicon-envelope"></i></a> </li>
+							    <li><a href="../gladys/uploadImage.html"><i class="glyphicon glyphicon-upload"></i></a> </li>
+
+
+			                <li class="dropdown">
+			                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			                        <span class="glyphicon glyphicon-user"></span> 
+			                        <strong> Username </strong>
+			                       
+			                    </a>
+			                    <ul class="dropdown-menu">
+			                        <li>
+			                            <div class="navbar-login">
+			                                <div class="row">
+			                                    <div class="col-lg-4">
+			                                        <p class="text-center">
+			                                            <span class="glyphicon glyphicon-user icon-size"></span>
+			                                        </p>
+			                                    </div>
+			                                    <div class="col-lg-8">
+			                                        <p class="text-left"><strong> name </strong></p>
+			                                        <p class="text-left small"> email </p>
+			                                        <p class="text-left">
+			                                            <a href="../kah chun/profile.html" class="btn btn-primary btn-block btn-sm"> VIEW PROFILE </a>
+			                                        </p>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </li>
+			                        <li class="divider"></li>
+			                        <li>
+			                            <div class="navbar-login navbar-login-session">
+			                                <div class="row">
+			                                    <div class="col-lg-12">
+			                                        <p>
+			                                            <a class="btn btn-danger btn-block" onclick="logout()">LOG OUT</a>
+			                                        </p>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </li>
+			                    </ul>
+							</li>
+						</ul>
+					</div>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+
+<div class="container text-center">
+    	<div class="row">
+	<svg viewBox="0 0 860 250">
+    <symbol id="web-coderskull">
+		<text text-anchor="middle" x="50%" y="70%">Rate here</text>
+	</symbol>
+
+	<g class = "webcoderskull">
+		<use xlink:href="#web-coderskull" class="web-coder-skull"></use>
+		<use xlink:href="#web-coderskull" class="web-coder-skull"></use>
+		<use xlink:href="#web-coderskull" class="web-coder-skull"></use>
+		<use xlink:href="#web-coderskull" class="web-coder-skull"></use>
+		<use xlink:href="#web-coderskull" class="web-coder-skull"></use>
+	</g>
+</svg>
+	</div>
+
+	<div class="col-md-12 col-md-offset-0" style="background-color:#C0C0C0;height:500px;">
+        <div id="image">
+     
+        </div>
+		    <div id="who" style="background-color:#FFEE80; text-align:center;">
+			 name here
+			</div>
+			
+    <div class="col-md-8 col-md-offset-2" style="background-color:#C0C0C0;height:25%;" class="center">
+        <form id="theform">
+            <ul>
+            <li><label for="rating_1"><i class="fa fa-heart" style="font-size:50px;" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_1" value="1" onclick="saveRate(); none();"></input></li>
+            <li><label for="rating_2"><i class="fa fa-heart" style="font-size:50px;" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_2" value="2" onclick="saveRate(); none();"></input></li>
+            <li><label for="rating_3"><i class="fa fa-heart" style="font-size:50px;" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_3" value="3" onclick="saveRate(); none();"></input></li>
+            <li><label for="rating_4"><i class="fa fa-heart" style="font-size:50px;" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_4" value="4" onclick="saveRate(); none();"></input></li>
+            <li><label for="rating_5"><i class="fa fa-heart" style="font-size:50px;" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_5" value="5" onclick="saveRate(); none();"></input></li>
+            </ul>
+			<label for="feedback"style="color:#FFEE80;font-weight:bold;">Give feedback</label>
+			<textarea class="form-control" id="feedback">
+			</textarea>
+        </form>
+		<p id="display"></p>
+		<br>
+		<button class="button" id="exit"><span>exit</span></button>
+		<div id="ogrooModel" class="modalbox ogroobox" >
+            <div class="dialog">
+                <button  title="Close" onClick="overlay()"  class="closebutton" id="close">x</button>
+                    <div  style="min-height: 150px;">
+                    </div>
+		                 <!-- a href to home page again. -->
+		                <a href="../kai xun/home.html" class="typewrite" data-period="2000" data-type='[ "Thank you", "Fashare loves you", "Do visit us" ]'>
+                            <span class="wrap"></span>
+                        </a>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+
+
+  <script>
+  $('li').on('click',function(){
+  $('li').removeClass('active');
+  $('li').removeClass('secondary-active');
+  $(this).addClass('active');
+  $(this).prevAll().addClass('secondary-active');
+  })
+  
+  </script>
+  
+  <script>
+  var config = {
+    apiKey: "AIzaSyA9W19h4_1tpp4KSL0M99M8SOUuN7c2U3E",
+    authDomain: "fashare-2c.firebaseapp.com",
+    databaseURL: "https://fashare-2c.firebaseio.com",
+    projectId: "fashare-2c",
+    storageBucket: "fashare-2c.appspot.com",
+    messagingSenderId: "115707668738"
+  };
+     if ( firebase.apps.length ===0 ) {
+		firebase.initializeApp(config);
+  
+   function saveRate(){
+   // Initialize Firebase
+     var rate;
+     if(document.getElementById("rating_1").checked){
+        rate=document.getElementById("rating_1").value;
+		document.getElementById("display").innerHTML = " you given "+ rate +" hearts";
+		}
+     if(document.getElementById("rating_2").checked){
+        rate=document.getElementById("rating_2").value;
+		document.getElementById("display").innerHTML = " you given "+ rate +" hearts";
+		}
+     if(document.getElementById("rating_3").checked){
+        rate=document.getElementById("rating_3").value;
+		document.getElementById("display").innerHTML = " you given "+ rate +" hearts";
+		}
+     if(document.getElementById("rating_4").checked){
+        rate=document.getElementById("rating_4").value;
+		document.getElementById("display").innerHTML = " you given "+ rate +" hearts";
+		}
+     if(document.getElementById("rating_5").checked){
+        rate=document.getElementById("rating_5").value;
+	    document.getElementById("display").innerHTML = " you given "+ rate +" hearts";
+	    }
+		
+	var feedback=document.getElementById("feedback").value;
+    var dbRef=firebase.database().ref().child('ratingNfeedback');
+   
+    var postData ={
+     ratings:rate,
+	 feedback:feedback
+    };
+    dbRef.push(postData);
+
+    } 
+   } 
+   
+	 function saveFeedback(){
+	    var config = {
+		  apiKey: "AIzaSyDVHsTe1KK9ThVjfn1y_SmWa-uf8U2VSQI",
+		  authDomain: "ratings-50b2d.firebaseapp.com",
+		  databaseURL: "https://ratings-50b2d.firebaseio.com",
+		  projectId: "ratings-50b2d",
+		  storageBucket: "",
+		  messagingSenderId: "629723963555"
+		 };
+	     if ( firebase.apps.length ===0 ) {
+			firebase.initializeApp(config);
+	    var dbRef=firebase.database().ref().child('nypfeed');
+	    var postData = {
+			comment:feedback
+			};
+		    dbRef.push(postData);
+	    }
+	}
+
+ 
+ 
+ 
+</script>
+<script>
+function none() {
+    var x = document.getElementById('theform');
+    if (x.style.display === 'none') {
+        x.style.display = 'none';
+    } else {
+        x.style.display = 'none';
+    }
+	
+}
+
+</script>
+
+<script>
+
+document.getElementById("exit").addEventListener("click", function(){
+ var e =document.getElementsByClassName("modalbox");
+
+        e[0].style.display = 'block';
+   
+})	;
+document.getElementById("close").addEventListener("click", function(){
+   var e =document.getElementsByClassName("modalbox");
+ e[0].style.display= 'none';
+});
+</script>
+<script>
+var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+</script>
+
+<div class="container-full">
+		<!----------- Footer ------------>
+		<footer class="footer-bs">
+			<div class="row">
+					<div class="col-md-3 footer-nav">
+						<ul class="list">
+							<h4>HELP &amp; INFORMATION</h4>
+							<li><a href="../kai xun/FAQ.html">FAQ</a></li>
+							<li><a href="../kai xun/ContactUs.html">Contact Us</a></li>
+							<li><a href="../kai xun/aboutUs.html">About Us</a></li>
+							<li><a href="../kai xun/howToRent.html">How to Rent</a></li>
+						</ul>
+					</div>
+
+					<div class="col-md-2 footer-nav">
+                    <ul class="list">
+                    	<h4>for you</h4>
+                        <li><a href="../kah chun/profile.html">My Profile</a></li>
+                        <li><a href="../Xin jie/MyCollections.html">My Collection</a></li>
+                        <li><a href="../Xin jie/MyRentals.html">My Rentals </a></li>
+                        <li><a href="../Xin jie/PastHistory.html">My Rent-Out History</a></li>
+                    </ul>
+                </div>
+
+				<div class="col-md-3 footer-brand">
+					<img src="../images/footerLogo.png" alt="footer-logo" id="footer-logo"/>
+					<ul class="list">
+						<li> <a href="../gladys/termsncon.html">TERMS &amp; CONDITIONS </a> </li>
+					</ul>
+				</div>
+
+				<div class="col-md-4 footer-social">
+					<h4>FOLLOW US</h4>
+					
+					<a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+					<a href="https://twitter.com/?lang=en" class="fa fa-twitter"></a>
+					<a href="https://www.instagram.com/fashare2c/?hl=en" class="fa fa-instagram"></a>
+				 
+				</div>
+				
+			</div>
+		</footer>
+   
+		<script>
+			/* When the user clicks on the button,
+			toggle between hiding and showing the dropdown content */
+			function myFunction() {
+				document.getElementById("myDropdown").classList.toggle("show");
+			}
+
+			function filterFunction() {
+				var input, filter, ul, li, a, i;
+				input = document.getElementById("myInput");
+				filter = input.value.toUpperCase();
+				div = document.getElementById("myDropdown");
+				a = div.getElementsByTagName("a");
+				for (i = 0; i < a.length; i++) {
+					if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+						a[i].style.display = "";
+					} else {
+						a[i].style.display = "none";
+					}
+				}
+			}
+			
+			function logout(){
+			  firebase.auth().signOut().then(function() {
+			  // Sign-out successful.
+			   window.location.href="../kah chun/login.html";
+			}).catch(function(error) {
+			  // An error happened.
+			});
+			}
+	</script>
+	
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-wdith, initial-scale=1, shrink-to-fit=no">
+		
+			<!-- Latest compiled and minified CSS -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+			<!-- Optional theme -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	
+			<!-- Latest compiled and minified JavaScript -->
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+			<link rel="stylesheet" href="../css/FAQ.css"> 
+		<title>Fashare - FAQ</title>
+		
+		<script type="text/javascript">
+			function CS() {
+    			var x = document.getElementById('CS');
+				var y = document.getElementById('HTR');
+				var z = document.getElementById('AS');
+    			if (x.style.display === 'none') {
+       					x.style.display = 'block';
+						y.style.display = 'none';
+						z.style.display = 'none';
+    			} else {
+        			x.style.display = 'none';
+    			}
+			}
+			
+			function HTR() {
+				var x = document.getElementById('HTR');
+				var y = document.getElementById('AS');
+				var z = document.getElementById('CS');
+				if (x.style.display == 'none')
+				{	x.style.display = 'block';
+					y.style.display = 'none';
+					z.style.display = 'none';
+				} else {
+					x.style.display = 'none';
+				}
+			}
+			
+			function AS() {
+				var x = document.getElementById('AS');
+				var y = document.getElementById('CS');
+				var z = document.getElementById('HTR');
+				if(x.style.display == 'none')
+				{ 	x.style.display ='block';
+					y.style.display = 'none';
+					z.style.display = 'none';
+				} else {
+					x.style.display = 'none';}
+				}
+			
+		</script>
+	</head>
+	
+	<body>
+		<header>
+			<nav class="navbar navbar-default">
+			<div class="container-fluid">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>                       
+			      </button>
+			      <a class="navbar-brand active" href="../kai xun/home.html"> <img id="logo" src="../images/fashare.png"> </a>
+			    </div>
+
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-center">
+							<li><a href="../kai xun/trending.html"> TRENDING </a></li>
+					        <li class="dropdown">
+					          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> OCCASIONS <span class="caret"></span></a>
+					          <ul class="dropdown-menu">
+					            <li><a href="#"> PROM </a></li>
+					            <li><a href="../gladys/schoolWomen.html"> SCHOOL</a></li>
+					            <li><a href="#"> BUSINESS </a></li>
+					          </ul>
+					        </li>
+
+					        <li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#"> STYLES <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="../Xin jie/TomboyStyle.html">TOMBOY STYLE</a></li>
+										<li><a href="../Xin jie/ChicStyle.html">CHIC STYLE</a></li>
+										<li><a href="../Xin jie/CasualStyle.html">CASUAL STYLE</a></li>
+										<li><a href="../Xin jie/BohemianStyle.html">BOHEMIAN STYLE</a></li>
+									</ul>
+							</li>
+
+					        <li class="dropdown">
+					          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> HELP <span class="caret"></span></a>
+					          <ul class="dropdown-menu">
+					            <li><a href="../kai xun/FAQ.html"> FAQ </a></li>
+					            <li><a href="../kai xun/aboutUs.html"> ABOUT US </a></li>
+					            <li><a href="../kai xun/contactUs.html"> CONTACT US </a></li>
+					            <li><a href="../kai xun/howToRent.html"> HOW TO RENT </a></li>
+					          </ul>
+					        </li>
+						</ul>
+			
+						
+								<ul class="nav navbar-nav navbar-right">
+								 <li>
+									<div class="dropdown dropdown-menu-left">
+										<button onclick="myFunction()" class="glyphicon glyphicon-search"></button>
+										<div id="myDropdown" class="dropdown-content scrollable-menu">
+											<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+											<p> QUICK LINKS </p>
+											<a href="#about">PROM</a>
+											<a href="../gladys/schoolWomen.html">SCHOOL</a>
+											<a href="#blog">BUSINESS</a>
+											<a href="../Xin jie/TomboyStyle.html">TOMBOY STYLE</a>
+											<a href="../Xin jie/ChicStyle.html">CHIC STYLE</a>
+											<a href="../Xin jie/CasualStyle.html">CASUAL STYLE</a>
+											<a href="../Xin jie/MyCollections.html">My Collection</a>
+											<a href="../kah chun/profile.html">My Profile</a>
+											<a href="../Xin jie/MyRentals.html">My Rentals</a>
+											<a href="../Xin jie/PastHistory.html">My Rent-out History</a>
+											<a href="../kai xun/FAQ.html">FAQ</a>
+											<a href="../gladys/termsncon.html">TERMS AND CONDITIONS</a>
+											<a href="../kai xun/ContactUs.html">CONTACT US</a>
+											<a href="../kai xun/aboutUs.html">ABOUT US</a>
+											<a href="../kai xun/howToRent.html">HOW TO RENT</a>
+										</div>
+									</div> 
+								</li>
+								
+							    <li><a href="../Kovan/chatRoom.html"><i class="glyphicon glyphicon-envelope"></i></a> </li>
+							    <li><a href="../gladys/uploadImage.html"><i class="glyphicon glyphicon-upload"></i></a> </li>
+
+
+			                <li class="dropdown">
+			                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			                        <span class="glyphicon glyphicon-user"></span>&nbsp;
+			                        <strong> Username </strong>
+			                       
+			                    </a>
+			                    <ul class="dropdown-menu">
+			                        <li>
+			                            <div class="navbar-login">
+			                                <div class="row">
+			                                    <div class="col-lg-4">
+			                                        <p class="text-center">
+			                                            <span class="glyphicon glyphicon-user icon-size"></span>
+			                                        </p>
+			                                    </div>
+			                                    <div class="col-lg-8">
+			                                        <p class="text-left"><strong> name </strong></p>
+			                                        <p class="text-left small"> email </p>
+			                                        <p class="text-left">
+			                                            <a href="../kah chun/profile.html" class="btn btn-primary btn-block btn-sm"> VIEW PROFILE </a>
+			                                        </p>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </li>
+			                        <li class="divider"></li>
+			                        <li>
+			                            <div class="navbar-login navbar-login-session">
+			                                <div class="row">
+			                                    <div class="col-lg-12">
+			                                        <p>
+			                                            <a class="btn btn-danger btn-block" onclick="logout()">LOG OUT</a>
+			                                        </p>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </li>
+			                    </ul>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+			
+		</nav>
+	</header>	
+				
+			<section>
+				<h1 class="faq">FREQUENTLY ASKED QUESTIONS</h1>
+					<br/>
+						
+				<p class="question">MOST POPULAR QUESTIONS</p>
+				<br>
+					<p class="question">Q: What is this website for?</p>
+					<p class="answer">Fashare is a website made for people to share their individual styles they would usually wear daily or for an important occasion.</p>
+					<br>
+						<p class="question">Q: Must I need an account to use this site?</p>
+						<p class="answer">You can view post from the trending page but would need to view the home page and to rent from the owners. </p>
+						<br>
+							<p class="question">Q: How do I rent?</p>
+							<p class="answer">You are required to set up an account before you rent and you can find more information on the "How to Rent" section.</p>
+							<br>
+								<p class="question">Q: Who can I contact for help or assistance?</p>
+								<p class="answer">You can contact us through our email address and helplines number that all can be found on the "Contact Us" section.</p>
+								<br>
+									<p class="question">Q: What can I do on this website?</p>
+									<p class="answer">You can browse post made by your friends and rent from them or you can create your own post and have people rent from you.</p>
+									<br/>
+									<br/>
+									<hr/>
+			
+					
+					<br/>
+					<div class="services">
+					<h1 style="font-weight:bold">OTHER INFORMATION</h1>
+						<ul>
+						<li><div class="divider"></div></li>
+						<label><li>
+							<div class="CScontainer" onclick="CS()">
+								<img src="../images/contactus.jpg" alt="CS" class="CSimage"/>
+									<div class="CSmiddle">
+										<div class="CStext">Contact Us</div>
+									</div>
+								</div>
+						</label></li>
+						<li><div class="divider"></div></li>
+						<label> <li>
+							<div class="HTRcontainer" onclick="HTR()">
+								<img src="../images/howtorent.jpg" alt="HTR" class="HTRimage"/>
+									<div class="HTRmiddle">
+										<div class="HTRtext">How to Rent</div>
+									</div>
+								</div>
+
+						</label></li>
+						<li><div class="divider"></div></li>
+						<label> <li>
+							<div class="AScontainer" onclick="AS()">
+								<img src="../images/aboutus.jpg" alt="AS" class="ASimage"/>
+										<div class="ASmiddle">
+											<div class="AStext">About Us</div>
+										</div>
+							</div>
+						</label> </li>
+						</ul>
+					</div>	
+					
+				</section>
+
+					<div id="CS" style="display: none;">
+						<ul>
+							<li>
+								<table class="tablebackground">
+									<tbody><tr>
+										<td> 
+											<div class="info">
+											<h1>CONTACT US</h1>
+											<p>If have any enquiries, you can:</p>			
+											<p>Call us at <span style="font-weight: bold">8686 8188</span></p>
+											<p>Email us at <a href="mailto:contact@Fashare.com.sg" id="email"><span>contact@Fashare.com.sg</span></a></p>
+											<p>For our 24-hours helpline, call us at <span style="font-weight: bold">6893 4122</span></p>
+											</div>
+										</td>
+									</tr>
+								</tbody></table>
+							</li>
+						</ul>
+					</div>	
+
+					<div id="HTR" style="display: none;">
+						<ul>
+							<li>
+								<table class="tablebackground">
+									<tbody><tr>
+										<td> 
+											<div class="rent">
+												<h1>HOW TO RENT</h1>
+												<p style="font-weight: bold">Step 1: Search for the item(s) you are looking for</p>
+												<p>You can find them in post made by friends/followers or throught the trending and home pages.</p>
+												<br>
+												<p style="font-weight: bold">Step 2: Click on the item you want to rent</p>
+												<p>It is located on the post itself. Do remember to check the size and the description of each post check if the outfit fits you.</p>
+												<br>
+												<p style="font-weight: bold">Step 3: Message the owner/user</p>
+												<p>We're not gonna do it for you, so get messaging!!</p>
+												<br>
+												<p style="font-weight: bold">Step 4: Choose preferred date and send request to rent</p>
+												<p>Only once both the owner and renter both agree on the things needed.</p>
+												<br>
+												<p style="font-weight: bold">Step 5: Procced with payment</p>
+												<p>Payment can done through Visa/MasterCard or even through bank transfer(ibanking)</p>
+												<br>
+												<p style="font-weight: bold">Step 6: Meet up with the owner and you're done!!</p>
+												<p>Remeber to be friendly to each other</p>
+											</div>
+										</td>
+									</tr>
+								</tbody></table>
+							</li>
+						</ul>
+					</div>		
+					
+					<div id="AS" style="display: none;">
+						<ul>
+							<li>
+								<table class="tablebackground">
+									<tbody><tr>
+										<td> 
+											<div class="aboutUs">
+												<h1>ABOUT US</h1>
+												<img class="group" src="../images/Group.jpeg" alt="group photo">
+												<br>
+												<p>We are five poly students from Nanyang Polytechnic (NYP) who have created this website to help students who may be in need of a dress/outfit that she/he may need for an important event or presentation. We got the inspiration when we start to notice that student in our class did not really brother to dress up nicely and we wanted to change that.</p>
+												<br>
+												<p>Fashare is a fashion website that allows students to share their looks or their styles with other students and even allow for renting with other students as well which can students earn some money well they are studying.</p>
+												<br>
+												<p>Our goal is for people to be able to share what the type of outfit they like to share to others and get more people to start dress up nicely, promoting a more fashionable environment.</p>
+												
+											</div>
+										</td>
+									</tr>
+								</tbody></table>
+							</li>
+						</ul>
+					</div>	
+
+		
+		
+			<div class="container-full">
+					<!----------- Footer ------------>
+					<footer class="footer-bs">
+						<div class="row">
+						<div class="col-md-3 footer-nav">
+							<ul class="list">
+								<h4>HELP &amp; INFORMATION</h4>
+								<li><a href="../kai xun/FAQ.html">FAQ</a></li>
+								<li><a href="../kai xun/ContactUs.html">Contact Us</a></li>
+								<li><a href="../kai xun/aboutUs.html">About Us</a></li>
+								<li><a href="../kai xun/howToRent.html">How to Rent</a></li>
+							</ul>
+						</div>
+
+							<div class="col-md-2 footer-nav">
+								<ul class="list">
+									<h4>for you</h4>
+									<li><a href="../kah chun/profile.html">My Profile</a></li>
+									<li><a href="../Xin jie/MyCollections.html">My Collections</a></li>
+									<li><a href="../Xin jie/MyRentals.html">My Rentals </a></li>
+									<li><a href="../Xin jie/PastHistory.html">My Rent-Out History</a></li>
+								</ul>
+							</div>
+							
+					<div class="col-md-3 footer-brand">
+						<img src="../images/footerLogo.png" alt="footer-logo" id="footer-logo">
+						<ul class="list">
+							<li> <a href="../gladys/termsncon.html">TERMS &amp; CONDITIONS </a> </li>
+						</ul>
+					</div>
+
+					<div class="col-md-4 footer-social">
+						<h4>FOLLOW US</h4>
+						
+						<a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+						<a href="https://twitter.com/?lang=en" class="fa fa-twitter"></a>
+						<a href="https://www.instagram.com/fashare2c/?hl=en" class="fa fa-instagram"></a>
+					 
+					</div>
+					
+				</div>
+			</footer>
+		</div>
+		
+	<script>
+		/* When the user clicks on the button,
+		toggle between hiding and showing the dropdown content */
+		function myFunction() {
+			document.getElementById("myDropdown").classList.toggle("show");
+		}
+
+		function filterFunction() {
+			var input, filter, ul, li, a, i;
+			input = document.getElementById("myInput");
+			filter = input.value.toUpperCase();
+			div = document.getElementById("myDropdown");
+			a = div.getElementsByTagName("a");
+			for (i = 0; i < a.length; i++) {
+				if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+					a[i].style.display = "";
+				} else {
+					a[i].style.display = "none";
+				}
+			}
+		}
+		
+			function logout(){
+			  firebase.auth().signOut().then(function() {
+			  // Sign-out successful.
+			   window.location.href="../kah chun/login.html";
+			}).catch(function(error) {
+			  // An error happened.
+			});
+			}
+		
+	</script>
+	
+		
+		
+</body>
+	
+</html>	

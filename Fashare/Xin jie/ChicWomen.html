@@ -1,0 +1,764 @@
+<!Doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<title>Chic Style - Women</title>
+	<style>
+
+	* { font-family:" Century Gothic",Futura, "Gill Sans";
+  	   }
+
+	ul.gender{
+		clear:both;
+		list-style: none;
+		text-align: center;
+		padding:0px;
+	}
+
+	ul.gender li {
+		display: inline;
+	}
+
+	ul.gender li.hover{
+		font-weight:bold;
+		background-color:grey;
+	}
+
+	hr{
+		clear:both;
+		border: 2px solid grey;
+		margin-top: -7px;
+	}
+	.dropdown {
+		margin-bottom:20px;
+		color: black;
+		text-align: center;
+	}
+
+	button.btn{
+		background-color: lightgrey;
+	}
+
+	button.labels {padding-left: 20px;
+				   width: 180px;
+				   font-size: 15px;}
+
+	.size {width:100%; 
+		   height:550px; 
+		   width:550px;}
+
+	li a.tagging {text-decoration: none; }
+
+	li a.tagging:hover {text-decoration: none;
+						border: 3px solid black;
+						}
+
+	.dropdown-toggle {position: relative;
+    				  display: inline-block;}
+
+	.dropdown-menu {display: none;
+				    position: absolute;
+				    background-color: #f6f6f6;
+				    min-width: 160px;
+				    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+				    padding: 12px 16px;
+				    z-index: 1;
+					}
+
+    .dropdown:hover .dropdown-menu {display: block;
+									}
+
+	img#logo {
+			width: 100px;
+			margin-left: 3%;
+			float: left;
+			padding-bottom: 10px;
+
+		}
+
+		.pageTitle {
+			float: right;
+			margin-right: 3%;
+			font-size: 28px;
+			font-weight:bold;
+
+		}
+
+		.title1{
+				font-size:40px;
+			}
+
+		div{
+
+			color: black;
+
+		}
+
+		a.navbar-brand {
+			padding : 0;
+			margin-right: 50px;
+			padding-left: 20px;
+		}
+
+	
+		.navbar-default {
+    		background-color: white;
+    		border-radius: 0;
+    		border-bottom: 2px solid black;
+    		padding-bottom: 5px;
+    		font-size:18px;
+
+			}
+
+		.navbar-default .navbar-nav > li > a {
+			margin-top: 5px;
+    		color: #000000;
+			}
+
+		.navbar-default .navbar-center > li > a {
+			margin-left: 30px;
+    		color: #000000;
+			}
+
+		ul.dropdown-menu{
+			margin-left: 30px;
+		}
+		
+  		
+  		ul.dropdown-menu li a:hover{
+  			color: white;
+  			background: #393939;
+
+  		}
+
+  		.navbar-login
+		{
+		    width: 305px;
+		    padding: 10px;
+		    padding-bottom: 0px;
+		}
+
+		.navbar-login-session
+		{
+		    padding: 10px;
+		    padding-bottom: 0px;
+		    padding-top: 0px;
+		}
+
+		.icon-size
+		{
+		    font-size: 87px;
+		}
+
+		.glyphicon.glyphicon-search, .glyphicon.glyphicon-envelope, .glyphicon.glyphicon-upload {
+		    font-size: 18px;
+		    margin-left: 20px;
+		    border:0px;
+		}
+		.glyphicon.glyphicon-search{
+			margin-top:20px;
+			color:black;
+			margin-right:18px;
+			margin-left: 27px;
+			margin-bottom:10px;
+
+		}
+
+		.glyphicon.glyphicon-upload{
+			margin-right: 30px;
+		}
+
+		li.dropdown strong{
+			font-size:12px;
+		}
+
+		span.caret{
+			color:#a0a0a0;
+		}
+
+		@media (max-width: 1200px) {
+		    .navbar-header {
+		        float: none;
+		    }
+		    .navbar-left,.navbar-right {
+		        float: none !important;
+		    }
+		    .navbar-toggle {
+		        display: block;
+		    }
+		    .navbar-collapse {
+		        border-top: 1px solid transparent;
+		        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+		    }
+		    .navbar-fixed-top {
+		        top: 0;
+		        border-width: 0 0 1px;
+		    }
+		    .navbar-collapse.collapse {
+		        display: none!important;
+		    }
+		    .navbar-nav {
+		        float: none!important;
+		        margin-top: 7.5px;
+		    }
+		    .navbar-nav>li {
+		        float: none;
+		    }
+		    .navbar-nav>li>a {
+		        padding-top: 10px;
+		        padding-bottom: 10px;
+		    }
+		    .collapse.in{
+		        display:block !important;
+		    }
+		}
+
+			.footer-bs {
+					margin-top:100px;
+		    	background-color: #3c3d41;
+			padding: 60px 40px;
+			color: rgba(255,255,255,1.00);
+		}
+
+		.container-full {
+		  margin: 0 auto;
+		  width: 100%;
+		}
+
+		.footer-bs .help, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 25px; }
+		.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+
+		#footer-logo{
+			width:50%;
+			display:block;
+    		margin:auto;
+		}
+
+		.footer-bs .footer-brand ul.list {
+			list-style:none; 
+			padding:0px; 
+		}
+
+		.footer-bs .footer-brand ul li { 
+			padding:5px 0px;
+			text-decoration:underline; 
+			text-align:center;
+			
+		}
+		.footer-bs .footer-brand ul.list a { 
+			color:white; 
+			font-size:13px;
+		}
+		.footer-bs .footer-brand ul.list a:hover { 
+			color:grey; 
+		}
+
+
+
+		.footer-bs .footer-nav ul.list { 
+			list-style:none; 
+			padding:0px; 
+			margin:0px;
+		}
+		.footer-bs .footer-nav ul.list li { 
+			padding:5px 0px;
+			text-align:left;
+		}
+		.footer-bs .footer-nav ul.list a { 
+			color:white; 
+			font-size:12px;
+		}
+		.footer-bs .footer-nav ul.list a:hover { 
+			color:rgba(255,255,255,0.60); 
+			text-decoration:none; 
+		}
+
+
+		.footer-bs h4 {
+			font-size: 13px;
+			font-weight:bold;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			color: #FFEE80;
+		}
+
+		.fa {
+		  padding: 20px;
+		  font-size: 30px;
+		  text-decoration: none;
+		  text-align:center;
+		  margin: 10px 10px;
+		  border-radius: 50%
+		}
+
+		.fa:hover {
+		    text-decoration: none;
+		}
+
+		.fa-facebook {
+		  background: #3B5998;
+		  color: white;
+		  padding:20px 25px;
+		}
+
+		.fa-twitter {
+		  background: #55ACEE;
+		  color: white;
+		}
+
+		.fa-instagram {
+		  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+		  color: white;
+		  padding:20px 23px;
+		}
+
+		@media only screen and (max-width: 991px){
+			#footer-logo{
+			width:20%;
+			clear:both;
+		}
+		.footer-bs .footer-brand ul li { 
+			padding:5px 0px;
+			text-decoration:underline; 
+			text-align:center;
+			clear:both;
+		}
+
+		.fa {
+		  padding: 10px;
+		  font-size: 20px;
+		  text-decoration: none;
+		  text-align:center;
+		  margin: 10px 10px;
+		  border-radius: 50%
+  
+		}
+
+		.fa-facebook {
+		  background: #3B5998;
+		  color: white;
+		  padding:10px 15px;
+		}
+	}			
+
+	.dropbtn {
+		    background-color: #4CAF50;
+		    color: white;
+		    padding: 16px;
+		    font-size: 16px;
+		    border: none;
+		    cursor: pointer;
+		}
+
+		.dropbtn:hover, .dropbtn:focus {
+		    background-color: #3e8e41;
+		}
+
+		#myInput {
+		    border-box: box-sizing;
+		    background-image: url('searchicon.png');
+		    background-position: 3px 10px;
+		    background-repeat: no-repeat;
+		    background-position: left;
+		    background-size: 40px;
+		    font-size: 16px;
+		    padding: 14px 15px 12px 45px;
+		    border: none;
+		    border-bottom: 1px solid #ddd;
+		}
+
+		#myInput:focus {outline: 3px solid #ddd;}
+
+		.dropdown {
+		    position: relative;
+		    display: inline-block;
+		}
+
+		.dropdown-content {
+		    display: none;
+		    position: absolute;
+		    background-color: #f6f6f6;
+		    min-width: 230px;
+		    overflow: auto;
+		    border: 1px solid #ddd;
+		    z-index: 1;
+		}
+
+		.dropdown-content a {
+		    color: black;
+		    padding: 12px 16px;
+		    text-decoration: none;
+		    display: block;
+		}
+
+		.dropdown a:hover {background-color: #ddd}
+
+		.show {display:block;}
+
+		.scrollable-menu{
+			height:auto;
+			max-height:275px;
+			overflow-x: hidden;
+			font-size:15px;
+		}
+
+		#myDropdown p {
+			padding-left: 20px;
+			font-size: 12px;
+			color:grey;
+			padding-top: 10px;
+			text-align: left;
+		}	
+
+		#myDropdown a {
+			padding-left: 20px;
+			font-size: 15px;
+			padding-top: 12px;
+			text-align: left;
+		}	
+
+			
+	</style>
+</head>
+
+<body>
+	<header> 
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>                       
+			      </button>
+			      <a class="navbar-brand active" href="../kai xun/home.html"> <img id="logo" src="../images/fashare.png"> </a>
+			    </div>
+
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-center">
+					<li><a href="../kai xun/trending.html"> TRENDING </a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#"> OCCASIONS <span class="caret"></span></a>
+					        <ul class="dropdown-menu">
+					        	<li><a href="#"> PROM </a></li>
+					            <li><a href="../gladys/schoolWomen.html"> SCHOOL</a></li>
+					            <li><a href="#"> BUSINESS </a></li>
+					        </ul>
+					</li>
+
+					<li class="dropdown">
+					    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> STYLES <span class="caret"></span></a>
+					        <ul class="dropdown-menu">
+					            <li><a href="../Xin jie/TomboyStyle.html">TOMBOY STYLE</a></li>
+								<li><a href="../Xin jie/ChicStyle.html">CHIC STYLE</a></li>
+								<li><a href="../Xin jie/CasualStyle.html">CASUAL STYLE</a></li>
+								<li><a href="../Xin jie/BohemianStyle.html">BOHEMIAN STYLE</a></li>
+					        </ul>
+					</li>
+
+					<li class="dropdown">
+					    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> HELP <span class="caret"></span></a>
+					        <ul class="dropdown-menu">
+					            <li><a href="../kai xun/FAQ.html"> FAQ </a></li>
+					            <li><a href="../kai xun/aboutUs.html"> ABOUT US </a></li>
+					            <li><a href="../kai xun/ContactUs.html"> CONTACT US </a></li>
+					            <li><a href="../kai xun/howToRent.html"> HOW TO RENT </a></li>
+					        </ul>
+					</li>
+				</ul>			
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<div class="dropdown dropdown-menu-left">
+							<button onclick="myFunction()" class="glyphicon glyphicon-search"></button>
+							<div id="myDropdown" class="dropdown-content scrollable-menu">
+								<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+								<p> QUICK LINKS </p>
+								<a href="#about">PROM</a>
+								<a href="../gladys/schoolWomen.html">SCHOOL</a>
+								<a href="#blog">BUSINESS</a>
+								<a href="../Xin jie/TomboyStyle.html">TOMBOY STYLE</a>
+								<a href="../Xin jie/ChicStyle.html">CHIC STYLE</a>
+								<a href="../Xin jie/CasualStyle.html">CASUAL STYLE</a>
+								<a href="../Xin jie/MyCollections.html">My Collection</a>
+								<a href="../kah chun/profile.html">My Profile</a>
+								<a href="../Xin jie/CurrentRentals.html">My Rentals</a>
+								<a href="../Xin jie/PastHistory.html">My Rent-out History</a>
+								<a href="../kai xun/FAQ.html">FAQ</a>
+								<a href="../gladys/termsncon.html">TERMS AND CONDITIONS</a>
+								<a href="../kai xun/ContactUs.html">CONTACT US</a>
+								<a href="../kai xun/aboutUs.html">ABOUT US</a>
+								<a href="../kai xun/howToRent.html">HOW TO RENT</a>
+							</div>
+						</div> 
+					</li>
+					<li><a href="../Kovan/chatRoom.html"><i class="glyphicon glyphicon-envelope"></i></a> </li>
+					<li><a href="../gladys/uploadImage.html"><i class="glyphicon glyphicon-upload"></i></a> </li>
+
+			        <li class="dropdown">
+			            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				            <span class="glyphicon glyphicon-user"></span> 
+				            <strong> Username </strong>
+			            </a>
+			            <ul class="dropdown-menu">
+			                <li>
+			                    <div class="navbar-login">
+			                        <div class="row">
+			                            <div class="col-lg-4">
+			                                <p class="text-center">
+			                                	<span class="glyphicon glyphicon-user icon-size"></span>
+			                                </p>
+			                            </div>
+			                            <div class="col-lg-8">
+			                                <p class="text-left"><strong> name </strong></p>
+			                                <p class="text-left small"> email </p>
+			                                <p class="text-left">
+			                                    <a href="../kah chun/profile.html" class="btn btn-primary btn-block btn-sm"> VIEW PROFILE </a>
+			                                </p>
+			                            </div>
+			                        </div>
+			                    </div>
+			                </li>
+			                <li class="divider"></li>
+			                <li>
+			                    <div class="navbar-login navbar-login-session">
+			                        <div class="row">
+			                            <div class="col-lg-12">
+			                                <p>
+			                                    <a class="btn btn-danger btn-block" onclick="logout()">LOG OUT</a>
+			                                </p>
+			                            </div>
+			                        </div>
+			                    </div>
+			                </li>
+			            </ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		</nav>
+	</header>
+
+	<center><h4>You searched for:</h4></center>
+	<center><h2><div>"Chic Style"</div></h2></center>
+
+	<ul class="gender">
+		<li> <a href="../Xin jie/ChicWomen.html" class="w3-bar-item w3-button w3-hover-none w3-hover-border-black tagging">WOMEN</a> </li>
+		<li> <a href="../Xin jie/ChicMen.html"  class="w3-bar-item w3-button w3-hover-none w3-hover-border-grey tagging">MEN</a> </li>
+	  	<li> <a href="../Xin jie/ChicUnisex.html"  class="w3-bar-item w3-button w3-hover-none w3-hover-border-light-grey tagging">UNISEX</a> </li>
+	</ul>
+	
+	<div class="container"> 
+		<hr>
+
+		<div class="row"> <!-- for drop down -->
+			<div class="col-sm-3">
+			</div>
+			<div class="col-sm-2">
+			<div class="dropdown">
+			    <button class="btn dropdown-toggle labels" type="button" data-toggle="dropdown">Colour
+			    <span class="caret"></span></button>
+			    <ul class="dropdown-menu">
+			      <li><a href="#">Black</a></li>
+			      <li><a href="#">Denim</a></li>
+			      <li><a href="#">Gold</a></li>
+			      <li><a href="#">Maroon</a></li>
+			      <li><a href="#">White</a></li>
+			      <li><a href="#">Red</a></li>
+			      <li><a href="#">Yellow</a></li>
+			    </ul>
+			  </div>
+			</div>
+
+			<div class="col-sm-2">
+			<div class="dropdown">
+			    <button class="btn dropdown-toggle labels" type="button" data-toggle="dropdown">Material
+			    <span class="caret"></span></button>
+			    <ul class="dropdown-menu">
+			      <li><a href="#">Cotton</a></li>
+			      <li><a href="#">Silk</a></li>
+			      <li><a href="#">Polyester</a></li>
+			      <li><a href="#">Dry-Fit</a></li>
+			    </ul>
+			  </div>
+			</div>
+
+			<div class="col-sm-2">
+			<div class="dropdown">
+			    <button class="btn dropdown-toggle labels" type="button" data-toggle="dropdown">Size
+			    <span class="caret"></span></button>
+			    <ul class="dropdown-menu">
+			      <li><a href="#">XS</a></li>
+			      <li><a href="#">S</a></li>
+			      <li><a href="#">M</a></li>
+			      <li><a href="#">L</a></li>
+				  <li><a href="#">XL</a></li>
+			    </ul>
+			  </div>
+			</div>
+			<div class="col-sm-3">
+			</div>
+		</div>
+
+
+		<div class="row"> <!-- first row -->
+			<div class="col-sm-4">
+				<div class="w3-display-container">
+					<img src="../images/cw1.jpg" style="width:100%" height="550px" width="500px">
+		        	<div class="w3-display-middle w3-display-hover"> <i class="fa fa-shopping-cart"></i></button>
+			        </div>
+			    </div>
+	        	<p><img src="../images/heart1.png" width="30px" height="30px";>&nbsp;Ripped Skinny Jeans<br><b>$24.99</b></p>
+			</div>
+	
+			<div class="col-sm-4">
+				<div class="w3-display-container">
+					<img src="../images/cw2.jpg" style="width:100%" height="550px" width="500px">
+		        	<div class="w3-display-middle w3-display-hover">
+		        	 	<button class="w3-button w3-red">Buy now</button>
+			        </div>
+			    </div>
+	        	<p><img src="../images/heart1.png" width="30px" height="30px";>&nbsp;Ripped Skinny Jeans<br><b>$24.99</b></p>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="w3-display-container">
+					<img src="../images/cw3.jpg" style="width:100%" height="550px" width="500px">
+					<span class="w3-tag w3-display-topleft">New</span>
+		        	<div class="w3-display-middle w3-display-hover">
+		        	 	<button class="w3-button w3-red">Buy now</button>
+			        </div>
+			    </div>
+		        <p><img src="../images/heart1.png" width="30px" height="30px";>&nbsp;Ripped Skinny Jeans<br><b>$24.99</b></p>
+			</div>
+		</div>
+
+		<div class="row"> <!-- second row -->
+			<div class="col-sm-4">
+				<div class="w3-display-container">
+				<img src="../images/cw4.jpg" class="size" style="width:100%" height="550px" width="500px";>
+			        <div class="w3-display-middle w3-display-hover">
+		        	 	<button class="w3-button w3-red">Buy now</button>
+			        </div>
+	    		</div>
+	        	<p><img src="../images/heart1.png" width="30px" height="30px";>&nbsp;Mega Ripped Jeans<br><b>$19.99</b></p>
+	    	</div> 
+
+	    	<div class="col-sm-4">
+	    		<div class="w3-display-container">
+				<img src="../images/cw5.jpg" style="width:100%" height="550px" width="500px";>
+				<span class="w3-tag w3-display-topleft">Sale</span>
+			        <div class="w3-display-middle w3-display-hover">
+		        	 	<button class="w3-button w3-red">Buy now</button>
+			        </div>
+		    	</div>
+		        <p><img src="../images/heart1.png" width="30px" height="30px";>&nbsp;Mega Ripped Jeans<br><b>$19.99</b></p>
+	    	</div> 
+
+	    	<div class="col-sm-4">
+	    		<div class="w3-display-container">
+				<img src="../images/cw6.jpg" style="width:100%" height="550px" width="500px";>
+			        <div class="w3-display-middle w3-display-hover">
+		        	 	<button class="w3-button w3-red">Buy now</button>
+			        </div>
+	    		</div>
+	        	<p><img src="../images/heart1.png" width="30px" height="30px";>&nbsp;Mega Ripped Jeans<br><b>$19.99</b></p>
+	    	</div> 
+		</div>
+	</div>
+
+	<div class="container-full"> <!--footer -->
+	    <footer class="footer-bs">
+	        <div class="row">
+	            <div class="col-md-3 footer-nav">
+	                <ul class="list">
+	                    <h4>HELP &amp; INFORMATION</h4>
+						<li><a href="../kai xun/FAQ.html">FAQ</a></li>
+						<li><a href="../kai xun/ContactUs.html">Contact Us</a></li>
+						<li><a href="../kai xun/aboutUs.html">About Us</a></li>
+						<li><a href="../kai xun/howToRent.html">How to Rent</a></li>
+	            
+	                </ul>
+	            </div>
+
+	            <div class="col-md-2 footer-nav">
+	                <ul class="list">
+	                    <h4>for you</h4>
+						<li><a href="../kah chun/profile.html">My Profile</a></li>
+                        <li><a href="../Xin jie/MyCollections.html">My Collection</a></li>
+                        <li><a href="../Xin jie/CurrentRentals.html">My Rentals </a></li>
+                        <li><a href="../Xin jie/PastHistory.html">My Rent-Out History</a></li>
+	                </ul>
+	            </div>
+
+	        	<div class="col-md-3 footer-brand">
+	            	<img src="../images/footerLogo.png" alt="footer-logo" id="footer-logo"/>
+	            	<ul class="list">
+	            		<li> <a href="../gladys/termsncon.html">TERMS &amp; CONDITIONS </a> </li>
+	            	</ul>
+	            </div>
+
+	        	<div class="col-md-4 footer-social">
+	            	<h4>FOLLOW US</h4>
+	            	<a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+					<a href="https://twitter.com/?lang=en" class="fa fa-twitter"></a>
+					<a href="https://www.instagram.com/fashare2c/?hl=en" class="fa fa-instagram"></a>
+					
+	             
+	            </div>
+	        	
+	        </div>
+	    </footer>
+	</div>
+
+	<script>
+	/* When the user clicks on the button,
+	toggle between hiding and showing the dropdown content */
+	function myFunction() {
+	    document.getElementById("myDropdown").classList.toggle("show");
+	}
+
+	function filterFunction() {
+	    var input, filter, ul, li, a, i;
+	    input = document.getElementById("myInput");
+	    filter = input.value.toUpperCase();
+	    div = document.getElementById("myDropdown");
+	    a = div.getElementsByTagName("a");
+	    for (i = 0; i < a.length; i++) {
+	        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+	            a[i].style.display = "";
+	        } else {
+	            a[i].style.display = "none";
+	        }
+	    }
+	}
+	
+	function logout(){
+	  firebase.auth().signOut().then(function() {
+	  // Sign-out successful.
+	   window.location.href="../kah chun/login.html";
+	}).catch(function(error) {
+	  // An error happened.
+	});
+}
+	</script>
+
+
+</body>
+</html>

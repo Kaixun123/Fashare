@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+	<html lang = "en">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-wdith, initial-scale=1">
+			<!-- Latest compiled and minified CSS -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+			<!-- Optional theme -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	
+			<!-- Latest compiled and minified JavaScript -->
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<link rel="stylesheet" href="../css/trending.css">
+
+			<title>Fashare - Trending</title>
+
+	</head>
+	
+	<body>
+		<header>
+			<nav class="navbar navbar-default">
+			<div class="container-fluid">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>                       
+			      </button>
+			      <a class="navbar-brand active" href="../kai xun/home.html"> <img id="logo" src="../images/fashare.png"> </a>
+			    </div>
+
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-center">
+							<li><a href="#"> TRENDING </a></li>
+					        <li class="dropdown">
+					          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> OCCASIONS <span class="caret"></span></a>
+					          <ul class="dropdown-menu">
+					            <li><a href="#"> PROM </a></li>
+					            <li><a href="../gladys/schoolWomen.html"> SCHOOL</a></li>
+					            <li><a href="#"> BUSINESS </a></li>
+					          </ul>
+					        </li>
+
+					        
+					<li class="dropdown">
+					    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> STYLES <span class="caret"></span></a>
+					        <ul class="dropdown-menu">
+					            <li><a href="../Xin jie/TomboyStyle.html">TOMBOY STYLE</a></li>
+					            <li><a href="../Xin jie/ChicStyle.html">CHIC STYLE</a></li>
+					            <li><a href="../Xin jie/CasualStyle.html">CASUAL STYLE</a></li>
+					            <li><a href="../Xin jie/BohemianStyle.html">BOHEMIAN STYLE</a></li>
+					        </ul>
+					</li>
+
+					        <li class="dropdown">
+					          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> HELP <span class="caret"></span></a>
+					          <ul class="dropdown-menu">
+					            <li><a href="../kai xun/FAQ.html"> FAQ </a></li>
+					            <li><a href="../kai xun/aboutUs.html"> ABOUT US </a></li>
+					            <li><a href="../kai xun/contactUs.html"> CONTACT US </a></li>
+					            <li><a href="../kai xun/howToRent.html"> HOW TO RENT </a></li>
+					          </ul>
+					        </li>
+				</ul>
+			
+				
+						<ul class="nav navbar-nav navbar-right">
+								<li>
+									<div class="dropdown dropdown-menu-left">
+										<button onclick="myFunction()" class="glyphicon glyphicon-search"></button>
+										<div id="myDropdown" class="dropdown-content scrollable-menu">
+											<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+											<p> QUICK LINKS </p>
+											<a href="#about">PROM</a>
+											<a href="../gladys/schoolWomen.html">SCHOOL</a>
+											<a href="#blog">BUSINESS</a>
+											<a href="../Xin jie/TomboyStyle.html">TOMBOY STYLE</a>
+											<a href="../Xin jie/ChicStyle.html">CHIC STYLE</a>
+											<a href="../Xin jie/CasualStyle.html">CASUAL STYLE</a>
+											<a href="../Xin jie/MyCollections.html">My Collection</a>
+											<a href="../kah chun/profile.html">My Profile</a>
+											<a href="../Xin jie/MyRentals.html">My Rentals</a>
+											<a href="../Xin jie/PastHistory.html">My Rent-out History</a>
+											<a href="../kai xun/FAQ.html">FAQ</a>
+											<a href="../gladys/termsncon.html">TERMS AND CONDITIONS</a>
+											<a href="../kai xun/ContactUs.html">CONTACT US</a>
+											<a href="../kai xun/aboutUs.html">ABOUT US</a>
+											<a href="../kai xun/howToRent.html">HOW TO RENT</a>
+										</div>
+									</div> 
+								</li>
+							    <li><a href="../Kovan/chatRoom.html"><i class="glyphicon glyphicon-envelope"></i></a> </li>
+							    <li><a href="../gladys/uploadImage.html"><i class="glyphicon glyphicon-upload"></i></a> </li>
+
+
+			                <li class="dropdown">
+			                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			                        <span class="glyphicon glyphicon-user"></span> 
+			                        <strong> Username </strong>
+			                    </a>
+								
+			                    <ul class="dropdown-menu">
+			                        <li>
+			                            <div class="navbar-login">
+			                                <div class="row">
+			                                    <div class="col-lg-4">
+			                                        <p class="text-center">
+			                                            <span class="glyphicon glyphicon-user icon-size"></span>
+			                                        </p>
+			                                    </div>
+			                                    <div class="col-lg-8">
+			                                        <p class="text-left"><strong> name </strong></p>
+			                                        <p class="text-left small"> email </p>
+			                                        <p class="text-left">
+			                                            <a href="../kah chun/profile.html" class="btn btn-primary btn-block btn-sm"> VIEW PROFILE </a>
+			                                        </p>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </li>
+			                        <li class="divider"></li>
+			                        <li>
+			                            <div class="navbar-login navbar-login-session">
+			                                <div class="row">
+			                                    <div class="col-lg-12">
+			                                        <p>
+			                                            <a class="btn btn-danger btn-block" onclicl="logout()">LOG OUT</a>
+			                                        </p>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </li>
+			                    </ul>
+							</li>
+						</ul>
+					</div>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+			<div class="container">
+				<Strong class = "title">Trending</Strong>
+				<p class ="des">The most popular posts</p>
+				<br/>
+				
+				<div class="container-fluid" id ="contentHolder">
+				<div class="row justify-content-around">
+				<div class="col-md-9">
+					<div class="z">
+						<div class="r1">
+							<p class = "caption">Jacket fever</p>
+							<a class= "profile" href="#">@fionateo</a>
+							<br/>
+							<br/>
+							<div class="container">
+								<input type="image" src="../images/post(12).jpg" class="post" id="P1"/>
+								<br/>
+								<br/>
+								<button type="button" id="tooltip" class="glyphicon glyphicon-plus" onclick="savePost(1)">
+									<span class="tooltiptext">Add to collection</span>
+								</button>
+									<div class="overlay">
+										<div class="text">
+										<img src="../images/profile(6).jpeg" alt="profile" class="profileImage"/> &nbsp; <span class="name">Fiona Teo</span>
+										<br/>
+											Date joined: 12 jan 2018<br/>
+														Post(s): 56<br/>
+												<a href="#">View More</a>
+										</div>
+									</div>
+								</div>
+								<br/>
+							<p class ="description">I love jackets!!They keep you warm and they look cool.Here is one the many jackets I wear to school....<a href="#">read more</a></p>
+						</div>
+					</div>
+				</div>	
+				<div class="col-md-3">
+					<div class="r2">
+						<table style="margin-top: 90px;">
+							<tr><td> &nbsp;</td></tr>
+							<tr>
+								<td> Fiona Teo
+								<form class="form-vertical">
+								
+									<input type="text" class="ID" id="F1" name="userID" value="fionateo" disabled />
+									&nbsp;
+									<input type="button" id="f1" class="btn btn-default" value="follow" onclick="replaceButtonText('f1', 'following');saveToDB(1)"/>
+								</form>
+								</td>
+							</tr>
+							<tr><td colspan=2>Popular post:</td></tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr>
+								<td><img src="../images/post(14).jpeg"/></td>
+							</tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr>
+								<td><img src="../images/post(16).jpeg"/></td>
+							</tr>
+							<tr><td> &nbsp;</td></tr>
+						</table>
+					</div>
+				</div>
+				</div>	
+				<br/>
+				<hr/>
+			</div>
+			
+				
+				<div class="container-fluid" id ="contentHolder">
+				<div class="row justify-content-around">
+				<div class="col-md-9">
+					<div class="z">
+						<div class="r1">
+							<p class = "caption">Formal Wear</p>
+							<a class= "profile" href="#">@jasonChua</a>
+							<br/>
+							<br/>
+							<div class="container">
+								<input type="image" src="../images/post(17).jpeg" class="post" id="P2"/>
+								<br/><br/>
+								<button type="button" id="tooltip" class="glyphicon glyphicon-plus" onclick="savePost(2)">
+									<span class="tooltiptext">Add to collection</span>
+								</button>
+								
+									<div class="overlay">
+										<div class="text">
+										<img src="../images/profile(3).jpeg" alt="profile" class="profileImage"/> &nbsp; <span class="name">Jason Chua</span>
+											<br/>
+											Date joined: 26 jan 2018<br/>
+														Post(s): 36<br/>
+												<a href="#">View More</a>
+										</div>
+									</div>
+							</div>
+							<br/>
+							<p class ="description">I love jackets!!They keep you warm and they look cool.Here is one the many jackets I wear to school....<a href="#">read more</a></p>
+						</div>
+					</div>
+				</div>	
+				
+				<div class="col-md-3">
+					<div class="r2">
+						<table style="margin-top: 90px;">
+							<tr><td> &nbsp;</td></tr>
+							<tr>
+								<td> Jason Chua
+								<form class="form-vertical">
+								
+									<input type="text" class="ID" id="F2" name="userID" value="jasonChua" disabled />
+									&nbsp;
+									<input type="button" id="f2" class="btn btn-default" value="follow" onclick="replaceButtonText('f2', 'following');saveToDB(2)"/>
+								</form>
+							
+								</td>
+							</tr>
+							<tr><td colspan=2>Popular post:</td></tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr>
+								<td><img src="../images/post(4).jpg"/></td>
+							</tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr>
+								<td><img src="../images/post(6).jpg"/></td>
+							</tr>
+							<tr><td> &nbsp;</td></tr>
+						</table>
+					</div>
+				</div>
+				</div>	
+				<br/>
+				<hr/>
+			</div>
+			
+			
+			<div class="container-fluid" id ="contentHolder">
+				<div class="row justify-content-around">
+				<div class="col-md-9">
+					<div class="z">
+						<div class="r1">
+							<p class = "caption">Causal Wear</p>
+							<a class= "profile" href="#">@amandatoh34</a>
+							<br/>
+							<br/>
+							<div class="container">
+								<input type="image" src="../images/post(18).jpeg" class="post" id="P3" />
+								<br/><br/>
+								<button type="button" id="tooltip" class="glyphicon glyphicon-plus" onclick="savePost(3)">
+									<span class="tooltiptext">Add to collection</span>
+								</button>	
+									
+									<div class="overlay">
+										<div class="text">
+										<img src="../images/profile(7).jpeg" alt="profile" class="profileImage"/> &nbsp; <span class="name">Amanda Toh</span>
+											<br/>
+											Date joined: 21 dec 2017<br/>
+														Post(s): 14<br/>			
+												<a href="#">View More</a>
+										</div>
+									</div>
+								</div>
+							<br/>
+							<p class ="description">Hi!! I am renting some clothes that I don't really wear anymore.... <a href="#">read more</a></p>
+						</div>
+					</div>
+				</div>	
+				
+				<div class="col-md-3">
+					<div class="r2">
+						<table style="margin-top: 90px;">
+							<tr><td> &nbsp;</td></tr>
+							<tr>
+								<td> Amanda Toh
+								<form class="form-vertical">
+								
+									<input type="text" class="ID" id="F3" name="userID" value="amandatoh" disabled />
+									&nbsp;
+									<input type="button" id="f3" class="btn btn-default" value="follow" onclick="replaceButtonText('f3', 'following'); saveToDB(3)"/>
+								</form>
+							
+								</td>
+							</tr>
+							<tr><td colspan=2>Popular post:</td></tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr>
+								<td><img src="../images/post(20).jpeg"/></td>
+							</tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr>
+								<td><img src="../images/post(19).jpeg"/></td>
+							</tr>
+							<tr><td> &nbsp;</td></tr>
+						</table>
+					</div>
+				</div>
+				</div>	
+				<br/>
+				<hr/>
+			</div>
+			
+			
+			<div class="container-fluid" id ="contentHolder">
+				<div class="row justify-content-around">
+				<div class="col-md-9">
+					<div class="z">
+						<div class="r1">
+							<p class = "caption">Shoes</p>
+							<a class= "profile" href="#">@ryuubi</a>
+							<br/>
+							<br/>
+							<div class="container">
+								<input type="image" src="../images/post(21).jpg" class="post" id="P4"/>
+								<br/><br/>
+								<button type="button" id="tooltip" class="glyphicon glyphicon-plus" onclick="savePost(4)" >
+									<span class="tooltiptext">Add to collection</span>
+								</button>
+								
+									<div class="overlay">
+										<div class="text">
+										<img src="../images/profile(8).jpeg" alt="profile" class="profileImage"/> &nbsp; <span class="name">Jeremy Koh</span>
+											<br/>
+													Date joined: 21 aug 2017<br/>
+																 Post(s): 23<br/>
+														<a href="#">View More</a>
+										</div>
+									</div>
+							</div>
+							
+							<br/>
+							<p class ="description">Here are some shoes I wear almost everday of the week.... <a href="#">read more</a></p>
+						</div>
+					</div>
+				</div>	
+				
+				<div class="col-md-3">
+					<div class="r2">
+						<table style="margin-top: 90px;">
+							<tr><td> &nbsp;</td></tr>
+							<tr>
+								<td>Jeremy Koh
+								<form class="form-vertical" >
+								
+									<input type="text" class="ID" id="F4" name="userID" value="ryuubi" disabled />
+									&nbsp;
+									<input type="button" id="f4" class="btn btn-default" value="follow" onclick="replaceButtonText('f4', 'following'); saveToDB(4)"/>
+							
+								</td>
+							</tr>
+							<tr><td colspan=2>Popular post:</td></tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr>
+								<td><img src="../images/post(22).jpg"/></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr><td> &nbsp;</td></tr>
+						</table>
+					</div>
+				</div>
+				</div>	
+				<br/>
+				<hr/>
+			</div>
+			
+			</div>
+			
+			
+				<div class="container-full"> <!--footer -->
+					<footer class="footer-bs">
+						<div class="row">
+							<div class="col-md-3 footer-nav">
+								<ul class="list">
+									<h4>HELP &amp; INFORMATION</h4>
+
+									<li><a href="../kai xun/FAQ.html">FAQ</a></li>
+									<li><a href="../kai xun/ContactUs.html">Contact Us</a></li>
+									<li><a href="../kai xun/aboutUs.html">About Us</a></li>
+									<li><a href="../kai xun/howToRent.html">How to Rent</a></li>
+								</ul>
+							</div>
+
+							<div class="col-md-2 footer-nav">
+								<ul class="list">
+									<h4>for you</h4>
+									<li><a href="../kah chun/profile.html">My Profile</a></li>
+									<li><a href="../Xin jie/MyCollections.html">My Collections</a></li>
+									<li><a href="../Xin jie/MyRentals.html">My Rentals </a></li>
+									<li><a href="../Xin jie/PastHistory.html">My Rent-Out History</a></li>
+								</ul>
+							</div>
+
+							<div class="col-md-3 footer-brand">
+								<img src="../images/footerLogo.png" alt="footer-logo" id="footer-logo"/>
+								<ul class="list">
+									<li> <a href="../gladys/termsncon.html">TERMS &amp; CONDITIONS </a> </li>
+								</ul>
+							</div>
+
+							<div class="col-md-4 footer-social">
+								<h4>FOLLOW US</h4>
+								
+								<a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+								<a href="https://twitter.com/?lang=en" class="fa fa-twitter"></a>
+								<a href="https://www.instagram.com/fashare2c/?hl=en" class="fa fa-instagram"></a>
+							 
+							</div>
+							
+						</div>
+					</footer>
+				</div>
+				
+		
+			
+			
+			<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>		
+			<script>
+			
+				var config = {
+						apiKey: "AIzaSyA9W19h4_1tpp4KSL0M99M8SOUuN7c2U3E",
+						authDomain: "fashare-2c.firebaseapp.com",
+						databaseURL: "https://fashare-2c.firebaseio.com",
+						projectId: "fashare-2c",
+						storageBucket: "fashare-2c.appspot.com",
+						messagingSenderId: "115707668738"
+					  };
+					  
+						firebase.initializeApp(config);
+						
+						
+			
+					function saveToDB(num){
+						var config = {
+							apiKey: "AIzaSyA9W19h4_1tpp4KSL0M99M8SOUuN7c2U3E",
+							authDomain: "fashare-2c.firebaseapp.com",
+							databaseURL: "https://fashare-2c.firebaseio.com",
+							projectId: "fashare-2c",
+							storageBucket: "fashare-2c.appspot.com",
+							messagingSenderId: "115707668738"
+						  };
+						  
+						if(firebase.apps.length === 0){
+							firebase.initializeApp(config);
+
+						}
+						
+						var userID = document.getElementById("F"+num).value;
+						
+								
+							var dbRef = firebase.database().ref().child('followers');
+					
+							var postData = {
+								userID: userID
+							};
+							
+								dbRef.push(postData);
+						}
+						
+				
+				function replaceButtonText(buttonId, text)
+				{
+				  if (document.getElementById)
+				  {
+					var button=document.getElementById(buttonId);
+					if (button)
+					{
+					  if (button.childNodes[0])
+					  {
+						button.childNodes[0].nodeValue=text;
+					  }
+					  else if (button.value)
+					  {
+						button.value=text;
+					  }
+					  else //if (button.innerHTML)
+					  {
+						button.innerHTML=text;
+					  }
+					}
+				  }
+				  document.getElementById(buttonId).disabled = true;
+				  
+				}
+				
+				
+				function savePost(num){
+				// Initialize Firebase
+				var config = {
+					apiKey: "AIzaSyCfTScNmYmg49NPyN-lxj-W-i3jOwiTfCA",
+					authDomain: "workshop-part2.firebaseapp.com",
+					databaseURL: "https://workshop-part2.firebaseio.com/",
+					projectId: "workshop-part2",
+					storageBucket: "workshop-part2.appspot.com",
+					messagingSenderId: "561089850714"
+				};
+			
+					if(firebase.apps.length === 0){
+						firebase.initializeApp(config);
+					}	
+					
+					var URL = document.getElementById("P" + num).src;
+					
+					var dbRef = firebase.database().ref().child('Collection');
+					
+					var postData = {
+						url: URL
+					};
+					
+						dbRef.push(postData);
+						window.alert("Added to collection!");	
+						console.log(URL.src)
+				}
+		</script>
+		
+		<script>
+		
+		/* When the user clicks on the button,
+		toggle between hiding and showing the dropdown content */
+		function myFunction() {
+			document.getElementById("myDropdown").classList.toggle("show");
+		}
+
+		function filterFunction() {
+			var input, filter, ul, li, a, i;
+			input = document.getElementById("myInput");
+			filter = input.value.toUpperCase();
+			div = document.getElementById("myDropdown");
+			a = div.getElementsByTagName("a");
+			for (i = 0; i < a.length; i++) {
+				if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+					a[i].style.display = "";
+				} else {
+					a[i].style.display = "none";
+				}
+			}
+		}
+		
+			function logout(){
+			  firebase.auth().signOut().then(function() {
+			  // Sign-out successful.
+			   window.location.href="../kah chun/login.html";
+			}).catch(function(error) {
+			  // An error happened.
+			});
+			}
+	
+	</script>
+	
+	</body>
+</html>

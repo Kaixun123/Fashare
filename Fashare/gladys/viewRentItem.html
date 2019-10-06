@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Item for Rent </title>
+   	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  	<link rel="stylesheet" href="../css/gladys.css"> 
+
+  	<style>
+
+  		#user{
+  			width:50px;
+  			height:50px;
+  			border: 1px solid black;
+  			border-radius:50%;
+  			text-align:center;
+  			padding-top:200%;
+
+  		}
+
+  		h3.owner-item{
+  			text-align:center;
+  			margin:0;
+  			font-size:15px;
+  			font-style:italic;
+  			padding-bottom:6%;
+  		}
+
+  		#item-image{
+  			width:100%;
+  		}
+
+  		.container {
+  			margin-top:4%;
+  		}
+
+  		div.col-sm-5.container{
+  			margin:0;
+  			width:50%;
+  		}
+
+
+  		h3.item-details{
+  			font-size:20px;
+  			font-weight: bold;
+  			text-align:center;
+  			color:#2e2e2e;
+
+  		}
+
+  		input.idetail, input.userD{
+  			background-color: transparent;
+  			border:0;
+  			text-align:center;
+  		}
+
+
+		.item-title{
+			background-color: #cecece;
+			text-align:center;
+			height:10%;
+			margin:5px;
+			padding:1%;
+		}
+
+		div.rent-detail{
+			margin:4%;
+			text-align:center;	
+		}
+
+		div.rent-detail h5{
+			margin-bottom:0%;
+			text-align:center;	
+			font-size:17px;
+		}
+
+		.rent-dates h5{
+			font-size:17px;
+		}
+		
+
+		.rent-dates span{
+			display:inline-block;
+			text-align:center;
+		}
+
+
+		div.rent-detail .idetail{
+			font-size:14px;
+			margin-top:0;
+			color:#848484;
+		}
+
+		span#to {
+			margin:20px;
+			font-size:23px;
+			font-weight:bold;
+		}
+
+		#txtDate{border:0; border:1px solid grey}
+
+		.glyphicon-calendar{;}
+
+		.tc{text-align:center; padding-top:3%;}
+
+		.done{
+			text-align:center;
+			margin-top:10%;
+		}
+
+		.item {
+		  border: 1px solid #333;
+		  overflow: hidden;
+
+		}
+
+		.item img {
+		  max-width: 100%;
+		  -moz-transition: all 0.3s;
+		  -webkit-transition: all 0.3s;
+		  transition: all 0.3s;
+		}
+
+		.item:hover img {
+		  -moz-transform: scale(2.1);
+		  -webkit-transform: scale(2.1);
+		  transform: scale(2.1);
+		}
+		
+
+	@media screen and (max-width: 767px){
+			div.col-sm-5.container{
+				margin:0 auto;
+				width:100%;
+			}
+	}
+		
+		.imageicon{
+			width:50px;
+			height:50px;
+			border:1px solid black;
+			padding:3px;
+			margin:5%;
+		}
+		
+		div.col-sm-1{
+			
+			padding-right:0;
+			padding-top:3%;
+		}
+
+		a#item1{
+			text-decoration: none;
+		}
+
+		#img_01:v {
+		   border:2px solid black;
+		}
+
+		#numdays2{
+			border:0;
+			color:black;
+			padding:9px 10px;
+		}
+
+		div.rent-dates{
+			padding:0;
+		}
+
+		div#numdays{
+			padding-bottom:0%;
+		}
+
+		div.done{
+			margin-top:3%;
+		}
+		
+		.dropbtn {
+				background-color: #4CAF50;
+				color: white;
+				padding: 16px;
+				font-size: 16px;
+				border: none;
+				cursor: pointer;
+			}
+
+			.dropbtn:hover, .dropbtn:focus {
+				background-color: #3e8e41;
+			}
+
+			#myInput {
+				border-box: box-sizing;
+				background-image: url('searchicon.png');
+				background-position: 3px 10px;
+				background-repeat: no-repeat;
+				background-position: left;
+				background-size: 40px;
+				font-size: 16px;
+				padding: 14px 15px 12px 45px;
+				border: none;
+				border-bottom: 1px solid #ddd;
+			}
+
+			#myInput:focus {outline: 3px solid #ddd;}
+
+		.dropdown {
+				position: relative;
+				display: inline-block;
+			}
+
+			.dropdown-content {
+				display: none;
+				position: absolute;
+				background-color: #f6f6f6;
+				min-width: 230px;
+				overflow: auto;
+				border: 1px solid #ddd;
+				z-index: 1;
+			}
+
+			.dropdown-content a {
+				color: black;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+			}
+
+			.dropdown a:hover {background-color: #ddd}
+
+			.show {display:block;}
+
+			.scrollable-menu{
+				height:auto;
+				max-height:275px;
+				overflow-x: hidden;
+				font-size:15px;
+			}
+
+			#myDropdown p {
+				padding-left: 20px;
+				font-size: 12px;
+				color:grey;
+				padding-top: 10px;
+				text-align: left;
+			}	
+
+			#myDropdown a {
+				padding-left: 20px;
+				font-size: 15px;
+				padding-top: 12px;
+				text-align: left;
+			}	
+			
+			ul.gender{
+				clear:both;
+				list-style: none;
+				text-align: center;
+				padding:0px;
+			}
+
+			ul.gender li {
+				display: inline;
+			}
+
+			ul.gender li.hover{
+				font-weight:bold;
+				background-color:grey;
+			}
+
+			hr{
+				clear:both;
+				border: 2px solid grey;
+				margin-top: -7px;
+			}
+			.dropdown {
+				margin-bottom:20px;
+				color: black;
+				text-align: center;
+			}
+
+			button.btn{
+				background-color: lightgrey;
+			}
+
+			button.labels {
+				padding-left: 20px;
+				width: 180px;
+				font-size: 15px;
+			}
+
+			.size {width:100%; 
+				   height:550px; 
+				   width:550px;}
+
+			li a.tagging {text-decoration: none; }
+
+			li a.tagging:hover {text-decoration: none;
+								border: 3px solid black;
+								}
+
+			.dropdown-toggle {position: relative;
+							  display: inline-block;}
+
+			.dropdown-menu {display: none;
+							position: absolute;
+							background-color: #f6f6f6;
+							min-width: 160px;
+							box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+							padding: 12px 16px;
+							z-index: 1;
+							}
+
+			.dropdown:hover .dropdown-menu {display: block;
+											}
+											
+
+  	</style>
+  	
+
+</head>
+
+<body onload="retreiveDB();">
+	<header> 
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>                       
+			      </button>
+			      <a class="navbar-brand active" href="../kai xun/home.html"> <img id="logo" src="../images/fashare.png"> </a>
+			    </div>
+
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-center">
+							<li><a href="../kai xun/trending.html"> TRENDING </a></li>
+					        <li class="dropdown">
+					          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> OCCASIONS <span class="caret"></span></a>
+					          <ul class="dropdown-menu">
+					            <li><a href="#"> PROM </a></li>
+					            <li><a href="../gladys/schoolWomen.html"> SCHOOL</a></li>
+					            <li><a href="#"> BUSINESS </a></li>
+					          </ul>
+					        </li>
+
+					        <li class="dropdown">
+					          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> STYLES <span class="caret"></span></a>
+					          <ul class="dropdown-menu">
+									<li><a href="../Xin jie/TomboyStyle.html">TOMBOY STYLE</a></li>
+									<li><a href="../Xin jie/ChicStyle.html">CHIC STYLE</a></li>
+									<li><a href="../Xin jie/CasualStyle.html">CASUAL STYLE</a></li>
+									<li><a href="../Xin jie/BohemianStyle.html">BOHEMIAN STYLE</a></li>
+					          </ul>
+					        </li>
+
+					        <li class="dropdown">
+					          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> HELP <span class="caret"></span></a>
+					          <ul class="dropdown-menu">
+								<li><a href="../kai xun/FAQ.html"> FAQ </a></li>
+					            <li><a href="../kai xun/aboutUs.html"> ABOUT US </a></li>
+					            <li><a href="../kai xun/contactUs.html"> CONTACT US </a></li>
+					            <li><a href="../kai xun/howToRent.html"> HOW TO RENT </a></li>
+					          </ul>
+					        </li>
+				</ul>
+			
+				
+						<ul class="nav navbar-nav navbar-right">
+								<li>
+									<div class="dropdown dropdown-menu-left">
+										<button onclick="myFunction()" class="glyphicon glyphicon-search"></button>
+										<div id="myDropdown" class="dropdown-content scrollable-menu">
+											<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+											<p> QUICK LINKS </p>
+											<a href="#about">PROM</a>
+											<a href="../gladys/schoolWomen.html">SCHOOL</a>
+											<a href="#blog">BUSINESS</a>
+											<a href="../Xin jie/TomboyStyle.html">TOMBOY STYLE</a>
+											<a href="../Xin jie/ChicStyle.html">CHIC STYLE</a>
+											<a href="../Xin jie/CasualStyle.html">CASUAL STYLE</a>
+											<a href="../Xin jie/MyCollections.html">My Collection</a>
+											<a href="../kah chun/profile.html">My Profile</a>
+											<a href="../Xin jie/MyRentals.html">My Rentals</a>
+											<a href="../Xin jie/PastHistory.html">My Rent-out History</a>
+											<a href="../kai xun/FAQ.html">FAQ</a>
+											<a href="../gladys/termsncon.html">TERMS AND CONDITIONS</a>
+											<a href="../kai xun/ContactUs.html">CONTACT US</a>
+											<a href="../kai xun/aboutUs.html">ABOUT US</a>
+											<a href="../kai xun/howToRent.html">HOW TO RENT</a>
+										</div>
+									</div> 
+								</li>
+							    <li><a href="../Kovan/chatRoom.html"><i class="glyphicon glyphicon-envelope"></i></a> </li>
+							    <li><a href="../gladys/uploadImage.html"><i class="glyphicon glyphicon-upload"></i></a> </li>
+
+
+			                <li class="dropdown">
+			                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			                        <span class="glyphicon glyphicon-user"></span> 
+			                        <strong> Username </strong>
+			                       
+			                    </a>
+			                    <ul class="dropdown-menu">
+			                        <li>
+			                            <div class="navbar-login">
+			                                <div class="row">
+			                                    <div class="col-lg-4">
+			                                        <p class="text-center">
+			                                            <span class="glyphicon glyphicon-user icon-size"></span>
+			                                        </p>
+			                                    </div>
+			                                    <div class="col-lg-8">
+			                                        <p class="text-left"> <strong> name </strong></p>
+			                                        <p class="text-left small"> email </p>
+			                                        <p class="text-left">
+			                                            <a href="../kah chun/profile.html" class="btn btn-primary btn-block btn-sm"> VIEW PROFILE </a>
+			                                        </p>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </li>
+			                        <li class="divider"></li>
+			                        <li>
+			                            <div class="navbar-login navbar-login-session">
+			                                <div class="row">
+			                                    <div class="col-lg-12">
+			                                        <p>
+			                                            <a class="btn btn-danger btn-block" onclick="logout()">LOG OUT</a>
+			                                        </p>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </li>
+			                    </ul>
+							</li>
+						</ul>
+					</div>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+<div class="container">
+
+<div class="col-sm-1"></div>
+<div class="col-sm-1"> 
+	
+
+</div> <!-- for image icons -->
+
+<div class="col-sm-3">
+		<h3 class="owner-item"> Alisha Tan </h3>
+		<div class="item">
+			<img id="img_01" src="" class="forImage" id="item-image"/>
+		</div>
+		<h3 class="item-details"> ITEM DETAILS </h3>
+		<p> <input type="text" id="details" readonly="readonly" class="idetail" width="100%" height="100%"/> </p>
+</div>
+
+<div class="col-sm-1"></div>
+
+<div class="col-sm-5 container">
+	<h3 class="item-title"> <input type="text" id="ititle" readonly="readonly" class="userD"/> </h3>
+
+	<div class="rent-detail">
+		<h5> BRAND OF ITEM</h5>
+		<input type="text" id="brand" readonly="readonly" class="idetail"/>
+	</div>
+	<div class="rent-detail">
+		<h5> SIZE </h5>
+		<input type="text" id="size" readonly="readonly" class="idetail"/>
+	</div>
+	<div class="rent-detail">
+		<h5> COLOUR </h5>
+		<input type="text" id="icolour" readonly="readonly" class="idetail"/>
+	</div>
+	<div class="rent-detail">
+		<h5> MAXIMUM DURATION OF RENTAL </h5>
+		<input type="text" id="maxrent" readonly="readonly" class="idetail"/>
+	</div>
+	<div class="rent-detail">
+		<h5> PRICE OF RENTAL PER DAY</h5>
+		<input type="text" id="pricerent" readonly="readonly" class="idetail"/>
+	</div>
+	<div class="rent-detail">
+		<h5> CONDITION OF ITEM </h5>
+		<input type="text" id="icondition" readonly="readonly" class="idetail"/>
+	</div>
+
+	<form action="confirmRental.html" onsubmit="saveToDB()">
+		<div class="rent-dates text-center">
+			<span>
+				<h5> DATE OF RENT </h5>
+				<label> 
+					<input type="date" id="rent_date" name="rentDate" onchange="cal()"/><span class="glyphicon glyphicon-calendar"></span>
+				</label>
+			</span>
+
+			<span id="to">
+				TO 
+			</span>
+
+			<span>
+				<h5> DATE OF RETURN </h5>
+				<label> 
+					<input type="date" id="return_date" name="returnDate" onchange="cal()"/><span class="glyphicon glyphicon-calendar"></span>
+				</label>
+			</span>
+			<div id="numdays"><label class="form">Number of days:</label><input type="text" class="textbox" id="numdays2" name="numdays" readonly="readonly" onchange="max()"/></div>
+		</div>
+		<div class="tc"> 
+			<input type="checkbox" required id="check"> I agree to the <a href="termsncon.html"> renting terms and conditions </a>
+		</div>
+	
+
+	<div class="done">
+		<input type="submit" value="SUBMIT" class="submitButton"><a href="#" class="cancel" onclick="CancelUpload()"> BACK </a>
+	</div>
+</form>
+</div>
+
+
+<div class="col-sm-1"></div>
+
+</div>
+
+
+
+<div class="container-full">
+    <!----------- Footer ------------>
+    <footer class="footer-bs">
+        <div class="row">
+            	<div class="col-md-3 footer-nav">
+                    <ul class="list">
+                    	<h4>HELP &amp; INFORMATION</h4>
+						<li><a href="../kai xun/FAQ.html">FAQ</a></li>
+	                    <li><a href="../kai xun/ContactUs.html">Contact Us</a></li>
+	                    <li><a href="../kai xun/aboutUs.html">About Us</a></li>
+	                    <li><a href="../kai xun/howToRent.html">How to Rent</a></li>
+                    </ul>
+                </div>
+
+            	<div class="col-md-2 footer-nav">
+                    <ul class="list">
+                    	<h4>for you</h4>
+                        <li><a href="../kah chun/profile.html">My Profile</a></li>
+	                    <li><a href="../Xin jie/MyCollections.html">My Collections</a></li>
+	                    <li><a href="../Xin jie/MyRentals.html">My Rentals </a></li>
+	                    <li><a href="../Xin jie/PastHistory.html">My Rent-Out History</a></li>
+                    </ul>
+                </div>
+
+        	<div class="col-md-3 footer-brand">
+            	<img src="footerLogo.png" alt="footer-logo" id="footer-logo"/>
+            	<ul class="list">
+            		<li> <a href="../gladys/termsncon.html">TERMS &amp; CONDITIONS </a> </li>
+            	</ul>
+            </div>
+
+        	<div class="col-md-4 footer-social">
+            	<h4>FOLLOW US</h4>
+            	
+                <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+	               	<a href="https://twitter.com/?lang=en" class="fa fa-twitter"></a>
+	                <a href="https://www.instagram.com/fashare2c/?hl=en" class="fa fa-instagram"></a>
+             
+            </div>
+        	
+        </div>
+    </footer>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script>
+	var config = {
+		apiKey: "AIzaSyA9W19h4_1tpp4KSL0M99M8SOUuN7c2U3E",
+		authDomain: "fashare-2c.firebaseapp.com",
+		databaseURL: "https://fashare-2c.firebaseio.com",
+		projectId: "fashare-2c",
+		storageBucket: "fashare-2c.appspot.com",
+		messagingSenderId: "115707668738"
+			  };
+		firebase.initializeApp(config);
+  		
+</script>
+<script>
+	
+		var item1 = localStorage.getItem("item1");
+		var item2 = localStorage.getItem('item2');
+		var item3 = localStorage.getItem('item3');
+
+	function retreiveDB(){
+		var dbRef=firebase.database().ref().child('OutfitDetails');
+		dbRef.once('value', function(snapshot){
+			snapshot.forEach(function(childSnapshot){
+				var childData = childSnapshot.val();
+
+					if(item1 == childData.rentals.rName1){
+						document.getElementById("ititle").value=childData.rentals.rName1;
+						document.getElementById("brand").value=childData.rentals.rBrand1;
+					}
+					else if(item2 == childData.rentals.rName2){
+						document.getElementById("ititle").value=childData.rentals.rName2;
+						document.getElementById("brand").value=childData.rentals.rBrand2;
+					}
+					else if(item3 == childData.rentals.rName3){
+						document.getElementById("ititle").value=childData.rentals.rName3;
+						document.getElementById("brand").value=childData.rentals.rBrand3;
+						console.log(childData);
+					}
+					
+			});
+		});
+
+		var rentdb=firebase.database().ref().child('OutfitDetails/rentItems');
+		rentdb.once('value', function(snapshot){
+			snapshot.forEach(function(childSnapshot){
+				var rentData = childSnapshot.val();
+					 //if(item1 == rentData.rentItem){
+						document.getElementById("size").value=rentData.rentSize;
+						document.getElementById("icolour").value=rentData.rentColor;
+						document.getElementById("maxrent").value=rentData.rentDay;
+						document.getElementById("pricerent").value=rentData.rentPrice;
+						document.getElementById("icondition").value=rentData.rentCondition;
+						document.getElementById("details").value=rentData.rentDetails;
+						document.getElementById("img_01").src=rentData.rentURL;
+					//}
+					/*else if(item2 == rentData.rentItem){
+						document.getElementById("size").value=rentData.rentSize2;
+						document.getElementById("icolour").value=rentData.rentColor2;
+						document.getElementById("maxrent").value=rentData.rentDay2;
+						document.getElementById("pricerent").value=rentData.rentPrice2;
+						document.getElementById("icondition").value=rentData.rentCondition2;
+						document.getElementById("details").value=rentData.rentDetails2;
+						document.getElementById("img_01").src=rentData.rentURL2;
+					}
+					else if(item3 == rentData.rentItem){
+						document.getElementById("size").value=rentData.rentSize3;
+						document.getElementById("icolour").value=rentData.rentColor3;
+						document.getElementById("maxrent").value=rentData.rentDay3;
+						document.getElementById("pricerent").value=rentData.rentPrice3;
+						document.getElementById("icondition").value=rentData.rentCondition3;
+						document.getElementById("details").value=rentData.rentDetails3;
+						document.getElementById("img_01").src=rentData.rentURL3;
+						
+					} else{
+						alert("nope");
+					}*/
+
+				console.log(rentData);
+			});
+		});
+		
+	}
+
+	function saveToDB(){
+
+		var returnDate=document.getElementById("return_date").value;
+		var rentDate=document.getElementById("rent_date").value;
+		var rentName = document.getElementById("ititle").value;
+		var rentDays = document.getElementById("numdays2").value;
+		var rentPrice = document.getElementById("pricerent").value;
+		var rentiDetails = document.getElementById("details").value;
+		var rentSize = document.getElementById("size").value;
+
+		var dbRef=firebase.database().ref().child('OutfitDetails/confirmRent');
+
+		var postData = {
+			item_name: rentName,
+			item_size: rentSize,
+			rent_from: rentDate,
+			rent_to: returnDate,
+			num_days: rentDays,
+			rent_price:rentPrice,
+			rent_details: rentiDetails,
+
+		};
+		dbRef.push(postData);
+
+		localStorage.setItem("iName", rentName);
+		localStorage.setItem("iSize", rentSize);
+		localStorage.setItem("rentFrom", rentDate);
+		localStorage.setItem("rentTo", returnDate);
+		localStorage.setItem("noDays", rentDays);
+		localStorage.setItem("iPrice", rentPrice);
+  }
+					
+
+</script>
+<script type="text/javascript">
+
+        function GetDays(){
+                var returndt = new Date(document.getElementById("return_date").value);
+                var rentdt = new Date(document.getElementById("rent_date").value);
+                return parseInt((returndt - rentdt) / (24 * 3600 * 1000));
+        }
+
+        function cal(){
+	        if(document.getElementById("return_date")){
+	            document.getElementById("numdays2").value=GetDays();
+	        }
+	        var sdays = document.getElementById("numdays2").value;
+	        localStorage.setItem("max", sdays);
+    	}
+
+    	function max(){
+    		var mday = localStorage.getItem("max");
+			var maxdays = document.getElementById("maxrent").value;
+			console.log(mday);
+    		if(mday >= maxdays){
+	        	alert("Please select again");
+	        }
+    	}
+
+</script>
+
+<script>
+	/* When the user clicks on the button,
+	toggle between hiding and showing the dropdown content */
+	function myFunction() {
+	    document.getElementById("myDropdown").classList.toggle("show");
+	}
+
+	function filterFunction() {
+	    var input, filter, ul, li, a, i;
+	    input = document.getElementById("myInput");
+	    filter = input.value.toUpperCase();
+	    div = document.getElementById("myDropdown");
+	    a = div.getElementsByTagName("a");
+	    for (i = 0; i < a.length; i++) {
+	        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+	            a[i].style.display = "";
+	        } else {
+	            a[i].style.display = "none";
+	        }
+	    }
+	}
+	
+	function logout(){
+	  firebase.auth().signOut().then(function() {
+	  // Sign-out successful.
+	   window.location.href="../kah chun/login.html";
+	}).catch(function(error) {
+	  // An error happened.
+	});
+	}
+
+</script>
+
+</body>
+
+</html>

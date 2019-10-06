@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+	<html lang = "en">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-wdith, initial-scale=1">
+			<!-- Latest compiled and minified CSS -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+			<!-- Optional theme -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	
+			<!-- Latest compiled and minified JavaScript -->
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<link rel="stylesheet" href="../css/home.css">
+
+			<title>Fashare - Home</title>
+	</head>
+	
+	<body onload="RetrieveData()">
+		<header>
+			<nav class="navbar navbar-default">
+			<div class="container-fluid">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>                       
+			      </button>
+			      <a class="navbar-brand active" href="#"> <img id="logo" src="../images/fashare.png"> </a>
+			    </div>
+
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-center">
+							<li><a href="../kai xun/trending.html"> TRENDING </a></li>
+					        <li class="dropdown">
+					          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> OCCASIONS <span class="caret"></span></a>
+					          <ul class="dropdown-menu">
+					            <li><a href="#"> PROM </a></li>
+					            <li><a href="../gladys/schoolWomen.html"> SCHOOL</a></li>
+					            <li><a href="#"> BUSINESS </a></li>
+					          </ul>
+					        </li>
+
+					        
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"> STYLES <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="../Xin jie/TomboyStyle.html">TOMBOY STYLE</a></li>
+									<li><a href="../Xin jie/ChicStyle.html">CHIC STYLE</a></li>
+									<li><a href="../Xin jie/CasualStyle.html">CASUAL STYLE</a></li>
+									<li><a href="../Xin jie/BohemianStyle.html">BOHEMIAN STYLE</a></li>
+								</ul>
+						</li>
+
+					        <li class="dropdown">
+					          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> HELP <span class="caret"></span></a>
+					          <ul class="dropdown-menu">
+					            <li><a href="../kai xun/FAQ.html"> FAQ </a></li>
+					            <li><a href="../kai xun/aboutUs.html"> ABOUT US </a></li>
+					            <li><a href="../kai xun/contactUs.html"> CONTACT US </a></li>
+					            <li><a href="../kai xun/howToRent.html"> HOW TO RENT </a></li>
+					          </ul>
+					        </li>
+				</ul>
+			
+				
+						<ul class="nav navbar-nav navbar-right">
+								<li>
+									<div class="dropdown dropdown-menu-left">
+										<button onclick="myFunction()" class="glyphicon glyphicon-search"></button>
+										<div id="myDropdown" class="dropdown-content scrollable-menu">
+											<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+											<p> QUICK LINKS </p>
+											<a href="#about">PROM</a>
+											<a href="../gladys/schoolWomen.html">SCHOOL</a>
+											<a href="#blog">BUSINESS</a>
+											<a href="../Xin jie/TomboyStyle.html">TOMBOY STYLE</a>
+											<a href="../Xin jie/ChicStyle.html">CHIC STYLE</a>
+											<a href="../Xin jie/CasualStyle.html">CASUAL STYLE</a>
+											<a href="../Xin jie/MyCollections.html">My Collection</a>
+											<a href="../kah chun/profile.html">My Profile</a>
+											<a href="../Xin jie/CurrentRentals.html">My Rentals</a>
+											<a href="../Xin jie/PastHistory.html">My Rent-out History</a>
+											<a href="../kai xun/FAQ.html">FAQ</a>
+											<a href="../gladys/termsncon.html">TERMS AND CONDITIONS</a>
+											<a href="../kai xun/ContactUs.html">CONTACT US</a>
+											<a href="../kai xun/aboutUs.html">ABOUT US</a>
+											<a href="../kai xun/howToRent.html">HOW TO RENT</a>
+										</div>
+									</div> 
+								</li>
+							    <li><a href="../Kovan/chatRoom.html"><i class="glyphicon glyphicon-envelope"></i></a> </li>
+							    <li><a href="../gladys/uploadImage.html"><i class="glyphicon glyphicon-upload"></i></a> </li>
+
+
+			                <li class="dropdown">
+			                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			                        <span class="glyphicon glyphicon-user"></span> 
+			                        <strong> Username </strong>
+			                    </a>
+								
+			                    <ul class="dropdown-menu">
+			                        <li>
+			                            <div class="navbar-login">
+			                                <div class="row">
+			                                    <div class="col-lg-4">
+			                                        <p class="text-center">
+			                                            <span class="glyphicon glyphicon-user icon-size"></span>
+			                                        </p>
+			                                    </div>
+			                                    <div class="col-lg-8">
+			                                        <p class="text-left"><strong> Alisha Tan</strong></p>
+			                                        <p class="text-left small"> alishatan@gmail.com  </p>
+			                                        <p class="text-left">
+			                                            <a href="../kah chun/profile.html" class="btn btn-primary btn-block btn-sm"> VIEW PROFILE </a>
+			                                        </p>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </li>
+			                        <li class="divider"></li>
+			                        <li>
+			                            <div class="navbar-login navbar-login-session">
+			                                <div class="row">
+			                                    <div class="col-lg-12">
+			                                        <p>
+			                                            <a class="btn btn-danger btn-block" onclick="logout()">LOG OUT</a>
+			                                        </p>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </li>
+			                    </ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+			</header>
+			
+			<div class="container">
+				<Strong class = "title">Home</Strong>
+				
+				
+				<div class="container-fluid" id ="contentHolder">
+				<div class="row justify-content-around">
+				<div class="col-md-9">
+					<div class="z">
+						<div class="r1">
+							<p class="caption" id= "otitle"> </p>
+							<p><a class = "profile" href="../kah chun/profile.html">@alishatann</a></p>
+							<br/>						
+							<div class="container">
+													
+							<img src="" id="picUploaded" class="post" alt="post" id ="P1"/>
+							<br/>
+							<button type="button" id="tooltip" class="glyphicon glyphicon-plus" onclick="saveToDB(1)">
+								<span class="tooltiptext">Add to collection</span>
+							</button>
+							<div class="overlay">
+										<div class="text">
+											<img src="../images/profile(1).jpeg" alt="profile" class="profileImage"/> &nbsp; <span class="name">Alisha Tan</span>
+											<br/>
+											Date joined: 17 dec 2018<br/>
+														  post(s):23<br/>
+											<a href="../gladys/viewOther.html">View More</a><br/>
+										</div>
+									</div>
+								</div>
+							<p class ="description" id="oDes"></p> <p>...<a href="../gladys/viewOther.html">Read more</a></p>
+						</div>
+					</div>
+				</div>	
+				<div class="col-md-3">
+					<div class="r2">
+						<table style="margin-top: 90px;">
+							<tr><td> &nbsp;</td></tr>
+							<tr><td  style="font-weight:bold"> </td></tr>
+							<tr><td>POSTS YOU MIGHT HAVE MISSED:</td></tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr><td><a href="#"><img src="../images/post(23).jpg"/></a></td></tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr><td><a href="#"><img src="../images/post(24).jpeg"/></a></td></tr>
+							<tr><td> &nbsp;</td></tr>
+						</table>
+					</div>
+				</div>
+				</div>	
+				<br/>
+				<hr/>
+			</div>
+				
+				<div class="container-fluid" id ="contentHolder">
+				<div class="row justify-content-around">
+				<div class="col-md-9">
+					<div class="z">
+						<div class="r1">
+							<p class = "caption">Everyday Looks</p>
+							<p><a class= "profile" href="#">@Sarahtann</a></p>
+							<br/>						
+							<div class="container">
+							<input type="image" src="https://firebasestorage.googleapis.com/v0/b/fashare-2c.appspot.com/o/post%20for%20homepage%2Fpost(1).jpg?alt=media&token=ea4de0ad-55eb-472f-bfc6-f3c4cbf594de" class="post" id="P2"/>
+							<br/>
+							<button type="button" id="tooltip" class="glyphicon glyphicon-plus" onclick="saveToDB(2)">
+								<span class="tooltiptext">Add to collection</span>
+							</button>
+							<div class="overlay">
+										<div class="text">
+											<img src="../images/profile(2).jpg" alt="profile" class="profileImage"/> &nbsp; <span class="name">Sarah Tan</span>
+											<br/>
+											Date joined: 28 jan 2018<br/>
+														 Post(s): 10<br/>
+												<a href="#">View More</a>
+										</div>
+									</div>	
+								</div>
+							<p class ="description">Hi there,here is one of the many outfits I wear everday when im outside with friend or even in school....<a href="#">read more</a></p>
+						</div>
+					</div>
+				</div>	
+				<div class="col-md-3">
+					<div class="r2">
+						<table style="margin-top: 90px;">
+							<tr><td> &nbsp;</td></tr>
+							<tr><td  style="font-weight:bold">Sarah Tan</td></tr>
+							<tr><td>POSTS YOU MIGHT HAVE MISSED:</td></tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr><td><a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/fashare-2c.appspot.com/o/post%20for%20homepage%2Fpost(2).jpg?alt=media&token=ae72e309-758e-453a-82ce-3157386bbbe7"/></a></td></tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr><td><a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/fashare-2c.appspot.com/o/post%20for%20homepage%2Fpost(3).jpg?alt=media&token=55d2499d-efcd-4017-8e61-afe03a134907"/></a></td></tr>
+							<tr><td> &nbsp;</td></tr>
+						</table>
+					</div>
+				</div>
+				</div>	
+				<br/>
+				<hr/>
+			</div>
+			
+			<div class="container-fluid" id ="contentHolder">
+				<div class="row justify-content-around">
+				<div class="col-md-9">
+					<div class="z">
+						<div class="r1">
+							<p class = "caption">Prom King</p>
+							<p><a class= "profile" href="#">@jasonchui</a></p>
+							<br/>
+								<div class="container">
+								<input type="image" src="https://firebasestorage.googleapis.com/v0/b/fashare-2c.appspot.com/o/post%20for%20homepage%2Fpost(4).jpg?alt=media&token=f6ed7a0c-d03b-4c4d-ba5e-d31b6605710d" class="post" id="P3" ></input>
+									<br/>
+										<button type="button" id="tooltip" id="post" class="glyphicon glyphicon-plus" onclick="savePost(3)">
+												<span class="tooltiptext">Add to collection</span>
+										</button>
+									<div class="overlay">
+										<div class="text">
+											<img src="../images/profile(3).jpeg" alt="profile" class="profileImage"/> &nbsp; <span class="name">Jason Chui</span>
+											<br/>
+											 Date joined: 26 jan 2018<br/>
+														  Post(s): 36<br/>
+												 <a href="#">View More</a>
+										</div>
+									</div>									
+								</div>
+							<p class ="description">Don't know what to wear for prom? here is what I wore for prom which actually got me Prom King....<a href="#">read more</a></p>
+						</div>
+					</div>
+				</div>	
+				<div class="col-md-3">
+					<div class="r2">
+						<table style="margin-top: 90px;">
+							<tr><td> &nbsp;</td></tr>
+							<tr><td style="font-weight:bold">Jason Chui</td></tr>
+							<tr><td>POSTS YOU MIGHT HAVE MISSED:</td></tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr><td><a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/fashare-2c.appspot.com/o/post%20for%20homepage%2Fpost(5).jpg?alt=media&token=58892509-bc4e-465a-acec-c5b0202b20bf"/></a></td></tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr><td><a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/fashare-2c.appspot.com/o/post%20for%20homepage%2Fpost(6).jpg?alt=media&token=dbce4ad0-d982-42fc-b858-07377f9f1c0a"/></a></td></tr>
+							<tr><td> &nbsp;</td></tr>
+						</table>
+					</div>
+				</div>
+				</div>	
+				<br/>
+				<hr/>
+			</div>
+			
+			<div class="container-fluid" id ="contentHolder">
+				<div class="row justify-content-around">
+				<div class="col-md-9">
+					<div class="z">
+						<div class="r1">
+							<p class = "caption">Shoes, shoes & shoes</p>
+							<p><a class= "profile" href="#">@samong</a></p>
+							<br/>
+								<div class="container">
+									<input type="image" src="https://firebasestorage.googleapis.com/v0/b/fashare-2c.appspot.com/o/post%20for%20homepage%2Fpost(7).jpg?alt=media&token=b05994eb-8e4d-4644-bf27-f32645403d47" class="post" id="P4"/>
+									<br/>
+									<button type="button" id="tooltip" id="post" class="glyphicon glyphicon-plus" onclick="savePost(4)">
+												<span class="tooltiptext">Add to collection</span>
+									</button>
+										<div class="overlay">
+										<div class="text">
+										<img src="../images/profile(4).jpeg" alt="profile" class="profileImage"/> &nbsp; <span class="name">Sam Ong</span>
+										<br/>
+										  Date joined: 17 dec 2017<br/>
+													   Post(s): 47<br/>
+												<a href="#">View More</a>
+										</div>
+									</div>
+								</div>
+							<p class ="description">Looking for the perfect shoes? Here is what I think is the best pair of shoes that can match any outfit....<a href="#">read more</a></p>
+						</div>
+					</div>
+				</div>	
+				<div class="col-md-3">
+					<div class="r2">
+						<table style="margin-top: 90px;">
+							<tr><td> &nbsp;</td></tr>
+							<tr><td style="font-weight:bold" >Sam Tan</td></tr>
+							<tr><td>POSTS YOU MIGHT HAVE MISSED:</td></tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr><td><a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/fashare-2c.appspot.com/o/post%20for%20homepage%2Fpost(8).jpg?alt=media&token=71d42841-e9f8-406a-9262-75438e015623"/></a></td></tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr><td><a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/fashare-2c.appspot.com/o/post%20for%20homepage%2Fpost(9).jpg?alt=media&token=f360cfd8-274d-4634-9352-fcdc98319e75"/></a></td></tr>
+							<tr><td> &nbsp;</td></tr>
+						</table>
+					</div>
+				</div>
+				</div>	
+				<br/>
+				<hr/>
+			</div>
+			
+			
+			<div class="container-fluid" id ="contentHolder">
+				<div class="row justify-content-around">
+				<div class="col-md-9">
+					<div class="z">
+						<div class="r1">
+							<p class = "caption">Sweather weather</p>
+							<p><a class= "profile" href="#">@clairelim99</a></p>
+							<br/>
+								<div class="container">
+									<input type="image" src="https://firebasestorage.googleapis.com/v0/b/fashare-2c.appspot.com/o/post%20for%20homepage%2Fpost(10).jpeg?alt=media&token=7f46d42e-f502-40df-8fb2-57bf8b22c507" class="post" id="P5" ></input>
+									<br/>
+										<button type="button" id="tooltip" id="post" class="glyphicon glyphicon-plus" onclick="savePost(5)">
+												<span class="tooltiptext">Add to collection</span>
+										</button>
+										<div class="overlay">
+											<div class="text">
+												<img src="../images/profile(5).jpeg" alt="profile" class="profileImage"> &nbsp; <span class="name">Claire Lim</span>
+												<br/>
+													Date joined: 12 jan 2018<br/>
+																 Post(s): 45<br/>
+														<a href="#">View More</a>
+												</div>
+											</div>																			
+										</div>
+							<p class ="description">The weather this past few days has been really cold, so here are some outfits I been wearing the past few days...<a href="#">read more</a></p>
+						</div>
+					</div>
+				</div>	
+				<div class="col-md-3">
+					<div class="r2">
+						<table style="margin-top: 90px;">
+							<tr><td> &nbsp;</td></tr>
+							<tr><td style="font-weight:bold" >Claire lim</td></tr>
+							<tr><td>POSTS YOU MIGHT HAVE MISSED:</td></tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr><td><a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/fashare-2c.appspot.com/o/post%20for%20homepage%2Fpost(11).jpg?alt=media&token=0f09b299-235d-4a5e-a02c-378e91bb8d28"/></a></td></tr>
+							<tr><td> &nbsp;</td></tr>
+							<tr><td></td></tr>
+							<tr><td> &nbsp;</td></tr>
+						</table>
+					</div>
+				</div>
+				</div>	
+				<br/>
+				<hr/>
+			</div>
+			
+			
+	</div>
+	 
+	 <footer class="footer-bs">		
+		<div class="container-fluid"> <!--footer -->
+	        <div class="row">
+	            <div class="col-md-3 footer-nav">
+	                <ul class="list">
+	                    <h4>HELP &amp; INFORMATION</h4>
+
+	                    <li><a href="../kai xun/FAQ.html">FAQ</a></li>
+	                    <li><a href="../kai xun/ContactUs.html">Contact Us</a></li>
+	                    <li><a href="../kai xun/aboutUs.html">About Us</a></li>
+	                    <li><a href="../kai xun/howToRent.html">How to Rent</a></li>
+	                </ul>
+	            </div>
+
+	            <div class="col-md-2 footer-nav">
+	                <ul class="list">
+	                    <h4>for you</h4>
+	                    <li><a href="../kah chun/profile.html">My Profile</a></li>
+	                    <li><a href="../Xin jie/MyCollections.html">My Collections</a></li>
+	                    <li><a href="../Xin jie/CurrentRentals.html">My Rentals </a></li>
+	                    <li><a href="../Xin jie/PastHistory.html">My Rent-Out History</a></li>
+	                </ul>
+	            </div>
+
+	        	<div class="col-md-3 footer-brand">
+	            	<img src="../images/footerLogo.png" alt="footer-logo" id="footer-logo"/>
+	            	<ul class="list">
+	            		<li> <a href="../gladys/termsncon.html">TERMS &amp; CONDITIONS </a> </li>
+	            	</ul>
+	            </div>
+
+	        	<div class="col-md-4 footer-social">
+	            	<h4>FOLLOW US</h4>
+	            	
+	                <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+	               	<a href="https://twitter.com/?lang=en" class="fa fa-twitter"></a>
+	                <a href="https://www.instagram.com/fashare2c/?hl=en" class="fa fa-instagram"></a>
+	             
+	            </div>
+	        </div>
+		</div>
+	 </footer>			
+
+	 
+	 
+	<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+	<script>
+		$("#picUploaded").attr("src", localStorage.getItem("picURL"));
+		$("#profile").attr("src", localStorage.getItem("ProfilePic"));
+		
+			var config = {
+			    apiKey: "AIzaSyA9W19h4_1tpp4KSL0M99M8SOUuN7c2U3E",
+			    authDomain: "fashare-2c.firebaseapp.com",
+			    databaseURL: "https://fashare-2c.firebaseio.com",
+			    projectId: "fashare-2c",
+			    storageBucket: "fashare-2c.appspot.com",
+			    messagingSenderId: "115707668738"
+			  };
+			firebase.initializeApp(config);
+			
+			
+	function RetrieveData(){
+				var rent=firebase.database().ref().child('OutfitDetails');
+					rent.once('value', function(snapshot){
+						snapshot.forEach(function(childSnapshot){
+							var rentData = childSnapshot.val();
+							var outfit = rentData.outfitName;
+							if( outfit == "I am reddy for CNY"){
+								document.getElementById("picUploaded").src = rentData.outfitURL;
+								document.getElementById("otitle").innerHTML = rentData.outfitName;
+								document.getElementById("oDes").innerHTML = rentData.outfitDetails
+							}
+						
+						});
+					});
+			}
+	</script>
+	
+	<script>
+		function savePost(num){
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyCfTScNmYmg49NPyN-lxj-W-i3jOwiTfCA",
+				authDomain: "workshop-part2.firebaseapp.com",
+				databaseURL: "https://workshop-part2.firebaseio.com/",
+				projectId: "workshop-part2",
+				storageBucket: "workshop-part2.appspot.com",
+				messagingSenderId: "561089850714"
+			};
+		
+				if(firebase.apps.length === 0){
+					firebase.initializeApp(config);
+				}	
+				
+				var URL = document.getElementById("P" + num).src;
+				
+				var dbRef = firebase.database().ref().child('Collection');
+				
+				var postData = {
+					url: URL
+				};
+				
+					dbRef.push(postData);
+					window.alert("Added to collection!");	
+					console.log(URL.src)
+			}
+	</script>
+
+	<script>
+	/* When the user clicks on the button,
+	toggle between hiding and showing the dropdown content */
+	function myFunction() {
+	    document.getElementById("myDropdown").classList.toggle("show");
+	}
+
+	function filterFunction() {
+	    var input, filter, ul, li, a, i;
+	    input = document.getElementById("myInput");
+	    filter = input.value.toUpperCase();
+	    div = document.getElementById("myDropdown");
+	    a = div.getElementsByTagName("a");
+	    for (i = 0; i < a.length; i++) {
+	        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+	            a[i].style.display = "";
+	        } else {
+	            a[i].style.display = "none";
+	        }
+	    }
+	}
+	
+	function logout(){
+	  firebase.auth().signOut().then(function() {
+	  // Sign-out successful.
+	   window.location.href="../kah chun/login.html";
+	}).catch(function(error) {
+	  // An error happened.
+	});
+	}
+	</script>
+	
+	</body>
+
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<title>Fashare - create account</title>
+	<style>
+	
+
+		*{
+		font-family:Century GothiC,Futura, "Gill Sans";
+		}
+		body{
+		background-color:#d2d2d2;
+		}
+		.wholeform{
+		background-color:white;
+		font-size:15px;
+		}
+		.logo{
+		text-align:center;
+		}
+		h1{
+		text-align:center;
+		}
+		.button{
+		text-align:center;
+		}
+		
+		#contact input{
+		width: 100%;
+	
+		}
+		
+		#submit{
+		background-color:black;
+		border:0;
+		color:white;
+		padding:9px 20px;
+		margin-top:3%;
+		margin-bottom:3%;
+		}
+		#back{
+		background-color:#d2d2d2;
+		color:black;
+		padding:9px 20px;
+		margin-top:3%;
+		margin-bottom:3%;
+		}
+		.legend{
+		text-align:center;
+		font-size:25px;
+		padding-bottom:3%;
+		}
+		.col-sm-2{
+		font-size:17px;
+		}
+		.col-sm-10{
+		font-size:20px;
+		}
+		.forImage{
+			width:100%;
+		}
+		#uploader{
+		width:100%;
+		}
+
+	</style>
+</head>
+
+<body>
+	
+	
+	<div class="container">
+		<div class="logo">
+			<img src="../images/fashare.png" alt="fashare-logo" id="fashare-logo"/>
+		</div>
+		
+		<div class="col-sm-3"> 
+			<h4 class="text-center"> UPLOAD PROFILE PICTURE </h4>
+			<div>
+				
+				<img id="picUploaded" src="" class="forImage"/>
+				<progress value="0" max="100" id="uploader"> 0% </progress>
+				<input type="file"  value="upload" accept="image/*" id="fileButton" onclick="PostImage()">
+		
+			</div>
+		</div>
+		<div class="col-sm-1"></div>
+		<form class="col-sm-8 form-horizontal"> 
+		<div class ="wholeform">
+		<h1 style="font-weight:bold; padding-bottom:3%">Create Account</h1>
+		<legend>
+		<div class ="legend">Personal Detail</div>
+		<div class="form-group">
+		  <label class="control-label col-sm-2" for="name">Name *</label>
+		  <div class="col-sm-5">
+			<input type="text" class="form-control" id="Rname" placeholder="<Enter your fullname>" name="name" required/>
+		  </div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="contact" >Contact No *</label>
+			<div class= "col-sm-5">
+				<input type="tel" id="contact" name="contact" pattern= "\d{8}"  width="100px" placeholder = "<8888 8888>" required/>
+			</div>
+		</div>
+		<div class="form-group">
+		  <label class="control-label col-sm-2" for="adminNo" >Admin No</label>
+		  <div class="col-sm-5">
+			<input type="text" class="form-control" id="adminNo" name="adminNo" placeholder = "<170200D>">
+		  </div>
+		</div>
+		<div class="form-group">
+		  <label class="control-label col-sm-2" for="diploma">Course</label>
+		  <div class="col-sm-5">
+			<select name="course" id = "diploma" >
+			<option value=""></option>
+			<option value="Diploma in Information Technology">Diploma in Information Technology</option>
+			<option value="Diploma in Business Informatics">Diploma in Business Informatics</option>
+			<option value="Diploma in Business Enterprise IT">Diploma in Business Enterprise IT</option>
+			<option value="Diploma in Business Intelligence & Analytics">Diploma in Business Intelligence & Analytics</option>
+			<option value="Diploma in Cyber Security and Forensics">Diploma in Cyber Security and Forensics</option>
+			<option value="Diploma in Financial Informatics">Diploma in Financial Informatics</option>
+			<option value="Diploma in Infocomm & Security">Diploma in Infocomm & Security</option>
+		  </select>
+		  </div>
+		</div>
+		
+		<div class="form-group">
+		  <label class="control-label col-sm-2" for="dob">Date of Birth *</label>
+		  <div class="col-sm-5">          
+			<input type="date" class="form-control" id="dob" name="dob" required/>
+		  </div>
+		</div>
+		<div class="form-group">
+		  <label class="control-label col-sm-2" for="username" >Username </label>
+		  <div class="col-sm-5">
+			<input type="text" class="form-control" id="username" placeholder="<Username>" name="username" required/>
+		  </div>
+		</div>
+		<div class="form-group">        
+		  <div class="col-sm-offset-2 col-sm-10">
+			<div class="radio">
+			  <label class="block"><input type="radio" id="t1" name="gender" value="Male">Male</label>
+				<label class="block"><input type="radio" id="t2" name="gender" value="Female">Female</label>
+			</div>
+		  </div>
+		</div>
+		</legend>
+		<div class ="legend">Login Detail</div>
+		<div class="form-group">
+		  <label class="control-label col-sm-2" for="email">Email *</label>
+		  <div class="col-sm-5">
+			<input type="email" class="form-control" id="rEmail" placeholder="<google@gmail.com>" name="email" required/>
+		  </div>
+		</div>
+		<div class="form-group">
+		  <label class="control-label col-sm-2" for="password" >Password *</label>
+		  <div class="col-sm-5">
+			<input type="text" class="form-control" id="password" name="password" placeholder="<Login password>" required/>
+		  </div>
+		</div>
+		
+		<div class="form-group">        
+		  <div class="button">
+			<input type="button" value="Submit" id = "submit" onclick="saveToDB(); createAccount();" class="btn btn-default"/>
+			<a href= "login.html"><input type ="button" value="Back" id ="back" class="btn btn-default"/> </a>
+		  </div>
+		</div>
+		</legend>
+		<div id="response"></div>
+	  </form>
+	</div>
+	</div>
+	<!--start of footer section-->
+	<footer class="text-center">
+		<div class="container-fluid">
+			<div class="row">
+				<p>There is with * is required to fill in</p>
+				<p>Copyright &copy; Fashare 101</p>
+			</div>
+		</div>
+	</footer>
+	
+
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA9W19h4_1tpp4KSL0M99M8SOUuN7c2U3E",
+    authDomain: "fashare-2c.firebaseapp.com",
+    databaseURL: "https://fashare-2c.firebaseio.com",
+    projectId: "fashare-2c",
+    storageBucket: "fashare-2c.appspot.com",
+    messagingSenderId: "115707668738"
+  };
+   firebase.initializeApp(config);
+  
+  function PostImage(){
+  
+	var uploader = document.getElementById('uploader');
+	var fileButton = document.getElementById('fileButton');
+	fileButton.addEventListener('change', function(e){
+	var file = e.target.files[0];
+	var storageRef = firebase.storage().ref('profilePic/'+file.name);
+	var task = storageRef.put(file);
+	task.on('state_changed', function progress(snapshot) {
+		var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+		uploader.value = percentage;
+
+	  }, function error(err) {
+
+
+	  }, function complete() {
+	  var postKey = firebase.database().ref('ProfilePic/').push().key;
+	  var downloadURL = task.snapshot.downloadURL;
+	  var updates = {};
+	  var postData = {
+	  url: downloadURL, 
+	  };
+
+
+	  updates['ProfilePic/' + postKey]= postData;
+	  firebase.database().ref().update(updates);
+	  console.log(downloadURL);
+	  localStorage.setItem("ProfilePic", downloadURL);
+	 
+	  });
+
+	});
+
+}
+$("#picUploaded").attr("src", localStorage.getItem("ProfilePic"));
+
+
+</script>
+<script src = "../js/CreateAccount.js"></script>
+
+</body>
+</html>
